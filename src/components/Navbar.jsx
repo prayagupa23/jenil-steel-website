@@ -4,9 +4,10 @@ import logo from '../assets/logo/logo2.png';
 
 const navItems = [
   { label: 'Home', to: '/' },
-  { label: 'Services', to: '/services' },
+  { label: 'About', to: '/about' },
   { label: 'Products', to: '/products' },
-  { label: 'Infrastructure', to: '/infrastructure' },
+  { label: 'Services', to: '/services' },
+  { label : 'Our Reach', to: '/reach'},
   { label: 'CSR', to: '/csr' },
   { label: 'Contact', to: '/contact' },
 ];

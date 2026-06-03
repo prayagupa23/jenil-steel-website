@@ -5,9 +5,9 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Products from './pages/Products';
-import Infrastructure from './pages/Infrastructure';
 import CSR from './pages/CSR';
 import Contact from './pages/Contact';
+// import MiddleScrollToTop from './components/MiddleScrollToTop';
 
 function App() {
   return (
@@ -18,11 +18,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/infrastructure" element={<Infrastructure />} />
           <Route path="/csr" element={<CSR />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <WhatsAppButton />
+        
+        {/* <MiddleScrollToTop/> */}
       </div>
     </BrowserRouter>
   );

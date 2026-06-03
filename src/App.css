@@ -425,11 +425,16 @@
   font-weight: 700;
 }
 
+/* ==========================================
+   1. STRIP CONTAINER & INITIAL ANIMATION
+   ========================================== */
 .clients-strip {
   margin: 2.5rem 0 3rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.03);
+  /* Remove borders and background to let the main page color show through */
+  border-top: none;
+  border-bottom: none;
+  background: transparent; 
+  
   padding: 1rem 0;
   overflow: hidden;
   animation: fadeUp 0.95s ease 0.3s both;
@@ -443,38 +448,94 @@
   font-size: 0.88rem;
 }
 
+/* ==========================================
+   2. THE EDGE FADE (NEW WRAPPER REQUIRING STRUCTURE)
+   ========================================== */
+.marquee-fade-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  
+  /* Creates a feathered edge-fade stencil on the left and right sides */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ==========================================
+   3. MARQUEE RUNNING ENGINE
+   ========================================== */
+.marquee-content {
+  display: flex;
+  width: max-content;
+  align-items: center; /* Keeps logos and dots vertically centered */
+  animation: marqueeSlide 28s linear infinite;
+}
+
+/* Pause track motion on container hover */
+.clients-strip:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* ==========================================
+   4. LOGO HOUSING & BACKDROP CLEANUP
+   ========================================== */
 .client-logo {
   width: 170px;
   height: 84px;
-  margin: 0 2rem;
+  margin: 0 2.5rem; /* Increased slightly for cleaner breathing room */
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   opacity: 0.58;
+  
+  /* FIXED: Combined grayscale with luminosity to destroy grey bounding box frames */
   filter: grayscale(100%);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  mix-blend-mode: luminosity; 
+  
+  transition: opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease;
 }
 
+/* Gold Separator Rings */
 .client-logo::before {
   content: '';
   position: absolute;
-  left: -2.15rem;
-  width: 12px;
-  height: 12px;
+  left: -2.65rem; /* Adjusted alignment offset matching new margins */
+  width: 8px;   /* Slightly smaller makes it look cleaner */
+  height: 8px;
   border-radius: 50%;
   border: 2px solid #e4cfaa;
   background: transparent;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
-.client-logo:first-child::before {
+/* FIXED: Prevents missing dots or duplicate double dots at the loop overlap points */
+.marquee-content > .client-logo:first-child::before {
   display: none;
 }
 
+/* Premium Hover State */
 .client-logo:hover {
   opacity: 1;
   filter: grayscale(0%);
+  mix-blend-mode: normal; /* Restores real brand colors on hover */
   transform: scale(1.05);
 }
 
@@ -484,47 +545,15 @@
   object-fit: contain;
 }
 
-.marquee-track {
-  width: 100%;
-  overflow: hidden;
-}
-
-.marquee-content {
-  display: flex;
-  width: max-content;
-  animation: marqueeSlide 28s linear infinite;
-}
-
-.clients-strip:hover .marquee-content {
-  animation-play-state: paused;
-}
-
+/* ==========================================
+   5. TIMELINE TRANSLATION KEYFRAMES
+   ========================================== */
 @keyframes marqueeSlide {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.333%);
-  }
-}
-
-@keyframes pageEnter {
-  from {
-    opacity: 0.35;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes floatInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+    transform: translateX(-33.333%); /* Perfect mathematical snap reset */
   }
 }
 
@@ -538,6 +567,10 @@
     transform: translateY(0);
   }
 }
+
+/* Retaining your unused backup keyframes safely below for reference */
+@keyframes pageEnter { from { opacity: 0.35; } to { opacity: 1; } }
+@keyframes floatInLeft { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: translateX(0); } }
 
 .legacy-section {
   background: #050a12;
