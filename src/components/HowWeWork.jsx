@@ -9,3 +9,5 @@ const HowWeWork = () => {
         </section>
     );
 }
+
+export default HowWeWork;
