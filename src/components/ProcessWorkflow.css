@@ -1,0 +1,146 @@
+/* Container Layout context background details */
+.workflow-section {
+  background-color: #070e1c; /* Sleek deep dark navy theme */
+  padding: 20px 24px 0px 24px;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.workflow-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   1. SVG LINE LAYERING AND LASER PULSE ENGINE
+   ========================================== */
+.workflow-svg-line-container {
+  position: absolute;
+  /* Positions the line perfectly running behind the centers of the circles */
+  top: 40px; 
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  z-index: 1;
+  display: none; /* Hidden on mobile scales */
+}
+
+@media (min-width: 768px) {
+  .workflow-svg-line-container {
+    display: block; /* Unfolds cleanly on tablets and desktop monitors */
+  }
+}
+
+.workflow-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Base structural path background tint */
+.base-track-line {
+  stroke: rgba(228, 207, 170, 0.08);
+  stroke-width: 1.5;
+}
+
+/* The light-beam glowing dash traveler */
+.pulse-animated-line {
+  stroke: url(#laser-gradient); /* Handled natively via custom linear-gradients */
+  stroke: #ff6a00; /* Primary brand orange fallback */
+  stroke-width: 2;
+  stroke-linecap: round;
+  
+  /* Creates a short dashed segment that serves as the "laser point" */
+  stroke-dasharray: 15 85; 
+  animation: trace-pulse 4s linear infinite;
+}
+
+/* Continuously pushes the dashed point left-to-right along the vector wire */
+@keyframes trace-pulse {
+  0% {
+    stroke-dashoffset: 15;
+  }
+  100% {
+    stroke-dashoffset: -85;
+  }
+}
+
+/* ==========================================
+   2. GEOMETRIC CIRCLE NODES & DESIGN MATRIX
+   ========================================== */
+.steps-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+@media (min-width: 768px) {
+  .steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+
+.step-node-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle-node-wrapper {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #070e1c; /* Solid fill blocks the connecting line from clipping text inside */
+  border: 0.5px solid #c45100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.step-node-item:hover .circle-node-wrapper {
+  border-color: #ff6a00;
+  transform: scale(1.05);
+}
+
+.inner-number {
+  color: #ff6a00;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Top-right corner orbit dot */
+.accent-orbit-dot {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: #ff6a00;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ff6a00; /* Ambient neon energy glow */
+}
+
+/* Typography styles matching original graphic spacing rules */
+.step-node-title {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.step-node-desc {
+  color: #8a92a6;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  max-width: 220px;
+  margin: 0;
+}

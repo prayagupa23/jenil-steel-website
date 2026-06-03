@@ -40,7 +40,7 @@ const JenilAdvantage = () => {
             <span className="sub-title">WHY JENIL STEEL</span>
           </div>
           <h2 className="main-title">
-            The <span className="highlight">Jenil</span> advantage
+            The <span className="highlight">Jenil</span> Advantage
           </h2>
         </div>
 

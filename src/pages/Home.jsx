@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import heroVideo from '../assets/landingpage.mp4';
 import jswLogo from '../assets/images/jsw-logo-jv.webp';
 import rinlLogo from '../assets/images/Rashtriya_Ispat_Nigam.svg.png';
-// import sailLogo from '../assets/images/sail.png';
+// import sailLogo '../assets/images/sail.png';
 import tataLogo from '../assets/images/tata-steel-logo.png';
 import legacyImage from '../assets/images/legacy.png';
 import JenilAdvantage from '../components/JenilAdvantage';
 import HowWeWork from '../components/HowWeWork';
+import Testimonials from '../components/Testimonials';
+import VideoTestimonials from '../components/VideoTestimonials';
 
 const stats = [
   { value: 75, suffix: '+', label: 'YEARS EXPERIENCE' },
@@ -186,7 +188,7 @@ function Home() {
       <JenilAdvantage/>
 
       <section className="clients-strip">
-        <p className="clients-title">Our Customers</p>
+        <p className="clients-title">Companies We Work With</p>
         
         {/* Add this wrapper to handle the left & right fade gradient */}
         <div className="marquee-fade-container">
@@ -201,9 +203,10 @@ function Home() {
           </div>
         </div>
       </section>
-
+      <hr className="custom-line" />
       <HowWeWork/>
-
+      <Testimonials/>
+      <VideoTestimonials/>
     </main>
   );
 }

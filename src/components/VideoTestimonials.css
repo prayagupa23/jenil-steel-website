@@ -1,0 +1,372 @@
+.b2b-testimonial-section {
+  position: relative;
+  background-color: #070e1c; /* True industrial deep primary navy */
+  padding: 120px 24px;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.b2b-container {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+/* ==========================================
+   1. ACCENT BACKGROUND WATERMARKS (DEPTH LAYER)
+   ========================================== */
+.bg-giant-watermark {
+  position: absolute;
+  bottom: -20px;
+  left: 5%;
+  font-size: clamp(8rem, 15vw, 16rem);
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+  color: #ffffff;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.structural-quote-mark {
+  position: absolute;
+  top: -60px;
+  left: -20px;
+  font-size: 16rem;
+  font-family: 'Georgia', serif;
+  color: rgba(255, 255, 255, 0.025);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ==========================================
+   2. REFINED HEADER SUBTITLE SPECIFICATIONS
+   ========================================== */
+.b2b-header-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.b2b-label-line {
+  width: 40px;
+  height: 1px;
+  background-color: #ff6a00; /* Core corporate brand focus tone */
+}
+
+.b2b-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  
+  /* If the logo contains dark text, adding a high contrast filter ensures 
+     the corporate emblem pops perfectly over the dark navy section background */
+  filter: contrast(1.2) brightness(1.1);
+}
+
+.b2b-section-label {
+  color: #ff6a00;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   3. RESPONSIVE GRID SPLIT MATRIX
+   ========================================== */
+.b2b-split-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .b2b-split-grid {
+    grid-template-columns: 1.1fr 1.3fr; /* Perfectly weighted asymmetrical layout spacing */
+    gap: 80px;
+  }
+}
+
+/* ==========================================
+   4. LEFT COLUMN: VIDEO BLOCK INTERACTIONS
+   ========================================== */
+.video-box-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5; /* Cinema vertical proportions look premium */
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #0a0f20;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.video-media-asset {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%) contrast(1.05);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-box-card:hover .video-media-asset {
+  transform: scale(1.04);
+}
+
+.video-cinematic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #060913 5%, rgba(6, 9, 19, 0.4) 50%, rgba(0,0,0,0.2) 100%);
+  transition: background 0.4s ease;
+}
+
+.video-box-card:hover .video-cinematic-overlay {
+  background: linear-gradient(to top, #060913 2%, rgba(6, 9, 19, 0.3) 50%, rgba(0,0,0,0.1) 100%);
+}
+
+/* PLAY BUTTON HOVER ENGAGEMENT CORE */
+.video-trigger-button-housing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.premium-play-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #060913;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  z-index: 6;
+}
+
+.play-icon-vector {
+  width: 20px;
+  height: 20px;
+  margin-left: 4px; /* Optical centering calibration alignment offset */
+}
+
+.play-pulse-ring {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  z-index: 4;
+  transition: all 0.4s ease;
+}
+
+.video-box-card:hover .premium-play-circle {
+  transform: scale(1.08);
+  background-color: #ff6a00;
+  color: #ffffff;
+}
+
+.video-box-card:hover .play-pulse-ring {
+  transform: scale(1.4);
+  opacity: 0;
+  border-color: #ff6a00;
+}
+
+/* VIDEO FOOTER BEACON BAR */
+.video-footer-accent {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.pulse-beacon {
+  width: 6px;
+  height: 6px;
+  background-color: #ff6a00;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ff6a00;
+}
+
+.video-cta-text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* ==========================================
+   5. RIGHT COLUMN: EDITORIAL TEXT MATRIX
+   ========================================== */
+.b2b-content-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-fluid-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rating-star-cluster {
+  display: flex;
+  gap: 4px;
+  color: #ff6a00;
+}
+
+.star-element-vector {
+  width: 16px;
+  height: 16px;
+}
+
+.b2b-quote-paragraph {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* MINIMAL INDUSTRIAL GLASS PILL BADGE */
+.premium-industrial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 8px 16px;
+  border-radius: 4px;
+  width: max-content;
+}
+
+.badge-steel-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #ff6a00;
+  border-radius: 50%;
+}
+
+.badge-text-string {
+  color: #a0aec0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* CORPORATE CORPORATE SIGN-OFF ROW FOOTER */
+.b2b-corporate-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 2rem;
+  margin-top: 1rem;
+}
+
+.meta-user-name {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.meta-user-role {
+  color: #718096;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.corporate-logo-frame {
+  height: 48px;
+  max-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: screen; /* Forces corporate logos into perfect matching uniform clean layout format text */
+  opacity: 0.75;
+}
+
+/* ==========================================
+   6. DECK LEVEL NAVIGATION MODULE CONSTRUCTS
+   ========================================== */
+.b2b-navigation-control-deck {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 3.5rem;
+}
+
+.arrows-cluster {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-arrow-trigger {
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-arrow-trigger:hover {
+  border-color: #ff6a00;
+  color: #ff6a00;
+  background-color: rgba(255, 106, 0, 0.03);
+}
+
+/* FLEX INDICATOR RAIL INTERFACE DOT TRACKER */
+.timeline-dots-rail {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3W cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-dot.active-dot {
+  background-color: #ff6a00;
+  width: 24px; /* Premium expandable horizontal accent slider link element */
+  border-radius: 4px;
+}

@@ -1,0 +1,272 @@
+@import url(https://fonts.bunny.net/css?family=krub:200i,300);
+
+.testimonials-section {
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  font-family: 'Krub', sans-serif;
+  background-color: #f9fafb; /* Seamlessly blends into your dark theme */
+}
+
+.carousel-outer-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================
+   1. MAIN CAROUSEL CORE
+   ========================================== */
+.carousel {
+  --card-width: 100%;
+  --card-height: auto;
+  --transition-duration: 600ms;
+
+  width: min(calc(100% - 2rem), 750px); /* Restricting maximum quote display boundaries */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 280px;
+  position: relative;
+  overflow: visible;
+}
+
+/* ==========================================
+   2. ITEM SLIDES AND STATE TRANSITIONS
+   ========================================== */
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  max-width: 650px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: opacity var(--transition-duration) ease-in-out, 
+              transform var(--transition-duration) ease-in-out;
+  text-align: center;
+}
+
+/* Simulated snapped class matching your '@container scroll-state(snapped)' rule */
+.carousel-item.snapped {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  position: relative; /* Keeps container space static */
+}
+
+.item-content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 40px 60px 20px 60px;
+  position:relative;
+}
+
+.item-content-box::before {
+  content: "“";
+  position: absolute;
+  
+  /* CHANGE THIS: Bring it down from -40px to 0px so it fits perfectly inside the new padding */
+  top: 0px;   
+  left: 10px;   
+  
+  font-size: 10rem;
+  font-family: 'Georgia', serif;
+  line-height: 1;
+  color: #070e1c; 
+  pointer-events: none;
+}
+
+/* 4. ADJUST THE CLOSING QUOTE POSITION (Just to keep it symmetrical) */
+.item-content-box::after {
+  content: "”";
+  position: absolute;
+  
+  /* CHANGE THIS: Pull it up slightly to avoid clipping the bottom edge */
+  bottom: -20px; 
+  right: 10px;   
+  
+  font-size: 10rem;
+  font-family: 'Georgia', serif;
+  line-height: 1;
+  color: #070e1c;
+  pointer-events: none;
+}
+
+.quote-paragraph {
+  margin: 0;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: #070e1c; /* Soft readable clear text code tint */
+}
+
+.author-citation {
+  display: block;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 1.1rem;
+  color: #070e1c;
+  text-align: right;
+  padding-right: 10%;
+}
+
+/* ==========================================
+   3. MANUAL SCROLL CONTROL BUTTONS
+   ========================================== */
+.scroll-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background-color: transparent;
+  color: #070e1c;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.scroll-btn.prev {
+  left: 0;
+}
+
+.scroll-btn.next {
+  right: 0;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(0, 89, 138, 0.15);
+  color: #070e1c;
+  scale: 1.1;
+}
+
+/* Hide navigation controls on tight phone displays to avoid overlapping long quotes */
+@media (max-width: 640px) {
+  .scroll-btn {
+    display: none;
+  }
+}
+
+/* ==========================================
+   4. NAVIGATION MARKER DOTS (DOT TRAIL)
+   ========================================== */
+.scroll-marker-group-surrogate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2rem;
+}
+
+.scroll-marker-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #070e1c;
+  cursor: pointer;
+  padding: 0;
+  transition: all 250ms ease-in-out;
+}
+
+.scroll-marker-dot.active {
+  background-color: #070e1c;
+  outline: 1px solid #070e1c;
+  outline-offset: 3px;
+  transform: scale(1.1);
+}
+
+.scroll-marker-dot:hover {
+  background-color: #050a14;
+}
+/* ==========================================
+   ADDED: AVATAR / PROFILE STYLING 
+   ========================================== */
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem; /* Pushes the text down slightly */
+}
+
+.avatar-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #070e1c; /* Matches your brand blue theme */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Fallback styles if you don't supply an image link string */
+.avatar-placeholder {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #070e1c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   UPDATED: CONTAINER HOUSING THE LARGE QUOTES
+   ========================================== */
+.item-content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 60px; /* Increased padding so text doesn't overlap the huge quotes */
+  position: relative; /* Crucial: Allows the quotes to anchor to this box */
+}
+
+/* 1. THE OPENING QUOTE (Top Left) */
+.item-content-box::before {
+  content: "“"; /* Unicode opening curly double quote */
+  position: absolute;
+  top: -40px;   /* Pushes it slightly above the text/avatar layer */
+  left: 10px;   /* Places it beautifully in the left margin gap */
+  
+  font-size: 10rem; /* Makes it exceptionally large */
+  font-family: 'Georgia', serif; /* Elegant serif look for the quote curves */
+  line-height: 1;
+  
+  /* Matches your brand blue theme with an ultra-faded, elegant opacity */
+  color: rgba(0, 89, 138, 0.15); 
+  pointer-events: none; /* Prevents it from interfering with user text selection */
+}
+
+/* 2. THE CLOSING QUOTE (Bottom Right) */
+.item-content-box::after {
+  content: "”"; /* Unicode closing curly double quote */
+  position: absolute;
+  bottom: -40px; /* Positions it below the text row */
+  right: 10px;   /* Places it cleanly in the right margin gap */
+  
+  font-size: 10rem;
+  font-family: 'Georgia', serif;
+  line-height: 1;
+  
+  color: rgba(0, 89, 138, 0.15);
+  pointer-events: none;
+}
