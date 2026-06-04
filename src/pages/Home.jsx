@@ -11,6 +11,7 @@ import JenilAdvantage from '../components/JenilAdvantage';
 import HowWeWork from '../components/HowWeWork';
 import Testimonials from '../components/Testimonials';
 import VideoTestimonials from '../components/VideoTestimonials';
+import CTASection from '../components/CTASection';
 
 const stats = [
   { value: 75, suffix: '+', label: 'YEARS EXPERIENCE' },
@@ -207,6 +208,8 @@ function Home() {
       <HowWeWork/>
       <Testimonials/>
       <VideoTestimonials/>
+      <CTASection/>
+
     </main>
   );
 }
