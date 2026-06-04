@@ -5,11 +5,12 @@ function CTASection() {
 
   const [isInside, setIsInside] = useState(false);
   const sectionRef = useRef(null);
-  
+  const [hasMoved, setHasMoved] = useState(false);
+
   // cursor
   const [mousePos, setMousePos] = useState({
-    x: 0,
-    y: 0,
+      x: 0,
+      y: 0,
   });
 
   const [hoveringButton, setHoveringButton] = useState(false);
@@ -20,7 +21,7 @@ function CTASection() {
 
     const handleMouseMove = (e) => {
       const rect = section.getBoundingClientRect();
-
+      setHasMoved(true);
       setMousePos({
         x: e.clientX - rect.left,
         y: e.clientY - rect.top,
@@ -46,22 +47,35 @@ function CTASection() {
         <div
         className="grid-canvas"
         style={{
-            backgroundImage: `
-            radial-gradient(
+          backgroundImage: hasMoved && isInside
+            ? `
+              radial-gradient(
                 circle at ${mousePos.x}px ${mousePos.y}px,
                 rgba(234,88,255,.25) 0px,
                 transparent 180px
-            ),
-            linear-gradient(
+              ),
+              linear-gradient(
                 to right,
                 rgba(26,36,58,.5) 1px,
                 transparent 1px
-            ),
-            linear-gradient(
+              ),
+              linear-gradient(
                 to bottom,
                 rgba(26,36,58,.5) 1px,
                 transparent 1px
-            )
+              )
+            `
+            : `
+              linear-gradient(
+                to right,
+                rgba(26,36,58,.5) 1px,
+                transparent 1px
+              ),
+              linear-gradient(
+                to bottom,
+                rgba(26,36,58,.5) 1px,
+                transparent 1px
+              )
             `,
         }}
         ></div>

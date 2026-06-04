@@ -212,7 +212,7 @@
   width: 18px;
   height: 18px;
 
-  position: fixed;
+  position: absolute;
 
   border-radius: 50%;
 
@@ -232,7 +232,7 @@
 }
 
 .cursor-glow {
-  position: fixed;
+  position: absolute;
 
   width: 300px;
   height: 300px;
@@ -258,4 +258,11 @@
   background: transparent;
 
   border: 1px solid #ffb693;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor,
+  .cursor-glow {
+    display: none;
+  }
 }

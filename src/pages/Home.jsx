@@ -12,6 +12,7 @@ import HowWeWork from '../components/HowWeWork';
 import Testimonials from '../components/Testimonials';
 import VideoTestimonials from '../components/VideoTestimonials';
 import CTASection from '../components/CTASection';
+import Footer from '../components/Footer';
 
 const stats = [
   { value: 75, suffix: '+', label: 'YEARS EXPERIENCE' },
@@ -209,6 +210,7 @@ function Home() {
       <Testimonials/>
       <VideoTestimonials/>
       <CTASection/>
+      <Footer/>
 
     </main>
   );

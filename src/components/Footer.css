@@ -1,0 +1,176 @@
+.footer {
+  position: relative;
+
+  background: #070e1c;
+
+  overflow: hidden;
+
+  padding-top: 5rem;
+
+  color: #ffffff;
+}
+
+.footer-beam {
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ce7106,
+    transparent
+  );
+
+  box-shadow: 0 0 10px rgba(244,178,102,.3);
+}
+
+.footer-watermark {
+  position: absolute;
+
+  top: 40px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 16rem;
+
+  font-weight: 800;
+
+  letter-spacing: 20px;
+
+  color: rgba(255,255,255,.02);
+
+  pointer-events: none;
+
+  user-select: none;
+
+  white-space: nowrap;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding: 4rem 5%;
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1fr;
+
+  gap: 4rem;
+}
+
+.footer-brand h2 {
+  font-size: 2rem;
+
+  margin-bottom: 1rem;
+
+  letter-spacing: 2px;
+}
+
+.footer-brand p {
+  color: rgba(255,255,255,.65);
+
+  line-height: 1.8;
+}
+
+.footer-column h3 {
+  color: #ce7106;
+
+  margin-bottom: 1.5rem;
+
+  font-size: 1rem;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.footer-column a {
+  display: block;
+
+  margin-bottom: 0.9rem;
+
+  text-decoration: none;
+
+  color: rgba(255,255,255,.65);
+
+  transition: all 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #ce7106;
+
+  transform: translateX(4px);
+}
+
+.footer-column p {
+  color: rgba(255,255,255,.65);
+
+  margin-bottom: 0.9rem;
+
+  line-height: 1.7;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.08);
+
+  padding: 1.5rem 5%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: rgba(255,255,255,.45);
+
+  font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-watermark {
+    font-size: 8rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-watermark {
+    font-size: 5rem;
+  }
+
+}
+
+.footer-logo {
+  width: 220px;
+  height: auto;
+
+  margin-bottom: 1.5rem;
+
+  object-fit: contain;
+}
