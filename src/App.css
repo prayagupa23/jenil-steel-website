@@ -438,13 +438,13 @@
    1. STRIP CONTAINER & INITIAL ANIMATION
    ========================================== */
 .clients-strip {
-  margin: 2.5rem 0 3rem;
+  margin: 2.5rem 0;
   /* Remove borders and background to let the main page color show through */
   border-top: none;
   border-bottom: none;
   background: transparent; 
   
-  padding: 1rem 0;
+  padding:0;
   overflow: hidden;
   animation: fadeUp 0.95s ease 0.3s both;
 }
@@ -598,7 +598,7 @@
 
 .legacy-eyebrow {
   margin: 0 0 1rem;
-  color: #e4cfaa;
+  color: #ce7106;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.14rem;
