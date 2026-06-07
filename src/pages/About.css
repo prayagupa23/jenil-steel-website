@@ -116,7 +116,7 @@
 .hero-section-about {
   position: relative;
   height: auto;
-  min-height: 400px;
+  min-height: 320px;
   padding: 6rem 2rem 4rem;
   display: flex;
   align-items: center;
@@ -139,12 +139,13 @@
 .hero-overlay-about {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(11,18,32,0.92) 0%,
-    rgba(11,18,32,0.80) 50%,
-    rgba(11,18,32,0.95) 100%
-  );
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(5, 10, 25, 0.92),
+      rgba(5, 10, 25, 0.75)
+    );
 }
 
 .hero-content-about {

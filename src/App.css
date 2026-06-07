@@ -1,3 +1,16 @@
+:root {
+  --container-width: 1200px;
+  --container-padding: 24px;
+
+  --section-spacing: 100px;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
 .site-shell {
   min-height: 100vh;
   background: #070e1c;
@@ -260,8 +273,8 @@
   z-index: 2;
   width: 100%;
   max-width: none;
-  margin: 0;
-  padding: 8.4rem 0 2rem 1.2rem;
+  margin: 0 ;
+  padding: 8rem 0 2rem 1.2rem;
   text-align: left;
   animation: floatInLeft 0.9s ease;
 }
