@@ -1,0 +1,360 @@
+/* =========================================
+   Standard Brand Hero Configuration
+   ========================================= */
+
+.reach-page {
+  width: 100%;
+  background-color: #ffffff; /* Shifted to clean crisp white background */
+}
+
+.reach-hero {
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  overflow: hidden;
+}
+
+.hero-bg-reach {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-bg-img-reach {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.35) contrast(1.1);
+}
+
+.hero-overlay-reach {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(14, 27, 46, 0.5), #0e1b2e);
+}
+
+.hero-content-reach {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-breadcrumbs-reach {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #b0b8cc;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.breadcrumb-link-reach {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s ease;
+}
+
+.breadcrumb-link-reach:hover {
+  color: #e07830;
+}
+
+.breadcrumb-home-svg {
+  width: 16px;
+  height: 16px;
+}
+
+.breadcrumb-separator-reach {
+  color: #53627c;
+}
+
+.hero-heading-reach {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.hero-heading-accent-reach {
+  color: #e07830;
+}
+
+/* =========================================
+   Laser Visual Separator
+   ========================================= */
+
+.molten-divider {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255, 94, 20, 0.4), #ff5e14, rgba(255, 94, 20, 0.4), transparent);
+  z-index: 5;
+}
+
+.laser-spark {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0 0 15px 4px #ff5e14, 0 0 30px 8px #e07830;
+  animation: laserSweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes laserSweep {
+  0% { left: -10%; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+/* =========================================
+   Two-Section Layout Blocks (About Style)
+   ========================================= */
+
+.reach-content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px; /* Healthy breathing space between sections */
+  box-sizing: border-box;
+}
+
+.reach-split-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Left/Right structural flex rules */
+.reach-image-column {
+  flex: 1;
+  max-width: 50%;
+}
+
+.reach-text-column {
+  flex: 1;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Premium Zoom Frame Engine */
+.reach-image-frame {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(14, 27, 46, 0.08);
+}
+
+.reach-split-img {
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Subtle frame image zoom on section interactions */
+.reach-image-frame:hover .reach-split-img {
+  transform: scale(1.05);
+}
+
+/* Typography Styling */
+.reach-tag-line {
+  color: #e07830; /* Your standard deep accent orange */
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.reach-dash-accent {
+  width: 24px;
+  height: 2px;
+  background-color: #e07830;
+}
+
+.reach-section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0e1b2e; /* Classic deep corporate slate */
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+}
+
+.reach-section-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #556175;
+  margin: 0;
+}
+
+/* =========================================
+   Scroll Entrance Trigger Animations
+   ========================================= */
+
+.animate-fade-up {
+  animation: reachRowFade 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes reachRowFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   Responsive Breakpoints Optimization
+   ========================================= */
+
+@media (max-width: 991px) {
+  .reach-content-wrapper {
+    gap: 60px;
+    padding: 60px 24px;
+  }
+  
+  .reach-split-row, 
+  .reach-split-row.alternate-row {
+    flex-direction: column !important; /* Stack columns sequentially on mobile devices */
+    gap: 30px;
+  }
+  
+  .reach-image-column {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .reach-split-img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-heading-reach {
+    font-size: 2.6rem;
+  }
+  .reach-section-title {
+    font-size: 2rem;
+  }
+}
+
+/* ════════════════════════════════════════════
+   CLIENTS STRIP / MARQUEE (ISOLATED DARK THEME)
+════════════════════════════════════════════ */
+.clients-strip-services {
+  margin: 2.5rem 0 0;
+  background-color: #0a1120; /* Your exact dark navy strip background */
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+.clients-title-services {
+  text-align: center;
+  margin: 0 0 1.5rem;
+  color: #72849a; /* Light slate blue text color from your image */
+  letter-spacing: 0.15rem;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+}
+
+.marquee-fade-container-services {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.marquee-track-services { 
+  width: 100%; 
+  overflow: hidden; 
+}
+
+.marquee-content-services {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: marqueeSlide 28s linear infinite;
+}
+
+.clients-strip-services:hover .marquee-content-services { 
+  animation-play-state: paused; 
+}
+
+.client-logo-services {
+  width: 170px;
+  height: 84px;
+  margin: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  /* ADJUSTED COMBO FOR LIGHTER LOGOS:
+     1. Bumped opacity from 0.45 to 0.65 for increased visibility.
+     2. Raised brightness from 0.75 to 0.95 to pop from the dark theme.
+  */
+  opacity: 0.65;
+  filter: grayscale(100%) brightness(0.95) contrast(1.1); 
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+.client-logo-services img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.client-logo-services::before {
+  content: '';
+  position: absolute;
+  left: -2.65rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid #72849a;
+  background: transparent;
+  opacity: 0.4;
+}
+
+.marquee-content-services > .client-logo-services:first-child::before { 
+  display: none; 
+}
+
+/* On hover, clear all filters to instantly restore the original logo colors */
+.client-logo-services:hover {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1) contrast(1);
+  transform: scale(1.05);
+}
+
+@keyframes marqueeSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
