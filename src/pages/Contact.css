@@ -1,0 +1,419 @@
+/* =========================================
+   Contact Page Layout & Hero
+   ========================================= */
+
+.contact-page {
+  width: 100%;
+  /* Gives a subtle industrial blueprint layout grid to replace the plain white background */
+  background-color: #f4f7fa;
+  background-image: 
+    linear-gradient(rgba(14, 27, 46, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 27, 46, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.contact-hero {
+  position: relative;
+  height: 420px; /* Expanded slightly for breathing room */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers container contents horizontally */
+  padding: 0 24px;
+  overflow: hidden;
+}
+
+.hero-bg-contact {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-bg-img-contact {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) contrast(1.1);
+}
+
+.hero-overlay-contact {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(14, 27, 46, 0.9) 30%, rgba(14, 27, 46, 0.4));
+}
+
+.hero-content-contact {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center; /* Centers all inner text elements */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers flex items like breadcrumbs */
+}
+
+.hero-breadcrumbs-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #b0b8cc;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.breadcrumb-link-contact {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s ease;
+}
+
+.breadcrumb-link-contact:hover {
+  color: #e07830;
+}
+
+.breadcrumb-home-svg {
+  width: 16px;
+  height: 16px;
+}
+
+.breadcrumb-separator-contact {
+  color: #53627c;
+}
+
+.hero-heading-contact {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+}
+
+.hero-heading-accent-contact {
+  color: #e07830;
+}
+
+/* =========================================
+   Main Interactive Interface Split Card
+   ========================================= */
+
+.contact-interface-section {
+  max-width: 1200px;
+  margin: -80px auto 120px auto; /* Pulls it up higher into the hero image context */
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.contact-interface-card {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  /* Multi-layered shadow to guarantee separation from the new pattern background */
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 20px 50px -12px rgba(14, 27, 46, 0.18);
+}
+
+/* Left Column: Information Display Panel */
+.contact-info-panel {
+  flex: 1.1;
+  background: #0e1b2e; /* Slate brand dark color */
+  position: relative;
+  padding: 50px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(224, 120, 48, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.info-panel-content {
+  position: relative;
+  z-index: 3;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.info-tag-line {
+  color: #e07830;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.info-accent-dash {
+  width: 30px;
+  height: 2px;
+  background-color: #e07830;
+}
+
+.info-title {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 15px 0;
+  letter-spacing: -0.01em;
+}
+
+.info-desc {
+  color: #a0aec0;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.info-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.info-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(224, 120, 48, 0.12);
+  border: 1px solid rgba(224, 120, 48, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e07830;
+  flex-shrink: 0;
+}
+
+.info-icon-wrapper svg {
+  width: 22px;
+  height: 22px;
+}
+
+.info-item h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.85rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-item p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Big Aesthetic Typography Background Watermark */
+.info-panel-watermark {
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+  font-size: 14rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Right Column: Premium Form Element Panel */
+.contact-form-panel {
+  flex: 1.4;
+  padding: 60px;
+  /* Changed from plain white to a sharp industrial light-slate tint for optimal depth */
+  background-color: #f8fafc; 
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.contact-form-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #e07830, #ff5e14);
+  opacity: 0.8;
+}
+
+.creative-form {
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-row {
+  display: flex;
+  gap: 30px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 35px;
+  flex: 1;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px 4px;
+  border: none;
+  border-bottom: 2px solid #cbd5e1;
+  background: transparent;
+  outline: none;
+  font-size: 1.05rem;
+  color: #0e1b2e;
+  font-weight: 500;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* floating label magic architecture */
+.input-group label {
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  color: #64748b;
+  font-size: 1.05rem;
+  pointer-events: none;
+  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
+}
+
+/* Floating behavior logic triggered on focus or input text presence */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+  top: -12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e07830;
+}
+
+/* Sliding colored line under active fields */
+.input-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #e07830;
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.input-group input:focus ~ .input-bar,
+.input-group textarea:focus ~ .input-bar {
+  width: 100%;
+}
+
+.textarea-group {
+  margin-bottom: 45px;
+}
+
+.input-group textarea {
+  resize: none;
+}
+
+/* Premium Button Interaction Details */
+.contact-submit-btn {
+  background-color: #ff5e14;
+  color: #ffffff;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(255, 94, 20, 0.25);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-arrow-icon {
+  width: 18px;
+  height: 18px;
+  transform: translateX(0);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contact-submit-btn:hover {
+  background-color: #e04f0e;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 94, 20, 0.4);
+}
+
+.contact-submit-btn:hover .btn-arrow-icon {
+  transform: translateX(6px);
+}
+
+/* =========================================
+   Animations & Device Scaling Controls
+   ========================================= */
+
+.animate-fade-up {
+  animation: contactFadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes contactFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet & Mobile responsive optimization breaks */
+@media (max-width: 991px) {
+  .contact-interface-card {
+    flex-direction: column;
+  }
+  .contact-info-panel {
+    padding: 40px;
+  }
+  .contact-form-panel {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero-heading-contact {
+    font-size: 2.6rem;
+  }
+  .info-title {
+    font-size: 1.8rem;
+  }
+}

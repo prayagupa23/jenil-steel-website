@@ -16,17 +16,6 @@ const logos = [jswLogo, rinlLogo, tataLogo];
 const products = [
   {
     id: 1,
-    title: "TMT Bars",
-    description: "Fe-500D & Fe-550D grade TMT bars with superior strength and ductility.",
-    specs: [
-      { label: "Grade", value: "Fe-500D / Fe-550D" },
-      { label: "Standard", value: "IS 1786:2008" },
-      { label: "Size", value: "8mm – 32mm" },
-    ],
-    image: tmtBar,
-  },
-  {
-    id: 2,
     title: "Wire Rods",
     description: "High-quality wire rods used in wire drawing, fasteners, electrodes, and engineering applications.",
     specs: [
@@ -35,6 +24,17 @@ const products = [
       { label: "Size", value: "5.5mm – 16mm" },
     ],
     image: wireRods,
+  },
+  {
+    id: 2,
+    title: "TMT Bars",
+    description: "Fe-500D & Fe-550D grade TMT bars with superior strength and ductility.",
+    specs: [
+      { label: "Grade", value: "Fe-500D / Fe-550D" },
+      { label: "Standard", value: "IS 1786:2008" },
+      { label: "Size", value: "8mm – 32mm" },
+    ],
+    image: tmtBar,
   },
   {
     id: 3,
