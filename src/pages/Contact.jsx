@@ -174,6 +174,32 @@ function Contact() {
         </div>
       </section>
 
+      {/* Full-Width Light Mode Map Section — Vatva GIDC */}
+      <section className="contact-map-section">
+        <div className="contact-map-inner">
+          <div className="map-card-header">
+            <div className="map-tag-accent">
+              <span className="map-line-dash"></span>
+              Our Location
+            </div>
+            <h3 className="map-title-text">Visit Our Vatva Ahmedabad Facility</h3>
+          </div>
+          
+          <div className="map-iframe-wrapper">
+            <iframe
+              title="Jenil Steel Vatva GIDC Ahmedabad Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.1166687023356!2d72.6247291!3d22.9643194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8666df9fa067%3A0xcd508be65cf1cb36!2sGIDC%2C%20Vatva%2C%20Ahmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
