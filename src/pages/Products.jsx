@@ -120,6 +120,51 @@ function ProductCard({ product }) {
   );
 }
 
+function AboutIndustry() {
+  return (
+    <section className="about-industry-container animate-fade-in-up">
+      <div className="about-industry-content">
+        
+        {/* Left Side: Worker Image with Zoom Frame */}
+        <div className="about-industry-image-wrapper">
+          <div className="about-industry-image-frame">
+            <img 
+              src="https://media.gettyimages.com/id/1186090913/photo/steelworkers-looking-on-during-steel-pour-in-steelworks.jpg?s=612x612&w=0&k=20&c=bUlPwDX-gamFoRu0-KvYhZ61n0WuQuU5fQ_6ZRhea3Y=" 
+              alt="Worker in industrial factory" 
+              className="about-industry-main-img"
+            />
+          </div>
+        </div>
+
+        {/* Right Side: Text details */}
+        <div className="about-industry-text-wrapper">
+          <h2 className="about-industry-heading">
+            Engineered for Strength. Trusted for Generations.
+          </h2>
+          <p className="about-industry-subtext">
+            Jenil Steel offers a comprehensive range of high-quality steel products sourced from leading manufacturers across India. Our portfolio includes Wire Rods, TMT Bars, Billets, Beams, Channels, Angles, Flats, and other structural steel solutions designed to meet diverse industrial requirements. With a strong focus on quality, reliability, and timely delivery, we ensure that every product meets the highest industry standards and supports the success of our customers' projects.
+          </p>
+
+          <div className="about-industry-features">
+            <div className="industry-feature-item">
+              <h3>
+                <span className="feature-arrow">›</span> Best Quality Services
+              </h3>
+            </div>
+            
+            <div className="industry-feature-item">
+              <h3>
+                <span className="feature-arrow">›</span> We Guarantee Success
+              </h3>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  );
+}
+
 function ClientsStrip() {
   return (
     <section className="clients-strip-products">
@@ -168,6 +213,20 @@ function Products() {
         </h1>
       </div>
       </section>
+
+      <AboutIndustry/>
+
+      {/* Products Section Header */}
+      <div className="products-section-header">
+        <div className="products-header-accent">
+          <span className="accent-line"></span>
+          <span className="accent-text">Our Products</span>
+        </div>
+        <h2 className="products-main-title">What We Deliver</h2>
+        <p className="products-header-subtext">
+          We provide high-grade, resilient steel products tailored to meet the strict performance standards and structural requirements of diverse sectors across India.
+        </p>
+      </div>      
 
       {/* Products Grid */}
       <section className="products-section">

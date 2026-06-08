@@ -73,6 +73,7 @@ function Reach() {
                 className="reach-split-img"
               />
             </div>
+            <div className="image-overlay"></div>
           </div>
           
           <div className="reach-text-column">
@@ -104,15 +105,16 @@ function Reach() {
             </p>
           </div>
 
-          <div className="reach-image-column">
-            <div className="reach-image-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" 
-                alt="Industrial steel inventory structures" 
-                className="reach-split-img"
-              />
+            <div className="reach-image-column">
+              <div className="reach-image-frame">
+                <img 
+                  src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" 
+                  alt="Industrial steel inventory structures" 
+                  className="reach-split-img"
+                />
+              </div>
+              <div className="image-overlay"></div>
             </div>
-          </div>
         </div>
 
       </section>

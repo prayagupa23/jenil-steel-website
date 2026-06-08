@@ -96,7 +96,7 @@ function Contact() {
                   </div>
                   <div>
                     <h4>Headquarters</h4>
-                    <p>Plot No. 45, GIDC, Ahmedabada</p>
+                    <p>Plot No. 45, GIDC, Ahmedabad</p>
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@ function Contact() {
               <span className="map-line-dash"></span>
               Our Location
             </div>
-            <h3 className="map-title-text">Visit Our Vatva Ahmedabad Facility</h3>
+            <h3 className="map-title-text">Visit Our Ahmedabad Facility</h3>
           </div>
           
           <div className="map-iframe-wrapper">

@@ -103,7 +103,7 @@ function AboutIndustry() {
             
             <div className="industry-feature-item">
               <h3>
-                <span className="feature-arrow">›</span> We guarantee success
+                <span className="feature-arrow">›</span> We Guarantee Success
               </h3>
             </div>
           </div>
