@@ -1,0 +1,137 @@
+/* =========================================
+   Industrial Code Vector Map Base Styles
+   ========================================= */
+
+.industrial-map-box {
+  width: 100%;
+  background: radial-gradient(circle at center, #0e1b2e 0%, #070f1e 100%); /* Your dark navy theme background */
+  border: 1px solid rgba(224, 120, 48, 0.2); /* Soft dark orange accent line trim */
+  border-radius: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Micro Header Status Bar Layout */
+.map-hud-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.hud-indicator-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ff5e14; /* Bright dark orange */
+  border-radius: 50%;
+}
+
+.hud-header-title {
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #a3b3cc;
+  letter-spacing: 0.05em;
+}
+
+.svg-container {
+  width: 100%;
+  position: relative;
+}
+
+.india-vector-svg {
+  width: 100%;
+  max-height: 520px;
+  display: block;
+}
+
+/* Map Elements Styling layer */
+.map-base-landmass {
+  fill: rgba(255, 255, 255, 0.015);
+  stroke: rgba(255, 255, 255, 0.04);
+  stroke-width: 1.5;
+}
+
+.pipeline-link {
+  stroke: #e07830;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+  opacity: 0.25;
+  transition: opacity 0.3s ease, stroke-width 0.3s ease;
+}
+
+/* Individual Interceptor Nodes Styling */
+.map-hub-node {
+  cursor: pointer;
+}
+
+.node-core-dot {
+  fill: #e07830;
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.node-radar-pulse {
+  fill: rgba(224, 120, 48, 0.25);
+  transform-origin: 0 0;
+  animation: radarWavePulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes radarWavePulse {
+  0% { transform: scale(0.4); opacity: 1; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+
+.node-text-label {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  fill: #687994;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  transition: fill 0.3s ease, font-size 0.3s ease;
+}
+
+/* Map Interactions & Hover State Adjustments */
+.map-hub-node:hover .node-core-dot,
+.map-hub-node.is-hovered .node-core-dot {
+  fill: #ffffff;
+  transform: scale(1.3);
+}
+
+.map-hub-node:hover .node-text-label,
+.map-hub-node.is-hovered .node-text-label {
+  fill: #ff5e14;
+  font-size: 0.78rem;
+}
+
+/* Readout Base Terminal Output bar at bottom */
+.map-readout-terminal {
+  background: rgba(5, 10, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-top: 20px;
+}
+
+.map-readout-terminal p {
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #72829c;
+  line-height: 1;
+}
+
+.txt-orange { color: #ff5e14; }
+.txt-white { color: #ffffff; }
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .node-text-label {
+    display: none; /* Hide conflicting text overlays on compact phone layouts */
+  }
+  .map-hub-node:hover .node-text-label,
+  .map-hub-node.is-hovered .node-text-label {
+    display: block; /* Pop individual active labels up on mobile hold touch registers */
+  }
+}

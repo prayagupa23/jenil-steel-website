@@ -3,7 +3,14 @@ import Footer from "../components/Footer";
 import "./Contact.css";
 
 function Contact() {
-  const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" });
+  const [formState, setFormState] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    product: "",
+    quantity: "",
+    message: ""
+  });
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -106,8 +113,10 @@ function Contact() {
           </div>
 
           {/* Right Panel: Premium Creative Form */}
+          {/* Right Panel: Form Element Panel updated based on image_0429aa.png */}
           <div className="contact-form-panel">
             <form onSubmit={handleSubmit} className="creative-form">
+              
               <div className="form-row">
                 <div className="input-group">
                   <input 
@@ -118,51 +127,75 @@ function Contact() {
                     onChange={handleChange}
                     placeholder=" "
                   />
-                  <label>Your Name</label>
+                  <label>Full Name *</label>
                   <span className="input-bar"></span>
                 </div>
+                
                 <div className="input-group">
                   <input 
-                    type="email" 
-                    name="email" 
+                    type="tel" 
+                    name="phone" 
                     required 
-                    value={formState.email} 
+                    value={formState.phone || ""} 
                     onChange={handleChange}
                     placeholder=" "
                   />
-                  <label>Email Address</label>
+                  <label>Phone *</label>
                   <span className="input-bar"></span>
                 </div>
               </div>
 
               <div className="input-group">
                 <input 
-                  type="text" 
-                  name="subject" 
-                  required 
-                  value={formState.subject} 
+                  type="email" 
+                  name="email" 
+                  value={formState.email} 
                   onChange={handleChange}
                   placeholder=" "
                 />
-                <label>Subject Topic</label>
+                <label>Email</label>
+                <span className="input-bar"></span>
+              </div>
+
+              <div className="input-group">
+                <input 
+                  type="text" 
+                  name="product" 
+                  required 
+                  value={formState.product || ""} 
+                  onChange={handleChange}
+                  placeholder=" "
+                />
+                <label>Product *</label>
+                <span className="input-bar"></span>
+              </div>
+
+              <div className="input-group">
+                <input 
+                  type="text" 
+                  name="quantity" 
+                  value={formState.quantity || ""} 
+                  onChange={handleChange}
+                  placeholder=" "
+                />
+                <label>Quantity</label>
                 <span className="input-bar"></span>
               </div>
 
               <div className="input-group textarea-group">
                 <textarea 
                   name="message" 
-                  required 
                   value={formState.message} 
                   onChange={handleChange}
                   placeholder=" "
                   rows="5"
                 ></textarea>
-                <label>Tell us about your requirements...</label>
+                <label>Project Details</label>
                 <span className="input-bar"></span>
               </div>
 
               <button type="submit" className="contact-submit-btn">
-                <span>Send Message</span>
+                <span>Submit Enquiry</span>
                 <svg className="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>

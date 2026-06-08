@@ -1,41 +1,23 @@
 import React from "react";
 import Footer from "../components/Footer";
 import "./Reach.css";
-import jswLogo from "../assets/images/jsw-logo-jv.webp";
-import rinlLogo from "../assets/images/Rashtriya_Ispat_Nigam.svg.png";
-import tataLogo from "../assets/images/tata-steel-logo.png";
+import truckVideo from "../assets/ourReach.mp4"; 
+import indiaMapImg from "../assets/images/map.jpeg"; 
 
-const logos = [jswLogo, rinlLogo, tataLogo];
-
-function ClientsStrip() {
-  return (
-    <section className="clients-strip-services">
-      <p className="clients-title-services">Companies We Work With</p>
-      <div className="marquee-fade-container-services">
-        <div className="marquee-track-services">
-          <div className="marquee-content-services">
-            {[...logos, ...logos, ...logos].map((logo, idx) => (
-              <div className="client-logo-services" key={`${logo}-${idx}`}>
-                <img src={logo} alt="Customer logo" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Reach() {
+function OurReach() {
   return (
     <div className="reach-page">
-      {/* STANDARD HERO BANNER STYLE */}
+      
+      {/* 1. HERO BANNER WITH VIDEO BACKGROUND */}
       <section className="reach-hero">
         <div className="hero-bg-reach">
-          <img
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1800&q=80"
-            alt="Global Logistics Hub"
-            className="hero-bg-img-reach"
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="hero-bg-video-reach"
+            src={truckVideo}
           />
           <div className="hero-overlay-reach" />
         </div>
@@ -51,37 +33,109 @@ function Reach() {
             <span className="breadcrumb-current-reach">Our Reach</span>
           </nav>
           <h1 className="hero-heading-reach">
-            Our Presence & <span className="hero-heading-accent-reach">Logistics</span>
+            Delivering Steel <span className="hero-heading-accent-reach">Across India</span>
           </h1>
+          <p className="hero-subheading-reach">
+            With over 75 years of industry expertise, Jenil Steel connects leading manufacturers with businesses across India through a reliable and efficient supply network.
+          </p>
         </div>
       </section>
 
-      {/* MOLTEN DIVIDER SEGMENT */}
-      <div className="molten-divider">
-      </div>
+      {/* 2. STATS GRID */}
+      <section className="reach-stats-section">
+        <div className="reach-stats-grid">
+          <div className="stat-card">
+            <h3 className="stat-number">75+</h3>
+            <p className="stat-text">Years of Industry Experience</p>
+          </div>
+          <div className="stat-card">
+            <h3 className="stat-number">1000+</h3>
+            <p className="stat-text">Customers Served</p>
+          </div>
+          <div className="stat-card">
+            <h3 className="stat-number">Pan-India</h3>
+            <p className="stat-text">Supply Network</p>
+          </div>
+          <div className="stat-card">
+            <h3 className="stat-number">Trusted</h3>
+            <p className="stat-text">Partnerships with Leading Steel Manufacturers</p>
+          </div>
+        </div>
+      </section>
 
-      {/* MAIN TEXT SECTIONS SECTION */}
-      <section className="reach-content-wrapper">
+      {/* 3. EXPANDED MAP CONNECTIONS GRID SECTION */}
+      <section className="reach-map-split-container">
         
-        {/* SECTION 1: FAST DELIVERY (Image Left, Content Right) */}
-        <div className="reach-split-row animate-fade-up">
+        {/* Left Column: Pulsing Map Image Panel */}
+        <div className="industrial-map-image-card">
+          <div className="map-card-hud-header">
+            <span className="hud-status-dot"></span>
+            <span className="hud-status-title">NATIONAL_LOGISTICS_INFRASTRUCTURE_MATRIX</span>
+          </div>
+          <div className="map-graphic-frame">
+            <img 
+              src={indiaMapImg} 
+              alt="Jenil Steel National Distribution Hub Map" 
+              className="india-distribution-map-img"
+            />
+          </div>
+        </div>
+
+        {/* Right Column: Filled Text Content & Hubs Grid */}
+        <div className="reach-map-text-content">
+          <div className="reach-accent-line" />
+          <h2 className="reach-section-title">Our Reach</h2>
+          <p className="reach-section-description">
+            Our extensive distribution network enables us to efficiently supply quality steel products to customers across major industrial and infrastructure hubs throughout India. By maintaining deep inventory levels and streamlined dispatch systems, we bridge the gap between primary production plants and your project site.
+          </p>
+          
+          {/* New content layer to fill out empty vertical spaces inside the card layout */}
+          <div className="reach-hubs-distribution-block">
+            <h4 className="hubs-grid-title">Key Operating & Supply Hubs</h4>
+            <div className="hubs-columns-grid">
+              <div className="hub-list-column">
+                <div className="hub-list-item"><span>›</span> Ahmedabad (HQ)</div>
+                <div className="hub-list-item"><span>›</span> Mumbai</div>
+                <div className="hub-list-item"><span>›</span> Pune</div>
+                <div className="hub-list-item"><span>›</span> Surat</div>
+              </div>
+              <div className="hub-list-column">
+                <div className="hub-list-item"><span>›</span> Delhi NCR</div>
+                <div className="hub-list-item"><span>›</span> Vadodara</div>
+                <div className="hub-list-item"><span>›</span> Jaipur</div>
+                <div className="hub-list-item"><span>›</span> Indore</div>
+              </div>
+              <div className="hub-list-column">
+                <div className="hub-list-item"><span>›</span> Jamshedpur</div>
+                <div className="hub-list-item"><span>›</span> Bokaro</div>
+                <div className="hub-list-item"><span>›</span> Raipur</div>
+                <div className="hub-list-item"><span>›</span> Kolkata</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* 4. ALTERNATING CONTENT SECTIONS WITH SIDE IMAGES */}
+      <section className="reach-manifesto-split-wrapper">
+        {/* FAST DELIVERY */}
+        <div className="reach-split-row">
           <div className="reach-image-column">
             <div className="reach-image-frame">
               <img 
                 src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" 
-                alt="Fleet of delivery trucks" 
+                alt="Delivery fleet logistics" 
                 className="reach-split-img"
               />
             </div>
-            <div className="image-overlay"></div>
           </div>
-          
           <div className="reach-text-column">
             <div className="reach-tag-line">
-              <span className="reach-dash-accent" /> TIMELY LOGISTICS
+              <span className="reach-dash-accent" /> LOGISTICS EFFICIENCY
             </div>
-            <h2 className="reach-section-title">Fast Delivery</h2>
-            <p className="reach-section-desc">
+            <h2 className="reach-manifesto-title">Fast Delivery</h2>
+            <p className="reach-manifesto-body">
               We recognize the paramount importance of timely delivery and its impact on our customers' operations. 
               To ensure a seamless experience, we have meticulously built a strong fleet of delivery trucks, 
               equipped to handle various order sizes and specifications. Our commitment to exceptional customer service 
@@ -90,39 +144,35 @@ function Reach() {
           </div>
         </div>
 
-        {/* SECTION 2: RELIABLE SUPPLY (Content Left, Image Right) */}
-        <div className="reach-split-row alternate-row animate-fade-up">
+        {/* RELIABLE SUPPLY */}
+        <div className="reach-split-row alternate-row">
           <div className="reach-text-column">
             <div className="reach-tag-line">
-              <span className="reach-dash-accent" /> INDUSTRIAL INTEGRITY
+              <span className="reach-dash-accent" /> SUPPLY GUARANTEE
             </div>
-            <h2 className="reach-section-title">Reliable Supply</h2>
-            <p className="reach-section-desc">
+            <h2 className="reach-manifesto-title">Reliable Supply</h2>
+            <p className="reach-manifesto-body">
               We understand the critical role that steel plays in various industries and applications, and we 
               recognize the importance of reliability in meeting our customers' needs. Our commitment to providing a 
               reliable supply of top-quality steel products is rooted in our dedication to customer satisfaction and 
               our passion for contributing to the success of our customers' projects and businesses.
             </p>
           </div>
-
-            <div className="reach-image-column">
-              <div className="reach-image-frame">
-                <img 
-                  src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" 
-                  alt="Industrial steel inventory structures" 
-                  className="reach-split-img"
-                />
-              </div>
-              <div className="image-overlay"></div>
+          <div className="reach-image-column">
+            <div className="reach-image-frame">
+              <img 
+                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" 
+                alt="Industrial steel supply stocks" 
+                className="reach-split-img"
+              />
             </div>
+          </div>
         </div>
-
       </section>
-      <ClientsStrip/>
-      {/* FOOTER */}
+
       <Footer />
     </div>
   );
 }
 
-export default Reach;
+export default OurReach;

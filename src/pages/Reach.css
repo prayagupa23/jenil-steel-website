@@ -1,15 +1,15 @@
 /* =========================================
-   Standard Brand Hero Configuration
+   1. Hero Video Banner Styles
    ========================================= */
 
 .reach-page {
   width: 100%;
-  background-color: #ffffff; /* Shifted to clean crisp white background */
+  background-color: #ffffff;
 }
 
 .reach-hero {
   position: relative;
-  height: 380px;
+  height: 380px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,17 +23,16 @@
   z-index: 1;
 }
 
-.hero-bg-img-reach {
+.hero-bg-video-reach {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.35) contrast(1.1);
 }
 
 .hero-overlay-reach {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(14, 27, 46, 0.5), #0e1b2e);
+  background: linear-gradient(to bottom, rgba(14, 27, 46, 0.6), rgba(14, 27, 46, 0.95));
 }
 
 .hero-content-reach {
@@ -56,7 +55,7 @@
   gap: 8px;
   color: #b0b8cc;
   font-size: 0.9rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .breadcrumb-link-reach {
@@ -85,54 +84,126 @@
   font-size: 3.5rem;
   font-weight: 800;
   color: #ffffff;
-  margin: 0;
+  margin: 0 0 12px 0;
   letter-spacing: -0.02em;
 }
 
 .hero-heading-accent-reach {
-  color: #e07830;
+  color: #e07830; 
+}
+
+.hero-subheading-reach {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #b0b8cc;
+  max-width: 800px;
+  margin: 0;
 }
 
 /* =========================================
-   Laser Visual Separator
+   2. Reach In Numbers (Stats Grid)
    ========================================= */
 
-.molten-divider {
-  position: relative;
+.reach-stats-section {
   width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, rgba(255, 94, 20, 0.4), #ff5e14, rgba(255, 94, 20, 0.4), transparent);
-  z-index: 5;
+  background-color: #0e1b2e; 
+  padding: 60px 24px;
+  box-sizing: border-box;
 }
 
-.laser-spark {
-  position: absolute;
-  width: 100px;
-  height: 100%;
-  background: #ffffff;
-  box-shadow: 0 0 15px 4px #ff5e14, 0 0 30px 8px #e07830;
-  animation: laserSweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+.reach-stats-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
-@keyframes laserSweep {
-  0% { left: -10%; opacity: 0; }
-  5% { opacity: 1; }
-  95% { opacity: 1; }
-  100% { left: 110%; opacity: 0; }
+.stat-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for numbers cards */
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(224, 120, 48, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e07830; 
+  margin: 0 0 10px 0;
+  line-height: 1;
+}
+
+.stat-text {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #ffffff;
+  margin: 0;
 }
 
 /* =========================================
-   Two-Section Layout Blocks (About Style)
+   3. Interactive India Map Header
    ========================================= */
 
-.reach-content-wrapper {
+.reach-map-info-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto 40px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.reach-map-info-content {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.reach-accent-line {
+  width: 44px;
+  height: 3px;
+  background-color: #e07830;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.reach-section-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0e1b2e;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+}
+
+.reach-section-description {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #6c757d;
+  max-width: 800px;
+  margin: 0;
+}
+
+/* =========================================
+   4. Side Image Split Rows & Zoom Hover
+   ========================================= */
+
+.reach-manifesto-split-wrapper {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 20px 24px 100px 24px;
   display: flex;
   flex-direction: column;
-  gap: 100px; /* Healthy breathing space between sections */
+  gap: 80px; 
   box-sizing: border-box;
 }
 
@@ -142,7 +213,6 @@
   gap: 60px;
 }
 
-/* Left/Right structural flex rules */
 .reach-image-column {
   flex: 1;
   max-width: 50%;
@@ -153,41 +223,37 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Premium Zoom Frame Engine */
+/* Card frame containment setup */
 .reach-image-frame {
-  position: relative;
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(14, 27, 46, 0.08);
-}
-
-.reach-image-frame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(14, 27, 46, 0.45);
-  z-index: 1;
+  box-shadow: 0 16px 40px rgba(14, 27, 46, 0.06);
+  transition: box-shadow 0.4s ease;
 }
 
 .reach-split-img {
   width: 100%;
-  height: 400px;
+  height: 380px;
   display: block;
   object-fit: cover;
   transform: scale(1);
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Subtle frame image zoom on section interactions */
-.reach-image-frame:hover .reach-split-img {
-  transform: scale(1.05);
+/* Hover-zoom effects on images */
+.reach-image-frame:hover {
+  box-shadow: 0 20px 45px rgba(224, 120, 48, 0.12);
 }
 
-/* Typography Styling */
+.reach-image-frame:hover .reach-split-img {
+  transform: scale(1.04);
+}
+
+/* Text fields inside split column layout */
 .reach-tag-line {
-  color: #e07830; /* Your standard deep accent orange */
-  font-size: 0.88rem;
+  color: #e07830;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -203,167 +269,212 @@
   background-color: #e07830;
 }
 
-.reach-section-title {
-  font-size: 2.5rem;
+.reach-manifesto-title {
+  font-size: 2.3rem;
   font-weight: 800;
-  line-height: 1.2;
-  color: #0e1b2e; /* Classic deep corporate slate */
-  margin: 0 0 20px 0;
+  color: #0e1b2e;
+  margin: 0 0 18px 0;
   letter-spacing: -0.01em;
 }
 
-.reach-section-desc {
+.reach-manifesto-body {
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.65;
   color: #556175;
   margin: 0;
 }
 
 /* =========================================
-   Scroll Entrance Trigger Animations
-   ========================================= */
-
-.animate-fade-up {
-  animation: reachRowFade 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@keyframes reachRowFade {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================================
-   Responsive Breakpoints Optimization
+   Responsive Breakpoints Controls
    ========================================= */
 
 @media (max-width: 991px) {
-  .reach-content-wrapper {
-    gap: 60px;
-    padding: 60px 24px;
+  .reach-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
   .reach-split-row, 
   .reach-split-row.alternate-row {
-    flex-direction: column !important; /* Stack columns sequentially on mobile devices */
+    flex-direction: column !important;
     gap: 30px;
   }
-  
   .reach-image-column {
     max-width: 100%;
     width: 100%;
   }
-  
   .reach-split-img {
     height: 300px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 560px) {
+  .reach-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
   .hero-heading-reach {
-    font-size: 2.6rem;
-  }
-  .reach-section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 
-/* ════════════════════════════════════════════
-   CLIENTS STRIP / MARQUEE (ISOLATED DARK THEME)
-════════════════════════════════════════════ */
-.clients-strip-services {
-  margin: 2.5rem 0 0;
-  background-color: #0a1120; /* Your exact dark navy strip background */
-  padding: 1.5rem 0;
-  overflow: hidden;
-}
+/* =========================================
+   Map Side-by-Side Split Panel Layout
+   ========================================= */
 
-.clients-title-services {
-  text-align: center;
-  margin: 0 0 1.5rem;
-  color: #72849a; /* Light slate blue text color from your image */
-  letter-spacing: 0.15rem;
-  font-size: 0.88rem;
-  text-transform: uppercase;
-}
-
-.marquee-fade-container-services {
-  position: relative;
+.reach-map-split-container {
   width: 100%;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
-}
-
-.marquee-track-services { 
-  width: 100%; 
-  overflow: hidden; 
-}
-
-.marquee-content-services {
-  display: flex;
-  width: max-content;
-  align-items: center;
-  animation: marqueeSlide 28s linear infinite;
-}
-
-.clients-strip-services:hover .marquee-content-services { 
-  animation-play-state: paused; 
-}
-
-.client-logo-services {
-  width: 170px;
-  height: 84px;
-  margin: 0 2.5rem;
+  max-width: 1200px;
+  margin: 90px auto;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  
-  /* ADJUSTED COMBO FOR LIGHTER LOGOS:
-     1. Bumped opacity from 0.45 to 0.65 for increased visibility.
-     2. Raised brightness from 0.75 to 0.95 to pop from the dark theme.
-  */
-  opacity: 0.65;
-  filter: grayscale(100%) brightness(0.95) contrast(1.1); 
-  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  gap: 60px;
+  box-sizing: border-box;
 }
 
-.client-logo-services img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+/* Map Image Box with Border Pulse Animation */
+.industrial-map-image-card {
+  flex: 1;
+  max-width: 50%;
+  background-color: #0e1b2e; 
+  border-radius: 14px;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: corporateBorderPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.client-logo-services::before {
-  content: '';
-  position: absolute;
-  left: -2.65rem;
+@keyframes corporateBorderPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(224, 120, 48, 0.2), 0 10px 30px rgba(14, 27, 46, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 0 3px rgba(224, 120, 48, 0.55), 0 15px 40px rgba(224, 120, 48, 0.12);
+  }
+}
+
+.map-card-hud-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-left: 4px;
+}
+
+.hud-status-dot {
   width: 6px;
   height: 6px;
+  background-color: #e07830;
   border-radius: 50%;
-  border: 2px solid #72849a;
-  background: transparent;
-  opacity: 0.4;
 }
 
-.marquee-content-services > .client-logo-services:first-child::before { 
-  display: none; 
+.hud-status-title {
+  font-family: monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #8a9cb5;
+  letter-spacing: 0.04em;
 }
 
-/* On hover, clear all filters to instantly restore the original logo colors */
-.client-logo-services:hover {
-  opacity: 1;
-  filter: grayscale(0%) brightness(1) contrast(1);
-  transform: scale(1.05);
+.map-graphic-frame {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-@keyframes marqueeSlide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.3333%); }
+.india-distribution-map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Right Content Column Redesign */
+.reach-map-text-content {
+  flex: 1;
+  max-width: 50%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.reach-accent-line {
+  width: 44px;
+  height: 3px;
+  background-color: #e07830;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.reach-section-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0e1b2e;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+}
+
+.reach-section-description {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #556175;
+  margin: 0 0 35px 0;
+  text-align: justify;
+}
+
+/* Hubs List Display Content Elements */
+.reach-hubs-distribution-block {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 25px;
+}
+
+.hubs-grid-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0e1b2e;
+  margin: 0 0 16px 0;
+}
+
+.hubs-columns-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.hub-list-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hub-list-item {
+  font-size: 0.95rem;
+  color: #4a5568;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hub-list-item span {
+  color: #e07830;
+  font-weight: bold;
+}
+
+/* Responsive adjustment layers */
+@media (max-width: 991px) {
+  .reach-map-split-container {
+    flex-direction: column;
+    gap: 40px;
+    margin: 60px auto;
+  }
+  .reach-map-split-container .industrial-map-image-card,
+  .reach-map-text-content {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hubs-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }
