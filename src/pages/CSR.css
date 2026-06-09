@@ -1,0 +1,604 @@
+/* =========================================
+   Sitewide Standard Hero Module
+   ========================================= */
+
+.csr-page {
+  width: 100%;
+  background-color: #ffffff; /* Consistent crisp light backend */
+}
+
+.csr-hero {
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  overflow: hidden;
+}
+
+.hero-bg-csr {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-bg-img-csr {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) contrast(1.05);
+}
+
+.hero-overlay-csr {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(14, 27, 46, 0.5), #0e1b2e);
+}
+
+.hero-content-csr {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-breadcrumbs-csr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #b0b8cc;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.breadcrumb-link-csr {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s ease;
+}
+
+.breadcrumb-link-csr:hover {
+  color: #e07830;
+}
+
+.breadcrumb-home-svg {
+  width: 16px;
+  height: 16px;
+}
+
+.breadcrumb-separator-csr {
+  color: #53627c;
+}
+
+.hero-heading-csr {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.hero-heading-accent-csr {
+  color: #e07830;
+}
+
+/* =========================================
+   Giving Back to Society Split Grid Module
+   ========================================= */
+
+.csr-master-society-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto 40px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.society-section-header {
+  margin-bottom: 35px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.society-section-main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0e1b2e;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Clear side-by-side grid structure */
+.society-split-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+/* Left side: Compact width carousel configuration */
+.society-slider-column {
+  flex: 1;
+  max-width: 45%;
+  position: sticky;
+  top: 40px;
+}
+
+.carousel-viewscreen {
+  width: 100%;
+  height: 560px; /* Elevated height dynamically wraps image ratios vertically */
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(14, 27, 46, 0.08);
+}
+
+.carousel-slide-panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.carousel-slide-panel.active-slide {
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-slide-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-tint-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14, 27, 46, 0.4) 0%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Minimalist Navigation Controls Anchors inside column framework */
+.carousel-arrow-btn {
+  position: absolute;
+  bottom: 25px;
+  background: #ffffff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  color: #0e1b2e;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.carousel-arrow-btn svg { width: 16px; height: 16px; }
+.carousel-arrow-btn:hover { background-color: #e07830; color: #ffffff; }
+.arrow-left { right: 73px; border-radius: 4px 0 0 4px; }
+.arrow-right { right: 28px; border-radius: 0 4px 4px 0; border-left: 1px solid #e2e8f0; }
+
+/* Right side: High-end Editorial Typography Structure */
+.society-why-csr-column {
+  flex: 1.2;
+  max-width: 55%;
+}
+
+.editorial-wrapper {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.why-csr-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #e07830; /* Theme accent orange color */
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.editorial-lead-paragraph {
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: #0e1b2e;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  text-align: justify;
+}
+
+.editorial-body-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #556175;
+  margin: 0 0 20px 0;
+  text-align: justify;
+}
+
+/* Standout Quote Container block for Vedanta business specifications */
+.corporate-manifesto-callout {
+  background-color: #f8fafc;
+  border-left: 4px solid #e07830;
+  padding: 24px 28px;
+  border-radius: 0 12px 12px 0;
+  margin-top: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+}
+
+.corporate-manifesto-callout p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0;
+  text-align: justify;
+}
+
+/* =========================================
+   Responsive Breakpoint Optimizations
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .society-split-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .society-slider-column,
+  .society-why-csr-column {
+    max-width: 100%;
+    width: 100%;
+    position: static;
+  }
+  .carousel-viewscreen {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .society-section-main-title { font-size: 2rem; }
+  .editorial-lead-paragraph { font-size: 1.1rem; }
+  .corporate-manifesto-callout { padding: 20px; }
+}
+
+/* =========================================
+   Creative Light-Themed Initiatives Split Layout
+   ========================================= */
+
+.csr-initiatives-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto 120px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.csr-split-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+/* Left Column Styling */
+.csr-intro-column {
+  flex: 1;
+  max-width: 45%;
+  font-family: 'Segoe UI', sans-serif;
+  position: sticky;
+  top: 40px;
+}
+
+.csr-orange-accent-line {
+  width: 44px;
+  height: 3px;
+  background-color: #e07830;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.csr-section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0e1b2e;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+}
+
+.csr-section-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #556175;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Right Column Rows Grid Styling */
+.csr-cards-column {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.csr-interactive-row-card {
+  background-color: #f8fafc; /* Crisp modern light background */
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              border-color 0.35s ease, 
+              box-shadow 0.35s ease;
+}
+
+.card-indicator-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #cbd5e1;
+  border-radius: 50%;
+  margin-top: 8px;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-content-block {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card-content-block h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0e1b2e;
+  margin: 0 0 8px 0;
+  transition: color 0.3s ease;
+}
+
+.card-content-block p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Animated accent trim strip sliding from bottom on hover */
+.card-hover-border-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: #e07830;
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Card Hover Logic Micro-interactions */
+.csr-interactive-row-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(224, 120, 48, 0.25);
+  box-shadow: 0 10px 25px rgba(14, 27, 46, 0.04);
+  background-color: #ffffff;
+}
+
+.csr-interactive-row-card:hover .card-indicator-dot {
+  background-color: #e07830;
+  transform: scale(1.2);
+}
+
+.csr-interactive-row-card:hover .card-content-block h3 {
+  color: #e07830;
+}
+
+.csr-interactive-row-card:hover .card-hover-border-accent {
+  width: 100%;
+}
+
+/* =========================================
+   Responsive Breakpoints Controls
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .carousel-viewscreen { height: 420px; }
+  .carousel-main-heading { font-size: 2.4rem; }
+  .csr-split-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .csr-intro-column {
+    max-width: 100%;
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-heading-csr { font-size: 2.6rem; }
+  .carousel-floating-text-wrapper { left: 30px; bottom: 35px; }
+  .carousel-main-heading { font-size: 2rem; }
+  .carousel-arrow-btn { bottom: 30px; }
+  .arrow-right { right: 30px; }
+  .arrow-left { right: 79px; }
+  .csr-section-title { font-size: 2rem; }
+  .csr-interactive-row-card { padding: 24px; }
+}
+
+/* =========================================
+   CSR Content Display Multi-Grid & Tickers
+   ========================================= */
+
+.csr-details-grid-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 100px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.csr-cards-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.csr-display-grid-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(14, 27, 46, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+}
+
+.grid-card-image-box {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.grid-card-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.grid-card-body {
+  padding: 30px 24px 24px 24px;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+  flex-grow: 1;
+}
+
+.grid-card-svg-icon {
+  position: absolute;
+  top: -24px;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+  background-color: #fff3eb;
+  border: 1px solid rgba(224, 120, 48, 0.25);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e07830; /* Theme dark orange */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.grid-card-svg-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.grid-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0e1b2e;
+  margin: 8px 0 10px 0;
+}
+
+.grid-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Zoom In Card Hover Effects Configuration */
+.csr-display-grid-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(224, 120, 48, 0.3);
+  box-shadow: 0 20px 40px rgba(224, 120, 48, 0.08);
+}
+
+.csr-display-grid-card:hover .grid-card-image-box img {
+  transform: scale(1.06); /* Clean image zoom execution */
+}
+
+/* 15-Second Recycling Counter Tickers Layout */
+.csr-counters-flex-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.csr-ticker-box {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.ticker-numeric-display {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #0e1b2e;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticker-orange-suffix {
+  color: #e07830;
+  margin-left: 2px;
+}
+
+.ticker-register {
+  animation-duration: 15s; /* Auto updates every 15 seconds */
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.1, 1, 0.1, 1);
+  animation-fill-mode: forwards;
+}
+
+.register-500::after { content: "500"; animation-name: count500; }
+.register-20::after { content: "20"; animation-name: count20; }
+.register-5000::after { content: "5,000"; animation-name: count5000; }
+.register-10::after { content: "10"; animation-name: count10; }
+
+@keyframes count500 { 0%, 92%, 100% { content: "0"; } 2%, 90% { content: "135"; } 4%, 88% { content: "312"; } 6%, 86% { content: "478"; } 8%, 84% { content: "500"; } }
+@keyframes count20 { 0%, 92%, 100% { content: "0"; } 2%, 90% { content: "4"; } 4%, 88% { content: "11"; } 6%, 86% { content: "17"; } 8%, 84% { content: "20"; } }
+@keyframes count5000 { 0%, 92%, 100% { content: "0"; } 2%, 90% { content: "1,240"; } 4%, 88% { content: "2,850"; } 6%, 86% { content: "4,610"; } 8%, 84% { content: "5,000"; } }
+@keyframes count10 { 0%, 92%, 100% { content: "0"; } 2%, 90% { content: "2"; } 4%, 88% { content: "5"; } 6%, 86% { content: "8"; } 8%, 84% { content: "10"; } }
+
+.ticker-meta-label {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Responsive Media Controls */
+@media (max-width: 1024px) {
+  .csr-cards-grid-layout { grid-template-columns: repeat(2, 1fr); }
+  .csr-counters-flex-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 680px) {
+  .csr-cards-grid-layout { grid-template-columns: 1fr; }
+  .csr-counters-flex-container { grid-template-columns: 1fr; }
+  .grid-card-image-box { height: 180px; }
+}
