@@ -1,0 +1,307 @@
+/* ============================================================
+   NAVBAR — Jenil Steel Pvt. Ltd.
+   ============================================================ */
+
+.navbar-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  width: 100%;
+  margin: 0;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0;
+  background: rgba(7, 14, 28, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.9rem;
+  position: relative;
+}
+
+/* ---------- Brand ---------- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+.brand img {
+  width: auto;
+  height: 46px;
+  max-width: 160px;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+/* ---------- Nav links (desktop) ---------- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-left: 0;
+}
+
+/* ---------- Nav link ---------- */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #f6f8fb;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.2rem 0.1rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #d26f75;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link-active::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Burger (hidden on desktop) ---------- */
+.nav-burger {
+  display: none;
+}
+
+/* ---------- CTA button ---------- */
+/* Drawer CTA always hidden on desktop */
+.nav-cta-drawer {
+  display: none;
+}
+
+.nav-cta {
+  margin-left: auto;
+  text-decoration: none;
+  color: #070e1c;
+  background: linear-gradient(135deg, #f6c37b 0%, #ff9f43 50%, #ffbe76 100%);
+  border: 1px solid rgba(255, 215, 160, 0.8);
+  padding: 0.6rem 1.05rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 8px 18px rgba(255, 159, 67, 0.35);
+  white-space: nowrap;
+}
+
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent 30%,
+    rgba(255, 245, 220, 0.45)
+  );
+  transform: rotate(-45deg);
+  transition: all 0.55s ease;
+  opacity: 0;
+}
+
+.nav-cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 179, 102, 0.62);
+}
+
+.nav-cta:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
+
+/* ============================================================
+   TABLET  ≤ 980px
+   ============================================================ */
+@media (max-width: 980px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+    gap: 0.6rem;
+  }
+
+  .nav-links {
+    gap: 0.9rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-cta {
+    margin-left: 0;
+    padding: 0.55rem 0.95rem;
+    font-size: 0.92rem;
+  }
+
+  .brand img {
+    height: 56px;
+    max-width: 180px;
+  }
+}
+
+/* ============================================================
+   MOBILE  ≤ 768px
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Two-column row: logo left, burger right */
+  .navbar {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    gap: 0;
+  }
+
+  .brand img {
+    height: 40px;
+  }
+
+  /* Hide desktop CTA in the navbar bar */
+  .nav-cta.nav-cta-desktop {
+    display: none;
+  }
+
+  /* Show burger */
+  .nav-burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    background: rgba(7, 14, 28, 0.35);
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+  }
+
+  .nav-burger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Burger → X */
+  .nav-burger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-burger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav-burger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Glassmorphism dropdown */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 1rem;
+    right: 1rem;
+    margin-left: 0;
+    background: rgba(7, 14, 28, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    padding: 0.5rem 0.75rem 0.75rem;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 1001;
+    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: navDropdown 0.18s ease both;
+  }
+
+  /* Nav items in dropdown */
+  .nav-link {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .nav-link:last-of-type {
+    border-bottom: none;
+  }
+
+  .nav-link::after {
+    bottom: -1px;
+  }
+
+  /* CTA inside dropdown */
+  .nav-cta-drawer {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.6rem;
+    padding: 0.72rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    margin-left: 0;
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE  ≤ 520px
+   ============================================================ */
+@media (max-width: 520px) {
+  .navbar {
+    padding: 0.45rem 0.75rem;
+  }
+
+  .brand img {
+    height: 36px;
+    max-width: 120px;
+  }
+}
+
+/* ---------- Animations ---------- */
+@keyframes navDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
