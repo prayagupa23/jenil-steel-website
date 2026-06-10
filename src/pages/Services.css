@@ -627,3 +627,76 @@
     font-size: 2rem;
   }
 }
+
+/* =========================================
+   TABLET
+========================================= */
+@media (max-width: 1024px) {
+  .services-hero {
+    height: 500px;
+    padding: 0 32px;
+  }
+
+  .hero-content-services {
+    max-width: 700px;
+  }
+
+  .hero-heading-services {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 768px) {
+  .services-hero {
+    min-height: 500px;
+    height: auto;
+    padding: 100px 24px 60px;
+  }
+
+  .hero-content-services {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-breadcrumbs-services {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero-heading-services {
+    font-size: 2.4rem;
+    line-height: 1.15;
+    margin-bottom: 0;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+@media (max-width: 480px) {
+  .services-hero {
+    min-height: 420px;
+    padding: 90px 20px 50px;
+  }
+
+  .hero-heading-services {
+    font-size: 2rem;
+    line-height: 1.2;
+    max-width: 280px;
+  }
+
+  .hero-breadcrumbs-services {
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+
+  .breadcrumb-home-svg {
+    width: 14px;
+    height: 14px;
+  }
+}

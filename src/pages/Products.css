@@ -596,3 +596,75 @@
     font-size: 2rem;
   }
 }
+
+/* =========================================
+   TABLET
+========================================= */
+@media (max-width: 1024px) {
+  .products-hero {
+    height: 500px;
+    padding: 0 32px;
+  }
+
+  .hero-content-products {
+    max-width: 700px;
+  }
+
+  .hero-heading-products {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 768px) {
+  .products-hero {
+    min-height: 500px;
+    height: auto;
+    padding: 100px 24px 60px;
+  }
+
+  .hero-content-products {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-breadcrumbs-products {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero-heading-products {
+    font-size: 2.5rem;
+    line-height: 1.15;
+    margin-bottom: 0;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+@media (max-width: 480px) {
+  .products-hero {
+    min-height: 420px;
+    padding: 90px 20px 50px;
+  }
+
+  .hero-heading-products {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .hero-breadcrumbs-products {
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+
+  .breadcrumb-home-svg {
+    width: 14px;
+    height: 14px;
+  }
+}

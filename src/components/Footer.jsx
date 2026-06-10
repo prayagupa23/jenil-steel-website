@@ -46,9 +46,9 @@ function Footer() {
         <div className="footer-column">
           <h3>Contact</h3>
 
-          <p>+91 98765 43210</p>
-          <p>info@jenilsteel.com</p>
-          <p>Plot No. 45, GIDC, Ahmedabad</p>
+          <p>022 8655011245</p>
+          <p>admin@jenilsteel.com</p>
+          <p>Excel Plaza, Pant Nagar, Ghatkopar East, Mumbai, Maharashtra 400075</p>
         </div>
 
       </div>

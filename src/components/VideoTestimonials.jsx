@@ -1,11 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star, Play } from 'lucide-react'; // Added Play icon back
 import './VideoTestimonials.css';
+import videoTestimonials from '../assets/videoTestimonial1.mp4';
 
 import bedmuthaLogo from '../assets/images/bedmutha.png'; 
 
 const VideoTestimonials = () => {
+
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const playVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const pauseVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
   const dataset = [
     {
       id: 1,
@@ -31,6 +50,15 @@ const VideoTestimonials = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const current = dataset[currentIndex];
+
+  React.useEffect(() => {
+    setIsPlaying(false);
+
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  }, [currentIndex]);  
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev === dataset.length - 1 ? 0 : prev + 1));
@@ -76,29 +104,15 @@ const VideoTestimonials = () => {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="video-box-card group"
               >
-                {/* Thumbnail Layer */}
-                <img 
-                  src={current.videoThumbnail} 
-                  alt={`${current.name} Case Study Cover`} 
-                  className="video-media-asset" 
-                />
-                
-                {/* Cinematic Vignette Overlay */}
-                <div className="video-cinematic-overlay" />
-
-                {/* RESTORED: Custom Play Button Micro-interactions */}
-                <div className="video-trigger-button-housing">
-                  <div className="play-pulse-ring"></div>
-                  <button className="premium-play-circle" aria-label="Play Case Study Video">
-                    <Play className="play-icon-vector" fill="currentColor" />
-                  </button>
-                </div>
-
-                {/* Subtitle Accent Bar Overlay */}
-                <div className="video-footer-accent">
-                  <span className="pulse-beacon"></span>
-                  <p className="video-cta-text">WATCH EXECUTIVE RECAP</p>
-                </div>
+                <video
+                  className="video-media-asset"
+                  src={videoTestimonials}
+                  controls
+                  preload="metadata"
+                  playsInline
+                >
+                  Your browser does not support the video tag.
+                </video>
               </motion.div>
             </AnimatePresence>
           </div>
