@@ -9,11 +9,13 @@ import CSR from './pages/CSR';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Reach from './pages/Reach';
+import ScrollToTop from './components/ScrollToTop';
 // import MiddleScrollToTop from './components/MiddleScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop/>
       <div className="site-shell">
         <Navbar />
         <Routes>

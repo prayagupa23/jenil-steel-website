@@ -173,7 +173,7 @@ function AboutContent() {
 
           <div className="stats-row-about">
             <div className="stat-card-about">
-              <span className="stat-number-about"><AnimatedCounter end={18} />+</span>
+              <span className="stat-number-about"><AnimatedCounter end={75} />+</span>
               <span className="stat-label-about">Years Experience</span>
             </div>
             <div className="stat-card-about">

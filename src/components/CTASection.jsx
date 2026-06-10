@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CTASection.css";
 
 function CTASection() {
@@ -6,6 +7,7 @@ function CTASection() {
   const [isInside, setIsInside] = useState(false);
   const sectionRef = useRef(null);
   const [hasMoved, setHasMoved] = useState(false);
+  const navigate = useNavigate();
 
   // cursor
   const [mousePos, setMousePos] = useState({
@@ -124,18 +126,11 @@ function CTASection() {
         <div className="cta-buttons">
         <button
         className="quote-btn"
+        onClick={() => navigate("/contact")}
         onMouseEnter={() => setHoveringButton(true)}
         onMouseLeave={() => setHoveringButton(false)}
         >
         REQUEST A QUOTE →
-        </button>
-
-        <button
-        className="call-btn"
-        onMouseEnter={() => setHoveringButton(true)}
-        onMouseLeave={() => setHoveringButton(false)}
-        >
-        CALL NOW
         </button>
         </div>
       </main>
