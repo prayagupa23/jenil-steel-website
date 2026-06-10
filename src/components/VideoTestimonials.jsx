@@ -32,7 +32,7 @@ const VideoTestimonials = () => {
       quote: "I will rate Jenil Steel with all 5 stars for their integrity, dedication, sensitivity towards customer requirement and transparency. They have been our supplier since 1988 and they not only supply raw materials but also help us with industry insights and updates.",
       name: "Vijay Bedmutha",
       designation: "CMD, Bedmutha Industries Ltd",
-      logo: bedmuthaLogo, 
+      logo: bedmuthaLogo,
       trustBadge: "TRUSTED PARTNER SINCE 1988",
       bgWatermark: "INTEGRITY"
     },

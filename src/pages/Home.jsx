@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import heroVideo from '../assets/landingpage.mp4';
+import heroVideo from '../assets/ourReach.mp4';
 import jswLogo from '../assets/images/jsw-logo-jv.webp';
 import rinlLogo from '../assets/images/Rashtriya_Ispat_Nigam.svg.png';
 // import sailLogo '../assets/images/sail.png';
