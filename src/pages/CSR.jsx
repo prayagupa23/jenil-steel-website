@@ -63,6 +63,34 @@ function CSR() {
         </div>
       </section>
 
+      <section className="about-industry-container animate-fade-in-up">
+        <div className="about-industry-content">
+          
+          {/* Left Side: Worker Image with Zoom Frame */}
+          <div className="about-industry-image-wrapper">
+            <div className="about-industry-image-frame">
+              <img 
+                src="https://z-cdn-media.chatglm.cn/files/3cbf4b2b-546b-4f91-b7b1-22c398497641.jpg?auth_key=1880034665-bd94b6957e4040d98f5c1c1a516cde6c-0-37231e8e7dccd69cb7a3e40934baaf00" 
+                alt="Worker in industrial factory" 
+                className="about-industry-main-img"
+              />
+            </div>
+          </div>
+
+          {/* Right Side: Text details */}
+          <div className="about-industry-text-wrapper">
+            <div className="csr-orange-accent-line" />
+            <h2 className="about-industry-heading">
+              CSR Committee
+            </h2>
+            <p className="about-industry-subtext">
+              Jenil Steel offers a comprehensive range of high-quality steel products sourced from leading manufacturers across India. Our portfolio includes Wire Rods, TMT Bars, Billets, Beams, Channels, Angles, Flats, and other structural steel solutions designed to meet diverse industrial requirements. With a strong focus on quality, reliability, and timely delivery, we ensure that every product meets the highest industry standards and supports the success of our customers' projects.
+            </p>
+          </div>
+          
+        </div>
+      </section>
+
       {/* MASTER SECTION: GIVING BACK TO SOCIETY (Two-Column Layout) */}
       <section className="csr-master-society-section">
         
@@ -283,28 +311,33 @@ function CSR() {
           
           <div className="csr-ticker-box">
             <div className="ticker-numeric-display">
-              <span className="ticker-register register-500">500</span><span className="ticker-orange-suffix">+</span>
+              {/* Empty spans prevent value duplication */}
+              <span className="ticker-register register-500"></span>
+              <span className="ticker-orange-suffix">+</span>
             </div>
             <p className="ticker-meta-label">STUDENTS</p>
           </div>
 
           <div className="csr-ticker-box">
             <div className="ticker-numeric-display">
-              <span className="ticker-register register-20">20</span><span className="ticker-orange-suffix">+</span>
+              <span className="ticker-register register-20"></span>
+              <span className="ticker-orange-suffix">+</span>
             </div>
             <p className="ticker-meta-label">HEALTH CAMPS</p>
           </div>
 
           <div className="csr-ticker-box">
             <div className="ticker-numeric-display">
-              <span className="ticker-register register-5000">5000</span><span className="ticker-orange-suffix">+</span>
+              <span className="ticker-register register-5000"></span>
+              <span className="ticker-orange-suffix">+</span>
             </div>
             <p className="ticker-meta-label">TREES PLANTED</p>
           </div>
 
           <div className="csr-ticker-box">
             <div className="ticker-numeric-display">
-              <span className="ticker-register register-10">10</span><span className="ticker-orange-suffix">+</span>
+              <span className="ticker-register register-10"></span>
+              <span className="ticker-orange-suffix">+</span>
             </div>
             <p className="ticker-meta-label">VILLAGES</p>
           </div>

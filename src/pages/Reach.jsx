@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import "./Reach.css";
 import truckVideo from "../assets/ourReach.mp4"; 
 import indiaMapImg from "../assets/images/map.jpeg"; 
+import fastDelivery from '../assets/images/truck.png'
 
 function OurReach() {
   return (
@@ -124,7 +125,7 @@ function OurReach() {
           <div className="reach-image-column">
             <div className="reach-image-frame">
               <img 
-                src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" 
+                src={fastDelivery}
                 alt="Delivery fleet logistics" 
                 className="reach-split-img"
               />

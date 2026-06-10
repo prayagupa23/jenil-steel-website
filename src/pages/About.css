@@ -593,7 +593,7 @@
 }
 
 /* ════════════════════════════════════════════
-   TEAM SECTION (SCROLLABLE LONG CONTENT)
+   TEAM SECTION (MODAL POPUP VARIANT IMPLEMENTATION)
 ════════════════════════════════════════════ */
 .team-section-about {
   position: relative;
@@ -608,19 +608,31 @@
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .team-grid-about { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .team-grid-about { grid-template-columns: 1fr; }
 }
 
 .team-card-about {
   position: relative;
   background: #0b1220; 
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 12px; /* Smoother curve matched to your mockup designs */
   aspect-ratio: 3/4;
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+.team-card-about:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(11, 18, 32, 0.15);
 }
 
 .team-card-img-wrapper {
@@ -629,25 +641,23 @@
   width: 100%;
   height: 100%;
 }
+
 .team-card-img-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(15%) brightness(0.85);
-  transition: transform 0.6s ease, filter 0.4s ease;
+  filter: brightness(0.9);
+  transition: transform 0.6s ease;
+}
+
+.team-card-about:hover .team-card-img-wrapper img {
+  transform: scale(1.04);
 }
 
 .team-card-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 30%, rgba(11, 18, 32, 0.95) 90%);
-  transition: background 0.4s ease;
-}
-
-/* Overlay transforms into a full contextual backdrop cover on active states */
-.team-card-about:hover .team-card-overlay-gradient,
-.team-card-about.force-hover .team-card-overlay-gradient {
-  background: linear-gradient(180deg, rgba(11, 18, 32, 0.4) 0%, rgba(11, 18, 32, 0.98) 70%);
+  background: linear-gradient(180deg, transparent 40%, rgba(11, 18, 32, 0.85) 90%);
 }
 
 .team-card-info {
@@ -660,79 +670,168 @@
   justify-content: flex-end;
 }
 
+.team-card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.team-card-meta {
+  flex: 1;
+  padding-right: 12px;
+}
+
 .team-card-name {
-  font-family: var(--font-display);
-  font-size: clamp(20px, 2.2vw, 26px);
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(18px, 1.8vw, 22px);
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.1;
-  margin-bottom: 4px;
+  line-height: 1.2;
+  margin-bottom: 6px;
 }
 
 .team-card-role {
-  font-size: 13px;
-  color: var(--orange);
-  font-weight: 500;
-  transition: margin-bottom 0.4s ease;
-}
-
-/* Expanded scrollable text panel block container */
-.team-card-details-drawer {
-  max-height: 0;
-  opacity: 0;
-  overflow-y: auto; /* Active local kinetic scrolling array maps */
-  padding-right: 4px;
-  transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, margin-top 0.4s ease;
-  
-  /* Standard custom system thin track scroll styling definitions */
-  scrollbar-width: thin;
-  scrollbar-color: var(--orange) transparent;
-}
-
-.team-card-details-drawer::-webkit-scrollbar { width: 3px; }
-.team-card-details-drawer::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
-
-.team-card-details-text {
-  font-size: 13px; /* Optimized sizing layout */
-  color: #e5e7eb;
-  line-height: 1.6;
+  font-size: 14px;
+  color: #94a3b8; /* Balanced secondary text tone layout mapping */
   font-weight: 400;
 }
 
-.team-card-bracket-tr {
-  position: absolute;
-  top: 0; right: 0;
-  width: 24px; height: 24px;
-  background: #ffffff; 
-  transform: rotate(45deg) translate(-35%, -70%);
-  z-index: 4;
+/* Plus Action Button Config Styling */
+.team-card-plus-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
-.team-card-bracket-bl {
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 24px; height: 24px;
+
+.team-card-plus-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.team-card-about:hover .team-card-plus-btn {
+  background: var(--orange, #e05314);
+  transform: rotate(90deg);
+}
+
+/* Corner Accents Retained */
+.team-card-bracket-tr, .team-card-bracket-bl { display: none; } /* Kept safe if needed later, turned off for round radius cards */
+
+/* ─── MODAL OVERLAY AND CONTAINER DESIGN ─── */
+.team-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 18, 32, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.team-modal-card {
+  position: relative;
   background: #ffffff;
-  transform: rotate(45deg) translate(-70%, 35%);
-  z-index: 4;
+  width: 100%;
+  max-width: 840px;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  padding: 40px;
 }
 
-/* Active Hover Transitions */
-.team-card-about:hover,
-.team-card-about.force-hover {
-  transform: translateY(-6px);
+.team-modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+  z-index: 10;
 }
 
-.team-card-about:hover .team-card-img-wrapper img,
-.team-card-about.force-hover .team-card-img-wrapper img {
-  transform: scale(1.02);
-  filter: grayscale(20%) brightness(0.5);
+.team-modal-close-btn:hover {
+  background: #f1f5f9;
+  color: #0b1220;
 }
 
-.team-card-about:hover .team-card-details-drawer,
-.team-card-about.force-hover .team-card-details-drawer {
-  max-height: 140px; /* Expanded capacity boundary layer to ensure complete paragraph display safety */
-  opacity: 1;
-  margin-top: 12px;
+.team-modal-close-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.team-modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .team-modal-card { padding: 32px 24px 24px 24px; }
+  .team-modal-body { grid-template-columns: 1fr; gap: 24px; }
+}
+
+.team-modal-img-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.team-modal-img-container img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 16px;
+  background: #f8fafc;
+}
+
+.team-modal-caption {
+  padding-left: 4px;
+}
+
+.team-modal-name {
+  font-family: var(--font-display), sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e3a8a; /* Deep elegant corporate blue */
+  margin-bottom: 4px;
+}
+
+.team-modal-role {
+  font-size: 15px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.team-modal-bio-container {
+  padding-top: 12px;
+}
+
+.team-modal-bio-text {
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.75;
+  font-weight: 400;
 }
 
 /* ════════════════════════════════════════════

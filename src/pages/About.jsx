@@ -8,7 +8,7 @@ import tataLogo from "../assets/images/tata-steel-logo.png";
 import "./About.css";
 import about1 from '../assets/images/about1.png';
 import { useInView as useInViewObs } from "react-intersection-observer";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const logos = [jswLogo, rinlLogo, tataLogo];
 
@@ -285,22 +285,13 @@ function TimelineSection() {
 /* ─── TEAM SECTION (5S CYCLING AUTOMATIC HOVER) ─── */
 function TeamSection() {
   const { ref, inView } = useInViewObs({ threshold: 0.1, triggerOnce: true });
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
-
-  useEffect(() => {
-    if (isHovering) return;
-
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % TEAM_MEMBERS.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isHovering]);
+  const [selectedMember, setSelectedMember] = useState(null);
 
   return (
     <section className="team-section-about" ref={ref}>
+      {/* BlueprintGrid component assuming it is defined in your file */}
       <BlueprintGrid />
+      
       <div className="section-header-about">
         <div className="section-label-about centered-about">
           <span className="label-line-about" style={{ width: inView ? '40px' : '0px', transition: 'width 0.8s ease' }} />
@@ -312,41 +303,100 @@ function TeamSection() {
         </h2>
       </div>
 
-      <div 
-        className="team-grid-about"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => {
-          setIsHovering(false);
-          setActiveIndex(-1);
-        }}
-      >
-        {TEAM_MEMBERS.map((member, idx) => {
-          const isActive = activeIndex === idx;
-          return (
-            <div 
-              key={member.id} 
-              className={`team-card-about ${isActive ? 'force-hover' : ''}`}
-              onMouseEnter={() => setActiveIndex(idx)}
-            >
-              <div className="team-card-img-wrapper">
-                <img src={member.image} alt={member.name} />
-                <div className="team-card-overlay-gradient" />
-              </div>
+      {/* Grid Layout Container */}
+      <div className="team-grid-about">
+        {TEAM_MEMBERS.map((member) => (
+          <div 
+            key={member.id} 
+            className="team-card-about"
+            onClick={() => setSelectedMember(member)}
+          >
+            <div className="team-card-img-wrapper">
+              <img src={member.image} alt={member.name} />
+              <div className="team-card-overlay-gradient" />
+            </div>
 
-              <div className="team-card-info">
-                <h3 className="team-card-name">{member.name}</h3>
-                <p className="team-card-role">{member.role}</p>
+            <div className="team-card-info">
+              <div className="team-card-header-row">
+                <div className="team-card-meta">
+                  <h3 className="team-card-name">{member.name}</h3>
+                  <p className="team-card-role">{member.role}</p>
+                </div>
                 
-                <div className="team-card-details-drawer">
-                  <p className="team-card-details-text">{member.details}</p>
+                {/* Interactive Plus Action Button */}
+                <button 
+                  className="team-card-plus-btn"
+                  aria-label={`View details for ${member.name}`}
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevents firing duplicate click events
+                    setSelectedMember(member);
+                  }}
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            <div className="team-card-bracket-tr" />
+            <div className="team-card-bracket-bl" />
+          </div>
+        ))}
+      </div>
+
+      {/* Interactive Profile Modal (Framer Motion managed portal layout) */}
+      <AnimatePresence>
+        {selectedMember && (
+          <motion.div 
+            className="team-modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedMember(null)}
+          >
+            <motion.div 
+              className="team-modal-card"
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 50 }}
+              transition={{ type: "spring", damping: 25, stiffness: 180 }}
+              onClick={(e) => e.stopPropagation()} // Prevents accidental background closing clicks
+            >
+              {/* Close Button Button Element */}
+              <button 
+                className="team-modal-close-btn" 
+                onClick={() => setSelectedMember(null)}
+                aria-label="Close Modal"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+
+              <div className="team-modal-body">
+                {/* Left Side: Dynamic Image Layout */}
+                <div className="team-modal-img-container">
+                  <img src={selectedMember.image} alt={selectedMember.name} />
+                  <div className="team-modal-caption">
+                    <h3 className="team-modal-name">{selectedMember.name}</h3>
+                    <p className="team-modal-role">{selectedMember.role}</p>
+                  </div>
+                </div>
+
+                {/* Right Side: Bio Text Content Panel */}
+                <div className="team-modal-bio-container">
+                  <p className="team-modal-bio-text">
+                    {selectedMember.details}
+                  </p>
                 </div>
               </div>
-              <div className="team-card-bracket-tr" />
-              <div className="team-card-bracket-bl" />
-            </div>
-          );
-        })}
-      </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
