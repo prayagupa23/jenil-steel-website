@@ -28,19 +28,21 @@ function Footer() {
         <div className="footer-column">
           <h3>Quick Links</h3>
 
-          <a href="#about">About Us</a>
-          <a href="#products">Products</a>
-          <a href="#infrastructure">Infrastructure</a>
-          <a href="#contact">Contact</a>
+          <a href="/about">About Us</a>
+          <a href="/products">Products</a>
+          <a href="/services">Services</a>
+          <a href="/reach">Our Reach</a>
+          <a href="/csr">CSR</a>
+          <a href="/contact">Contact</a>
         </div>
 
         <div className="footer-column">
           <h3>Products</h3>
 
-          <a href="/">Hot Rolled Sheets</a>
-          <a href="/">CR Coils</a>
-          <a href="/">GP Sheets</a>
-          <a href="/">Steel Processing</a>
+          <a href="/products">Wire Rods</a>
+          <a href="/products">TMT Bars</a>
+          <a href="/products">Angles</a>
+          <a href="/products">Billets</a>
         </div>
 
         <div className="footer-column">

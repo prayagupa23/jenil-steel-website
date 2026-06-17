@@ -11,6 +11,7 @@ import csr5 from "../assets/images/csr5.jpg";
 import csr6 from "../assets/images/csr6.jpg";
 import csr7 from "../assets/images/csr7.jpg";
 import csr8 from "../assets/images/csr8.jpg";
+import csrMain from "../assets/images/csr_main.jpeg";
 
 const CAROUSEL_IMAGES = [csr1, csr2, csr3, csr4, csr5, csr6, csr7, csr8];
 
@@ -70,7 +71,7 @@ function CSR() {
           <div className="about-industry-image-wrapper">
             <div className="about-industry-image-frame">
               <img 
-                src="https://z-cdn-media.chatglm.cn/files/3cbf4b2b-546b-4f91-b7b1-22c398497641.jpg?auth_key=1880034665-bd94b6957e4040d98f5c1c1a516cde6c-0-37231e8e7dccd69cb7a3e40934baaf00" 
+                src={csrMain} 
                 alt="Worker in industrial factory" 
                 className="about-industry-main-img"
               />
