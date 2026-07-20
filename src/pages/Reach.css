@@ -330,7 +330,7 @@
   margin: 90px auto;
   padding: 0 24px;
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 60px;
   box-sizing: border-box;
 }
@@ -492,8 +492,8 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 40px;
 }
 
 .state-item {
@@ -511,19 +511,7 @@
   font-size: 1.2rem;
 }
 
-/* Responsive adjustment layers */
-@media (max-width: 991px) {
-  .states-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 576px) {
-  .states-list {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-}
 
 /* =========================================
    TABLET

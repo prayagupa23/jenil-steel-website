@@ -601,6 +601,151 @@
   transform: scale(1.05);
 }
 
+/* =========================================
+   Reach Page USP Section (renamed)
+   ========================================= */
+
+.reach-usp-section {
+  padding: 10px 24px 60px 24px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.reach-usp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reach-usp-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0e1b2e;
+  text-align: left;
+  margin: 0 0 30px 0;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.reach-usp-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  transform: none;
+  width: 50px;
+  height: 2.5px;
+  background-color: #e07830;
+  border-radius: 2px;
+}
+
+.reach-usp-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.reach-usp-features {
+  order: 1;
+}
+
+.reach-usp-description {
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #6c757d;
+  margin-top: 15px;
+  max-width: 600px;
+}
+
+.reach-usp-image-wrapper {
+  order: 2;
+}
+
+.reach-usp-image-frame {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.reach-usp-image-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(224, 120, 48, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.reach-usp-image-frame:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(224, 120, 48, 0.2);
+}
+
+.reach-usp-image-frame:hover::before {
+  opacity: 1;
+}
+
+.reach-usp-main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(1);
+}
+
+.reach-usp-image-frame:hover .reach-usp-main-img {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments for Reach USP section */
+@media (max-width: 991px) {
+  .reach-usp-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .reach-usp-features {
+    order: 2;
+  }
+  .reach-usp-image-wrapper {
+    order: 1;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .reach-usp-section {
+    padding: 80px 20px;
+  }
+  .reach-usp-title {
+    font-size: 2rem;
+  }
+  .reach-usp-image-frame {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .reach-usp-section {
+    padding: 60px 16px;
+  }
+  .reach-usp-image-frame {
+    max-width: 100%;
+  }
+}
+
 /* Responsive adjustments for USP section */
 @media (max-width: 991px) {
   .our-usp-content {
@@ -641,7 +786,7 @@
     font-size: 1.2rem;
   }
 
-  .usp-text p {
+.usp-text p {
     font-size: 0.9rem;
   }
 

@@ -87,24 +87,17 @@ function OurReach() {
         {/* Right Column: Filled Text Content & Hubs Grid */}
         <div className="reach-map-text-content">
           <div className="reach-accent-line" />
-          <h2 className="reach-section-title">Our Reach</h2>
-          <p className="reach-section-description">
-            Our extensive distribution network enables us to efficiently supply quality steel products to customers across major industrial and infrastructure hubs throughout India. By maintaining deep inventory levels and streamlined dispatch systems, we bridge the gap between primary production plants and your project site.
-          </p>
+          <h2 className="reach-section-title">Key Operating & Supply Hubs</h2>
+
           
           {/* New content layer to fill out empty vertical spaces inside the card layout */}
           <div className="reach-hubs-distribution-block">
-            <h4 className="hubs-grid-title">Key Operating & Supply Hubs</h4>
             <ul className="states-list">
               <li className="state-item"><span>•</span> Maharashtra (Mumbai - HQ)</li>
               <li className="state-item"><span>•</span> Gujarat</li>
-              <li className="state-item"><span>•</span> Maharashtra</li>
-              <li className="state-item"><span>•</span> Gujarat</li>
               <li className="state-item"><span>•</span> Delhi</li>
-              <li className="state-item"><span>•</span> Gujarat</li>
               <li className="state-item"><span>•</span> Rajasthan</li>
               <li className="state-item"><span>•</span> Madhya Pradesh</li>
-              <li className="state-item"><span>•</span> Jharkhand</li>
               <li className="state-item"><span>•</span> Jharkhand</li>
               <li className="state-item"><span>•</span> Chhattisgarh</li>
               <li className="state-item"><span>•</span> West Bengal</li>
@@ -115,62 +108,21 @@ function OurReach() {
       </section>
 
             {/* Our USP Section */}
-      <section className="our-usp-section">
-        <div className="our-usp-container">
-          <h2 className="our-usp-title">Our Unique Selling Propositions</h2>
-          <div className="our-usp-content">
-            <div className="our-usp-features">
-              <ul className="usp-items">
-                <li className="usp-item">
-                  <span className="usp-number">01</span>
-                  <div className="usp-text">
-                    <h3>Timely Delivery</h3>
-                    <p>Ensuring on-schedule project completion with precision and efficiency</p>
-                  </div>
-                </li>
-                <li className="usp-item">
-                  <span className="usp-number">02</span>
-                  <div className="usp-text">
-                    <h3>Logistics</h3>
-                    <p>Streamlined supply chain management for optimal project execution</p>
-                  </div>
-                </li>
-                <li className="usp-item">
-                  <span className="usp-number">03</span>
-                  <div className="usp-text">
-                    <h3>Product Development</h3>
-                    <p>Innovative steel solutions tailored to industry-specific requirements</p>
-                  </div>
-                </li>
-                <li className="usp-item">
-                  <span className="usp-number">04</span>
-                  <div className="usp-text">
-                    <h3>Product Mix</h3>
-                    <p>Diverse range of high-quality steel products for all applications</p>
-                  </div>
-                </li>
-                <li className="usp-item">
-                  <span className="usp-number">05</span>
-                  <div className="usp-text">
-                    <h3>Tailored Solutions</h3>
-                    <p>Customized service packages addressing unique client challenges</p>
-                  </div>
-                </li>
-                <li className="usp-item">
-                  <span className="usp-number">06</span>
-                  <div className="usp-text">
-                    <h3>Size Max</h3>
-                    <p>Comprehensive size range to meet diverse project requirements.</p>
-                  </div>
-                </li>                
-              </ul>
+      <section className="reach-usp-section">
+        <div className="reach-usp-container">
+          <h2 className="reach-usp-title">Our Reach</h2>
+          <div className="reach-usp-content">
+            <div className="reach-usp-features">
+              <p className="reach-usp-description">
+                Our extensive distribution network enables us to efficiently supply quality steel products to customers across major industrial and infrastructure hubs throughout India. By maintaining deep inventory levels and streamlined dispatch systems, we bridge the gap between primary production plants and your project site.
+              </p>
             </div>
-            <div className="our-usp-image-wrapper">
-              <div className="our-usp-image-frame">
+            <div className="reach-usp-image-wrapper">
+              <div className="reach-usp-image-frame">
                 <img 
                   src={usp}
                   alt="Steel manufacturing process" 
-                  className="our-usp-main-img"
+                  className="reach-usp-main-img"
                 />
               </div>
             </div>
