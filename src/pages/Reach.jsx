@@ -1,9 +1,11 @@
 import React from "react";
 import Footer from "../components/Footer";
 import "./Reach.css";
+import "./Services.css"
 import truckVideo from "../assets/ourReach.mp4"; 
 import indiaMapImg from "../assets/images/map.jpeg"; 
-import fastDelivery from '../assets/images/truck.png'
+import fastDelivery from '../assets/images/truck.png';
+import usp from '../assets/images/usp.jpeg';
 
 function OurReach() {
   return (
@@ -112,9 +114,72 @@ function OurReach() {
 
       </section>
 
+            {/* Our USP Section */}
+      <section className="our-usp-section">
+        <div className="our-usp-container">
+          <h2 className="our-usp-title">Our Unique Selling Propositions</h2>
+          <div className="our-usp-content">
+            <div className="our-usp-features">
+              <ul className="usp-items">
+                <li className="usp-item">
+                  <span className="usp-number">01</span>
+                  <div className="usp-text">
+                    <h3>Timely Delivery</h3>
+                    <p>Ensuring on-schedule project completion with precision and efficiency</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">02</span>
+                  <div className="usp-text">
+                    <h3>Logistics</h3>
+                    <p>Streamlined supply chain management for optimal project execution</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">03</span>
+                  <div className="usp-text">
+                    <h3>Product Development</h3>
+                    <p>Innovative steel solutions tailored to industry-specific requirements</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">04</span>
+                  <div className="usp-text">
+                    <h3>Product Mix</h3>
+                    <p>Diverse range of high-quality steel products for all applications</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">05</span>
+                  <div className="usp-text">
+                    <h3>Tailored Solutions</h3>
+                    <p>Customized service packages addressing unique client challenges</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">06</span>
+                  <div className="usp-text">
+                    <h3>Size Max</h3>
+                    <p>Comprehensive size range to meet diverse project requirements.</p>
+                  </div>
+                </li>                
+              </ul>
+            </div>
+            <div className="our-usp-image-wrapper">
+              <div className="our-usp-image-frame">
+                <img 
+                  src={usp}
+                  alt="Steel manufacturing process" 
+                  className="our-usp-main-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. ALTERNATING CONTENT SECTIONS WITH SIDE IMAGES */}
-      <section className="reach-manifesto-split-wrapper">
-        {/* FAST DELIVERY */}
+      {/* <section className="reach-manifesto-split-wrapper">
         <div className="reach-split-row">
           <div className="reach-image-column">
             <div className="reach-image-frame">
@@ -139,7 +204,6 @@ function OurReach() {
           </div>
         </div>
 
-        {/* RELIABLE SUPPLY */}
         <div className="reach-split-row alternate-row">
           <div className="reach-text-column">
             <div className="reach-tag-line">
@@ -163,7 +227,7 @@ function OurReach() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

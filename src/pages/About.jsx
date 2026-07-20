@@ -13,6 +13,7 @@ import mukundLogo from '../assets/images/mukund.jpeg';
 import nicoLogo from '../assets/images/nico.png';
 import eslLogo from '../assets/images/esl.jpeg';
 import sailLogo from '../assets/images/sail.png';
+import usp from '../assets/images/usp.jpeg';
 
 const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
 
@@ -142,7 +143,7 @@ function AboutContent() {
 
   return (
     <section className="about-section-about" ref={ref}>
-      <BlueprintGrid />
+      {/* <BlueprintGrid /> */}
 
       <div className="about-container-about">
         <div className="about-left-about">
@@ -529,12 +530,77 @@ function ClientsStrip() {
   );
 }
 
+
+
 /* ─── MAIN COMPONENT PAGE LAYOUT ─── */
 export default function About() {
   return (
     <div className="about-page">
       <HeroSection />
       <AboutContent />
+            {/* Our USP Section */}
+      <section className="our-usp-section">
+        <div className="our-usp-container">
+          <h2 className="our-usp-title">Our Unique Selling Propositions</h2>
+          <div className="our-usp-content">
+            <div className="our-usp-features">
+              <ul className="usp-items">
+                <li className="usp-item">
+                  <span className="usp-number">01</span>
+                  <div className="usp-text">
+                    <h3>Timely Delivery</h3>
+                    <p>Ensuring on-schedule project completion with precision and efficiency</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">02</span>
+                  <div className="usp-text">
+                    <h3>Logistics</h3>
+                    <p>Streamlined supply chain management for optimal project execution</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">03</span>
+                  <div className="usp-text">
+                    <h3>Product Development</h3>
+                    <p>Innovative steel solutions tailored to industry-specific requirements</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">04</span>
+                  <div className="usp-text">
+                    <h3>Product Mix</h3>
+                    <p>Diverse range of high-quality steel products for all applications</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">05</span>
+                  <div className="usp-text">
+                    <h3>Tailored Solutions</h3>
+                    <p>Customized service packages addressing unique client challenges</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">06</span>
+                  <div className="usp-text">
+                    <h3>Size Max</h3>
+                    <p>Comprehensive size range to meet diverse project requirements.</p>
+                  </div>
+                </li>                
+              </ul>
+            </div>
+            <div className="our-usp-image-wrapper">
+              <div className="our-usp-image-frame">
+                <img 
+                  src={usp}
+                  alt="Steel manufacturing process" 
+                  className="our-usp-main-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <ValuesSection />
       <TimelineSection />
       <ClientsStrip />

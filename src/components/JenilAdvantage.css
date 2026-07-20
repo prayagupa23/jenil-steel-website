@@ -134,14 +134,14 @@
   stroke-width: 2px;
 }
 
-.card-title {
+.card-title-adv {
   font-size: 1.15rem;
   font-weight: 700;
   color: #0c1017;
   margin: 0 0 12px 0;
 }
 
-.card-description {
+.card-description-adv {
   font-size: 0.925rem;
   color: #6b7280; /* Neutral gray description text */
   line-height: 1.5;

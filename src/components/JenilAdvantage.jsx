@@ -51,8 +51,8 @@ const JenilAdvantage = () => {
               <div className="icon-wrapper">
                 {item.icon}
               </div>
-              <h3 className="card-title">{item.title}</h3>
-              <p className="card-description">{item.description}</p>
+              <h3 className="card-title-adv">{item.title}</h3>
+              <p className="card-description-adv">{item.description}</p>
             </div>
           ))}
         </div>
