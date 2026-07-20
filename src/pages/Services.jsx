@@ -9,8 +9,12 @@ import automobiles from '../assets/images/automobiles.jpeg';
 import jswLogo from "../assets/images/jsw-logo-jv.webp";
 import rinlLogo from "../assets/images/Rashtriya_Ispat_Nigam.svg.png";
 import tataLogo from "../assets/images/tata-steel-logo.png";
+import mukundLogo from '../assets/images/mukund.jpeg';
+import nicoLogo from '../assets/images/nico.png';
+import eslLogo from '../assets/images/esl.jpeg';
+import sailLogo from '../assets/images/sail.png';
 
-const logos = [jswLogo, rinlLogo, tataLogo];
+const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
 
 const services = [
   {
@@ -155,10 +159,10 @@ function Services() {
               Home
             </a>
             <span className="breadcrumb-separator-services">|</span>
-            <span className="breadcrumb-current-services">Services</span>
+            <span className="breadcrumb-current-services">Industries We Serve</span>
           </nav>
           <h1 className="hero-heading-services">
-            Services we <span className="hero-heading-accent-services">offer</span>
+            Industries We <span className="hero-heading-accent-services">Serve</span>
           </h1>
         </div>
       </section>
@@ -166,11 +170,68 @@ function Services() {
       {/* Integrated split screen details section */}
       <AboutIndustry />
 
+      {/* Our USP Section */}
+      <section className="our-usp-section">
+        <div className="our-usp-container">
+          <h2 className="our-usp-title">Our Unique Selling Propositions</h2>
+          <div className="our-usp-content">
+            <div className="our-usp-features">
+              <ul className="usp-items">
+                <li className="usp-item">
+                  <span className="usp-number">01</span>
+                  <div className="usp-text">
+                    <h3>Timely Delivery</h3>
+                    <p>Ensuring on-schedule project completion with precision and efficiency</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">02</span>
+                  <div className="usp-text">
+                    <h3>Logistics</h3>
+                    <p>Streamlined supply chain management for optimal project execution</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">03</span>
+                  <div className="usp-text">
+                    <h3>Product Development</h3>
+                    <p>Innovative steel solutions tailored to industry-specific requirements</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">04</span>
+                  <div className="usp-text">
+                    <h3>Product Mix</h3>
+                    <p>Diverse range of high-quality steel products for all applications</p>
+                  </div>
+                </li>
+                <li className="usp-item">
+                  <span className="usp-number">05</span>
+                  <div className="usp-text">
+                    <h3>Tailored Solutions</h3>
+                    <p>Customized service packages addressing unique client challenges</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="our-usp-image-wrapper">
+              <div className="our-usp-image-frame">
+                <img 
+                  src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg" 
+                  alt="Steel manufacturing process" 
+                  className="our-usp-main-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section Header */}
       <div className="services-section-header">
         <div className="services-header-accent">
           <span className="accent-line"></span>
-          <span className="accent-text">Our Services</span>
+          <span className="accent-text">Industries We Serve</span>
         </div>
         <h2 className="services-main-title">What We Do for Our Industries</h2>
         <p className="services-header-subtext">

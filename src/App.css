@@ -448,49 +448,48 @@
 }
 
 /* ==========================================
-   1. STRIP CONTAINER & INITIAL ANIMATION
+   1. STRIP CONTAINER & LIGHT THEME
    ========================================== */
 .clients-strip {
-  margin: 2.5rem 0;
-  /* Remove borders and background to let the main page color show through */
+  margin: 0 0 2.5rem 0;
   border-top: none;
-  border-bottom: none;
-  background: transparent; 
-  
-  padding:0;
+  border-bottom: 1px solid rgba(34,34,34,0.06);
+  background: linear-gradient(180deg,#ffffff 0%, #fbfbfb 100%);
+  padding: 2.25rem 0.5rem;
   overflow: hidden;
   animation: fadeUp 0.95s ease 0.3s both;
+  position: relative;
+  z-index: 2;
 }
 
 .clients-title {
   text-align: center;
-  margin: 0 0 0.8rem;
-  color: #b9c4d5;
-  letter-spacing: 0.15rem;
-  font-size: 0.88rem;
+  margin: 0 0 1rem;
+  color: #2b2b2b;
+  letter-spacing: 0.08rem;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
 /* ==========================================
-   2. THE EDGE FADE (NEW WRAPPER REQUIRING STRUCTURE)
+   2. THE EDGE FADE (WORKS FOR LIGHT BACKGROUNDS)
    ========================================== */
 .marquee-fade-container {
   position: relative;
   width: 100%;
   overflow: hidden;
-  
-  /* Creates a feathered edge-fade stencil on the left and right sides */
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 15%,
-    black 85%,
+    black 10%,
+    black 90%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 15%,
-    black 85%,
+    black 10%,
+    black 90%,
     transparent 100%
   );
 }
@@ -506,7 +505,7 @@
 .marquee-content {
   display: flex;
   width: max-content;
-  align-items: center; /* Keeps logos and dots vertically centered */
+  align-items: center;
   animation: marqueeSlide 28s linear infinite;
 }
 
@@ -516,67 +515,57 @@
 }
 
 /* ==========================================
-   4. LOGO HOUSING & BACKDROP CLEANUP
+   4. LOGO HOUSING - SHOW ORIGINAL LOGOS
    ========================================== */
 .client-logo {
   width: 170px;
   height: 84px;
-  margin: 0 2.5rem; /* Increased slightly for cleaner breathing room */
+  margin: 0 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  opacity: 0.58;
-  
-  /* FIXED: Combined grayscale with luminosity to destroy grey bounding box frames */
-  filter: grayscale(100%);
-  mix-blend-mode: luminosity; 
-  
-  transition: opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+  opacity: 1;
+  filter: none; /* show original colored logos */
+  mix-blend-mode: normal;
+  transition: transform 0.25s ease, box-shadow 0.2s ease;
 }
 
-/* Gold Separator Rings */
 .client-logo::before {
   content: '';
   position: absolute;
-  left: -2.65rem; /* Adjusted alignment offset matching new margins */
-  width: 8px;   /* Slightly smaller makes it look cleaner */
+  left: -2.65rem;
+  width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: 2px solid #e4cfaa;
+  border: 2px solid rgba(0,0,0,0.06);
   background: transparent;
   opacity: 0.6;
 }
 
-/* FIXED: Prevents missing dots or duplicate double dots at the loop overlap points */
 .marquee-content > .client-logo:first-child::before {
   display: none;
 }
 
-/* Premium Hover State */
 .client-logo:hover {
-  opacity: 1;
-  filter: grayscale(0%);
-  mix-blend-mode: normal; /* Restores real brand colors on hover */
-  transform: scale(1.05);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(38,38,38,0.06);
 }
 
 .client-logo img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  display: block;
+  filter: none; /* ensure no greyscale or tint */
 }
 
 /* ==========================================
    5. TIMELINE TRANSLATION KEYFRAMES
    ========================================== */
 @keyframes marqueeSlide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.333%); /* Perfect mathematical snap reset */
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
 }
 
 @keyframes fadeUp {

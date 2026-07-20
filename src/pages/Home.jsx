@@ -13,6 +13,10 @@ import Testimonials from '../components/Testimonials';
 import VideoTestimonials from '../components/VideoTestimonials';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
+import mukundLogo from '../assets/images/mukund.jpeg';
+import nicoLogo from '../assets/images/nico.png';
+import eslLogo from '../assets/images/esl.jpeg';
+import sailLogo from '../assets/images/sail.png';
 
 const stats = [
   { value: 75, suffix: '+', label: 'YEARS EXPERIENCE' },
@@ -21,7 +25,7 @@ const stats = [
   { value: 1, suffix: '', label: 'INDIA NATIONWIDE REACH' },
 ];
 
-const logos = [jswLogo, rinlLogo, tataLogo];
+const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
 
 const legacyStats = [
   { value: 75, suffix: '+', label: 'YEARS IN INDUSTRY' },
@@ -111,8 +115,8 @@ function Home() {
             </span>
           </h1>
           <p className="hero-subtext">
-            Jenil Steel Pvt. Ltd. — your one stop steel solutions partner.
-            Premium TMT bars, structural steel, and integrated solutions for
+            Jenil Steel Pvt. Ltd. - your one stop steel solutions partner.
+            Premium Wire Rod Coils, structural steel, and integrated solutions for
             construction that stands the test of time.
           </p>
 
@@ -205,7 +209,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <hr className="custom-line" />
+      {/* <hr className="custom-line" /> */}
       <HowWeWork/>
       <Testimonials/>
       <VideoTestimonials/>

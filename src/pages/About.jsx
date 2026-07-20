@@ -1,6 +1,6 @@
 // About.jsx
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import jswLogo from "../assets/images/jsw-logo-jv.webp";
 import rinlLogo from "../assets/images/Rashtriya_Ispat_Nigam.svg.png";
@@ -9,8 +9,12 @@ import "./About.css";
 import about1 from '../assets/images/about1.png';
 import { useInView as useInViewObs } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
+import mukundLogo from '../assets/images/mukund.jpeg';
+import nicoLogo from '../assets/images/nico.png';
+import eslLogo from '../assets/images/esl.jpeg';
+import sailLogo from '../assets/images/sail.png';
 
-const logos = [jswLogo, rinlLogo, tataLogo];
+const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
 
 /* ─── DATA ARRAYS ─── */
 const VALUES = [
@@ -48,8 +52,8 @@ const MILESTONES = [
 const TEAM_MEMBERS = [
   { id: 0, name: 'Chandresh T Mehta', role: 'Director', details: 'With an expertise of over five decades, Chandresh Mehta has played a pivotal role in driving significant growth, expanding the business by a remarkable fourfold. His exceptional leadership ensures effective utilization of resources, fostering continuous growth and success.', image: 'https://z-cdn-media.chatglm.cn/files/3cbf4b2b-546b-4f91-b7b1-22c398497641.jpg?auth_key=1880034665-bd94b6957e4040d98f5c1c1a516cde6c-0-37231e8e7dccd69cb7a3e40934baaf00' },
   { id: 1, name: 'Bhavnesh J Doshi', role: 'Director', details: 'Leveraging his extensive four-decade experience, Bhavnesh Doshi plays a pivotal role in strategically orchestrating financial activities. He constructively challenges our commercial team, ensuring insightful decision-making.', image: 'https://z-cdn-media.chatglm.cn/files/e50c6d72-4850-4580-b5e4-1ad39c82e34e.jpg?auth_key=1880034665-ec18cd8f390c4ef2aa9044ce59de0157-0-599eed35849935ffa174203a822e3989' },
-  { id: 2, name: 'Drashti B Doshi', role: 'Business Strategy Manager', details: 'With a Masters from UK and 6 years in Wealth Management, Drashti excels at creating strategies aligned with company goals and identifying growth opportunities.', image: 'https://z-cdn-media.chatglm.cn/files/09c1192f-8b28-4c6d-b311-c47fe5d6980b.jpg?auth_key=1880034665-22a4ef8c883f4452a32b351e7476c56e-0-af8805c007a5f77d807c60acb4121e04' },
-  { id: 3, name: 'Jenil C Mehta', role: 'Business Head', details: 'A forward-thinking entrepreneur with two decades of experience, Jenil transforms the company\'s vision into reality. He holds an Executive FMBA from SP Jain Mumbai.', image: 'https://z-cdn-media.chatglm.cn/files/07cb192e-58a9-47fa-92e5-0e15f6871092.jpg?auth_key=1880034665-992da53f92cd45c1ae7caac4c806c99e-0-3f0f564dd67c17700bbed1b512c0fcc1' }
+  { id: 2, name: 'Jenil C Mehta', role: 'Business Head', details: 'A forward-thinking entrepreneur with two decades of experience, Jenil transforms the company\'s vision into reality. He holds an Executive FMBA from SP Jain Mumbai.', image: 'https://z-cdn-media.chatglm.cn/files/07cb192e-58a9-47fa-92e5-0e15f6871092.jpg?auth_key=1880034665-992da53f92cd45c1ae7caac4c806c99e-0-3f0f564dd67c17700bbed1b512c0fcc1' },
+  { id: 3, name: 'Drashti B Doshi', role: 'Business Strategy Manager', details: 'With a Masters from UK and 6 years in Wealth Management, Drashti excels at creating strategies aligned with company goals and identifying growth opportunities.', image: 'https://z-cdn-media.chatglm.cn/files/09c1192f-8b28-4c6d-b311-c47fe5d6980b.jpg?auth_key=1880034665-22a4ef8c883f4452a32b351e7476c56e-0-af8805c007a5f77d807c60acb4121e04' },
 ];
 
 /* ─── ANIMATED GRID BACKGROUND ─── */
@@ -240,13 +244,117 @@ function ValuesSection() {
   );
 }
 
-/* ─── TIMELINE SECTION (HORIZONTAL TRACK) ─── */
+/* ─── HELPER FUNCTION: SCROLL HANDLING ─── */
+function useTimelineScroll(trackRef) {
+  const [isScrolling, setIsScrolling] = useState(false);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const getClientX = (e) => e.touches ? e.touches[0].clientX : e.clientX;
+
+  const startScroll = () => {
+    if (!isDragging.current) {
+      isDragging.current = true;
+      setIsScrolling(true);
+    }
+  };
+
+  const stopScroll = () => {
+    if (isDragging.current) {
+      isDragging.current = false;
+      setIsScrolling(false);
+    }
+  };
+
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    startScroll();
+    startX.current = getClientX(e) - trackRef.current.offsetLeft;
+    scrollLeft.current = trackRef.current.scrollLeft;
+    trackRef.current.classList.add('scrolling-active');
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const x = getClientX(e) - trackRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5;
+    trackRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    e.preventDefault();
+    startScroll();
+    startX.current = getClientX(e) - trackRef.current.offsetLeft;
+    scrollLeft.current = trackRef.current.scrollLeft;
+    trackRef.current.classList.add('scrolling-active');
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const touch = e.touches[0];
+    const x = getClientX(e) - trackRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5;
+    trackRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  useEffect(() => {
+    const track = trackRef.current;
+
+    const handleGlobalMouseUp = () => {
+      if (isDragging.current) {
+        stopScroll();
+        track.classList.remove('scrolling-active');
+      }
+    };
+
+    const handleGlobalTouchEnd = () => {
+      if (isDragging.current) {
+        stopScroll();
+        track.classList.remove('scrolling-active');
+      }
+    };
+
+    const handleMouseLeave = () => {
+      if (isDragging.current) {
+        stopScroll();
+        track.classList.remove('scrolling-active');
+      }
+    };
+
+    track.addEventListener('mousedown', handleMouseDown);
+    track.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('mouseup', handleGlobalMouseUp);
+
+    track.addEventListener('touchstart', handleTouchStart, { passive: false });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchend', handleGlobalTouchEnd);
+
+    return () => {
+      track.removeEventListener('mousedown', handleMouseDown);
+      track.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mouseup', handleGlobalMouseUp);
+      track.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchend', handleGlobalTouchEnd);
+    };
+  }, [trackRef]);
+
+  return { isScrolling, startScroll, stopScroll };
+}
+
+/* ─── TIMELINE SECTION (HORIZONTAL AUTO-SCROLL) ─── */
 function TimelineSection() {
   const { ref, inView } = useInViewObs({ threshold: 0.1, triggerOnce: true });
+  const trackRef = useRef(null);
+
+  const { startScroll, stopScroll } = useTimelineScroll(trackRef);
 
   return (
     <section className="timeline-section-about-hz" ref={ref}>
-      <BlueprintGrid />
       <div className="section-header-about">
         <div className="section-label-about centered-about">
           <span className="label-line-about" style={{ width: inView ? '40px' : '0px', transition: 'width 0.8s ease' }} />
@@ -259,7 +367,7 @@ function TimelineSection() {
       </div>
 
       <div className="timeline-hz-wrapper">
-        <div className="timeline-hz-track">
+        <div className="timeline-hz-track" ref={trackRef} onMouseOver={startScroll} onMouseOut={stopScroll} onTouchStart={startScroll} onTouchEnd={stopScroll}>
           <div className="timeline-hz-spine" style={{ transform: inView ? 'scaleX(1)' : 'scaleX(0)' }} />
           
           {MILESTONES.map((item) => (

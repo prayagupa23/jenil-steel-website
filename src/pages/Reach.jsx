@@ -93,26 +93,20 @@ function OurReach() {
           {/* New content layer to fill out empty vertical spaces inside the card layout */}
           <div className="reach-hubs-distribution-block">
             <h4 className="hubs-grid-title">Key Operating & Supply Hubs</h4>
-            <div className="hubs-columns-grid">
-              <div className="hub-list-column">
-                <div className="hub-list-item"><span>›</span> Ahmedabad (HQ)</div>
-                <div className="hub-list-item"><span>›</span> Mumbai</div>
-                <div className="hub-list-item"><span>›</span> Pune</div>
-                <div className="hub-list-item"><span>›</span> Surat</div>
-              </div>
-              <div className="hub-list-column">
-                <div className="hub-list-item"><span>›</span> Delhi NCR</div>
-                <div className="hub-list-item"><span>›</span> Vadodara</div>
-                <div className="hub-list-item"><span>›</span> Jaipur</div>
-                <div className="hub-list-item"><span>›</span> Indore</div>
-              </div>
-              <div className="hub-list-column">
-                <div className="hub-list-item"><span>›</span> Jamshedpur</div>
-                <div className="hub-list-item"><span>›</span> Bokaro</div>
-                <div className="hub-list-item"><span>›</span> Raipur</div>
-                <div className="hub-list-item"><span>›</span> Kolkata</div>
-              </div>
-            </div>
+            <ul className="states-list">
+              <li className="state-item"><span>•</span> Maharashtra (Mumbai - HQ)</li>
+              <li className="state-item"><span>•</span> Gujarat</li>
+              <li className="state-item"><span>•</span> Maharashtra</li>
+              <li className="state-item"><span>•</span> Gujarat</li>
+              <li className="state-item"><span>•</span> Delhi</li>
+              <li className="state-item"><span>•</span> Gujarat</li>
+              <li className="state-item"><span>•</span> Rajasthan</li>
+              <li className="state-item"><span>•</span> Madhya Pradesh</li>
+              <li className="state-item"><span>•</span> Jharkhand</li>
+              <li className="state-item"><span>•</span> Jharkhand</li>
+              <li className="state-item"><span>•</span> Chhattisgarh</li>
+              <li className="state-item"><span>•</span> West Bengal</li>
+            </ul>
           </div>
         </div>
 

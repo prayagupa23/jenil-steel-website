@@ -10,8 +10,16 @@ import channels from '../assets/images/channels.jpeg';
 import jswLogo from "../assets/images/jsw-logo-jv.webp";
 import rinlLogo from "../assets/images/Rashtriya_Ispat_Nigam.svg.png";
 import tataLogo from "../assets/images/tata-steel-logo.png";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import structuralSteel from '../assets/images/structuralSteel.jpeg';
+import pipes from '../assets/images/pipes.jpeg';
+import mukundLogo from '../assets/images/mukund.jpeg';
+import nicoLogo from '../assets/images/nico.png';
+import eslLogo from '../assets/images/esl.jpeg';
+import sailLogo from '../assets/images/sail.png';
 
-const logos = [jswLogo, rinlLogo, tataLogo];
+const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
 
 const products = [
   {
@@ -19,81 +27,66 @@ const products = [
     title: "Wire Rods",
     description: "High-quality wire rods used in wire drawing, fasteners, electrodes, and engineering applications.",
     specs: [
-      { label: "Grade", value: "Low Carbon / High Carbon" },
-      { label: "Standard", value: "IS 7887" },
       { label: "Size", value: "5.5mm – 16mm" },
     ],
     image: wireRods,
+    brands: [jswLogo, rinlLogo, tataLogo],
   },
   {
     id: 2,
+    title: "Round Bars",
+    description: "Hot-rolled round bars suitable for machining, construction, engineering, and fabrication applications.",
+    specs: [
+      { label: "Size", value: "12mm – 100mm" },
+    ],
+    image: roundBars,
+    brands: [rinlLogo, tataLogo, jswLogo],
+  },  
+  {
+    id: 3,
     title: "TMT Bars",
     description: "Fe-500D & Fe-550D grade TMT bars with superior strength and ductility.",
     specs: [
-      { label: "Grade", value: "Fe-500D / Fe-550D" },
-      { label: "Standard", value: "IS 1786:2008" },
       { label: "Size", value: "8mm – 32mm" },
     ],
     image: tmtBar,
-  },
-  {
-    id: 3,
-    title: "Angles",
-    description: "Equal and unequal steel angles widely used in structural frameworks and fabrication projects.",
-    specs: [
-      { label: "Type", value: "Equal / Unequal" },
-      { label: "Standard", value: "IS 808" },
-      { label: "Size", value: "25×25mm – 200×200mm" },
-    ],
-    image: angels,
+    brands: [jswLogo, tataLogo, rinlLogo],
   },
   {
     id: 4,
     title: "Billets",
     description: "Steel billets used as raw material for manufacturing TMT bars, wire rods, and other rolled products.",
     specs: [
-      { label: "Grade", value: "MS / Carbon Steel" },
-      { label: "Standard", value: "IS 2830" },
       { label: "Size", value: "100×100mm – 150×150mm" },
     ],
     image: billets,
+    brands: [rinlLogo, jswLogo, tataLogo],
   },
   {
     id: 5,
-    title: "Round Bars",
-    description: "Hot-rolled round bars suitable for machining, construction, engineering, and fabrication applications.",
+    title: "Structural Steel",
+    description: "Engineered structural steel solutions comprising Channels, Beams, and Angles, delivering superior strength, durability, and performance across infrastructure and industrial applications.",
     specs: [
-      { label: "Grade", value: "MS / EN Series" },
-      { label: "Standard", value: "IS 2062" },
-      { label: "Size", value: "12mm – 100mm" },
-    ],
-    image: roundBars,
-  },
-  {
-    id: 6,
-    title: "Beams",
-    description: "Structural steel beams designed for superior load-bearing performance in industrial and commercial construction.",
-    specs: [
-      { label: "Type", value: "H-Beam / I-Beam" },
-      { label: "Standard", value: "IS 808 / IS 2062" },
       { label: "Size", value: "100mm – 600mm" },
     ],
-    image: beams,
-  },
+    image: structuralSteel,
+    brands: [tataLogo, jswLogo, rinlLogo],
+  },    
   {
-    id: 7,
-    title: "Channels",
-    description: "Steel channels used in structural support systems, fabrication works, and industrial frameworks.",
+    id: 6,
+    title: "Pipes",
+    description: "Equal and unequal steel angles widely used in structural frameworks and fabrication projects.",
     specs: [
-      { label: "Type", value: "ISMC / ISSC" },
-      { label: "Standard", value: "IS 808" },
-      { label: "Size", value: "75mm – 400mm" },
+      { label: "Size", value: "25×25mm – 200×200mm" },
     ],
-    image: channels,
-  },  
+    image: pipes,
+    brands: [jswLogo, rinlLogo, tataLogo],
+  }
 ];
 
-function ProductCard({ product }) {
+function ProductCard({ product, onOpenModal }) {
+  const isMobile = () => window.innerWidth < 768;
+
   return (
     <div className="product-card">
       {/* Full-card background image */}
@@ -106,7 +99,7 @@ function ProductCard({ product }) {
       <div className="card-content">
         <div className="card-accent-line" />
         <h3 className="card-title">{product.title}</h3>
-        <p className="card-description">{product.description}</p>
+        
         <div className="card-specs">
           {product.specs.map((spec) => (
             <div className="spec-row" key={spec.label}>
@@ -115,8 +108,98 @@ function ProductCard({ product }) {
             </div>
           ))}
         </div>
+        
+        {isMobile() ? (
+          <button 
+            className="card-know-more-btn"
+            onClick={() => onOpenModal(product)}
+          >
+            Know More
+          </button>
+        ) : (
+          <div className="card-know-more-container">
+            <button 
+              className="card-know-more-btn"
+              onClick={() => onOpenModal(product)}
+            >
+              Know More
+            </button>
+          </div>
+        )}
       </div>
     </div>
+  );
+}
+
+function ProductModal({ product, onClose }) {
+  if (!product) return null;
+
+  return (
+    <AnimatePresence>
+      {product && (
+        <motion.div 
+          className="product-modal-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+        >
+          <motion.div 
+            className="product-modal-card"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+            transition={{ type: "spring", damping: 25, stiffness: 180 }}
+            onClick={(e) => e.stopPropagation()} // Prevents accidental background closing clicks
+          >
+            {/* Close Button Button Element */}
+            <button 
+              className="product-modal-close-btn" 
+              onClick={onClose}
+              aria-label="Close Modal"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            <div className="product-modal-body">
+              {/* Left Side: Dynamic Image Layout */}
+              <div className="product-modal-img-container">
+                <img src={product.image} alt={product.title} />
+                <div className="product-modal-caption">
+                  <h3 className="product-modal-name">{product.title}</h3>
+                  <p className="product-modal-description">{product.description}</p>
+                </div>
+              </div>
+
+              {/* Right Side: Bio Text Content Panel */}
+              <div className="product-modal-content-container">
+                <div className="product-modal-specs">
+                  {product.specs.map((spec, index) => (
+                    <div className="spec-row-modal" key={spec.label}>
+                      <span className="spec-label-modal">{spec.label}</span>
+                      <span className="spec-value-modal">{spec.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="product-modal-brands-container">
+                  <p className="brands-title">Companies We Stock</p>
+                  <div className="product-modal-brands">
+                    {product.brands.map((brand, idx) => (
+                      <div className="brand-logo" key={brand}>
+                        <img src={brand} alt={`Company logo ${idx}`} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
@@ -185,8 +268,26 @@ function ClientsStrip() {
 }
 
 function Products() {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleOpenProductModal = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const handleCloseProductModal = () => {
+    setSelectedProduct(null);
+  };
+
+  // Make modal accessible globally for the card component
+  window.showProductModal = (product) => {
+    handleOpenProductModal(product);
+  };
+
   return (
     <div className="products-page">
+      {/* Product Modal Portal */}
+      <ProductModal product={selectedProduct} onClose={handleCloseProductModal} />
+
       {/* Hero Banner */}
       <section className="products-hero">
       <div className="hero-bg-products">
@@ -232,7 +333,7 @@ function Products() {
       <section className="products-section">
         <div className="products-grid">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} onOpenModal={handleOpenProductModal} />
           ))}
         </div>
       </section>

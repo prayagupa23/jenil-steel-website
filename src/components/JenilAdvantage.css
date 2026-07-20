@@ -7,6 +7,11 @@
   justify-content: center;
 }
 
+/* Ensure no visual gap appears below this section */
+.jenil-advantage-section {
+  margin-bottom: 0;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;

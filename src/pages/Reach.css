@@ -484,6 +484,48 @@
 }
 
 /* =========================================
+   States List Styles
+   ========================================= */
+
+.states-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.state-item {
+  font-size: 0.95rem;
+  color: #4a5568;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.state-item span {
+  color: #e07830;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Responsive adjustment layers */
+@media (max-width: 991px) {
+  .states-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .states-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* =========================================
    TABLET
 ========================================= */
 @media (max-width: 1024px) {
