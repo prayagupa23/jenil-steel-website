@@ -92,6 +92,9 @@ function OurReach() {
           
           {/* New content layer to fill out empty vertical spaces inside the card layout */}
           <div className="reach-hubs-distribution-block">
+            <p className="reach-section-description">
+              From our headquarters in Mumbai, Jenil Steel operates across India's most active steel markets — reaching manufacturers, re-rollers, and businesses in Gujarat, Delhi, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, and West Bengal. Our supply network is built for speed, reliability, and consistency — so the right steel reaches the right place, at the right time.
+            </p>
             <ul className="states-list">
               <li className="state-item"><span>•</span> Maharashtra (Mumbai - HQ)</li>
               <li className="state-item"><span>•</span> Gujarat</li>
@@ -116,6 +119,14 @@ function OurReach() {
               <p className="reach-usp-description">
                 Our extensive distribution network enables us to efficiently supply quality steel products to customers across major industrial and infrastructure hubs throughout India. By maintaining deep inventory levels and streamlined dispatch systems, we bridge the gap between primary production plants and your project site.
               </p>
+              <ul className="reach-usp-points">
+                <li>Pan-India Distribution Network</li>
+                <li>Ready Stock for Faster Dispatch</li>
+                <li>On-Time Delivery Commitment</li>
+                <li>Efficient Logistics & Supply Chain</li>
+                <li>Serving Infrastructure & Industrial Projects</li>
+                <li>Reliable Support from Order to Delivery</li>
+              </ul>
             </div>
             <div className="reach-usp-image-wrapper">
               <div className="reach-usp-image-frame">
