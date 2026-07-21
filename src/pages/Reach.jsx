@@ -6,6 +6,11 @@ import truckVideo from "../assets/ourReach.mp4";
 import indiaMapImg from "../assets/images/map.jpeg"; 
 import fastDelivery from '../assets/images/truck.png';
 import usp from '../assets/images/usp.jpeg';
+import logistics from '../assets/images/logistics.png';
+import productDev from '../assets/images/product_dev.png';
+import productMix from '../assets/images/product_mix.png';
+import tailoredSol from '../assets/images/tailored_solution.png';
+import sizeMax from '../assets/images/sizeMax.jpeg'
 
 function OurReach() {
   return (
@@ -135,6 +140,185 @@ function OurReach() {
                   alt="Steel manufacturing process" 
                   className="reach-usp-main-img"
                 />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       {/* Horizontal Marquee Section - Our Capabilities */}
+      <section className="reach-our-capabilities-section">
+        <div className="reach-our-capabilities-header">
+          <h3 className="reach-our-usp-title">Our USPs</h3>
+        </div>
+        
+        <div className="reach-marquee-wrapper">
+          <div className="reach-marquee-track">
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={fastDelivery}
+                  alt="Timely Delivery" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Timely Delivery</h4>
+                <p className="reach-capability-description">Project completion precision and on-schedule efficiency</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={logistics}
+                  alt="Logistics" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Logistics</h4>
+                <p className="reach-capability-description">Supply chain optimization for seamless project execution</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={productDev} 
+                  alt="Product Development" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Product Development</h4>
+                <p className="reach-capability-description">Industry-specific steel innovation tailored</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={productMix}
+                  alt="Product Mix" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Product Mix</h4>
+                <p className="reach-capability-description">High-quality steel range for diverse applications</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={tailoredSol}
+                  alt="Tailored Solutions" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Tailored Solutions</h4>
+                <p className="reach-capability-description">Custom steel solutions for unique client needs</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={sizeMax} 
+                  alt="Size Max" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Size Max</h4>
+                <p className="reach-capability-description">Diverse size options for all project scale needs</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={fastDelivery}
+                  alt="Timely Delivery" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Timely Delivery</h4>
+                <p className="reach-capability-description">Project completion precision and on-schedule efficiency</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={logistics}
+                  alt="Logistics" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Logistics</h4>
+                <p className="reach-capability-description">Supply chain optimization for seamless execution</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={productDev}
+                  alt="Product Development" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Product Development</h4>
+                <p className="reach-capability-description">Industry-specific steel innovation tailored</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={productMix}
+                  alt="Product Mix" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Product Mix</h4>
+                <p className="reach-capability-description">Quality steel range for diverse applications</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={tailoredSol}
+                  alt="Tailored Solutions" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Tailored Solutions</h4>
+                <p className="reach-capability-description">Custom steel solutions for unique needs</p>
+              </div>
+            </div>
+
+            <div className="reach-capability-card">
+              <div className="reach-capability-image-wrapper">
+                <img 
+                  src={sizeMax}
+                  alt="Size Max" 
+                  className="reach-capability-image"
+                />
+              </div>
+              <div className="reach-capability-content">
+                <h4 className="reach-capability-title">Size Max</h4>
+                <p className="reach-capability-description">Diverse size options for all project scales</p>
               </div>
             </div>
           </div>

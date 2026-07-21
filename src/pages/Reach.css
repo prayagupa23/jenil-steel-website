@@ -484,20 +484,24 @@
 }
 
 /* =========================================
-   States List Styles
-   ========================================= */
+    States List Styles
+    ========================================= */
 
 .states-list {
   list-style: none;
-  padding-top: 50px;
+  padding-top: 15px;
   margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding-left: 0;
+  margin-left: 0;
+  max-width: 100%;
 }
 
 .state-item {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #4a5568;
   font-weight: 600;
   display: flex;
@@ -598,5 +602,387 @@
   .breadcrumb-home-svg {
     width: 14px;
     height: 14px;
+  }
+}
+
+/**
+ * REACH PAGE - OUR CAPABILITIES HORIZONTAL MARQUEE SECTION
+ * This section displays the 6 capability cards with smooth animation
+ */
+.reach-our-capabilities-section {
+  background: linear-gradient(to bottom, #ffffff 0%, #fbfbfb 100%);
+  padding: 60px 0;
+  margin: 0 0 3rem 0;
+}
+
+.reach-our-usp-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0e1b2e;
+  margin: 0 auto 50px auto;
+  letter-spacing: -0.01em;
+  position: relative;
+  text-align: center;
+}
+
+.reach-our-usp-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2.5px;
+  background-color: #e07830;
+  border-radius: 2px;
+}
+
+.reach-our-capabilities-header {
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+}
+
+.reach-marquee-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.reach-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  animation: reachMarquee 30s linear infinite;
+}
+
+.reach-marquee-wrapper:hover .reach-marquee-track {
+  animation-play-state: paused;
+}
+
+.reach-capability-card {
+  width: 240px;
+  height: 320px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.reach-capability-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(224, 120, 48, 0.12);
+  border-color: rgba(224, 120, 48, 0.2);
+}
+
+.reach-capability-image-wrapper {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.reach-capability-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: grayscale(15%) brightness(0.95);
+}
+
+.reach-capability-card:hover .reach-capability-image {
+  transform: scale(1.08);
+  filter: grayscale(0%) brightness(1.0);
+}
+
+.reach-capability-content {
+  padding: 16px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.9) 100%);
+  position: relative;
+  z-index: 2;
+}
+
+.reach-capability-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e07830;
+  margin: 0;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.reach-capability-description {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #0e1b2e;
+  margin: 10px 0 0 0;
+  text-align: center;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.reach-capability-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(224, 120, 48, 0.15);
+  border-color: rgba(224, 120, 48, 0.3);
+}
+
+@keyframes reachMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33333%); }
+}
+
+/* Responsive breakpoints */
+
+@media (max-width: 991px) {
+  .reach-our-capabilities-section {
+    padding: 50px 0;
+  }
+
+  .reach-capability-card {
+    width: 220px;
+    height: 300px;
+  }
+
+  .reach-capability-image-wrapper {
+    height: 180px;
+  }
+
+  .reach-capability-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reach-our-capabilities-section {
+    padding: 40px 0;
+  }
+
+  .reach-capabilities-title {
+    font-size: 1.1rem;
+  }
+
+  .reach-capability-card {
+    width: 200px;
+    height: 280px;
+  }
+
+  .reach-capability-image-wrapper {
+    height: 160px;
+  }
+
+  .reach-capability-content {
+    padding: 14px;
+  }
+
+  .reach-capability-title {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .reach-our-capabilities-section {
+    padding: 30px 0;
+  }
+
+  .reach-capability-card {
+    width: 180px;
+    height: 260px;
+  }
+
+  .reach-capability-image-wrapper {
+    height: 140px;
+  }
+
+  .reach-capability-content {
+    padding: 12px;
+  }
+
+  .reach-capability-title {
+    font-size: 0.9rem;
+  }
+}
+
+.marquee-fade-container-services {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.marquee-track-services { width: 100%; overflow: hidden; }
+
+.marquee-content-services {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: marqueeSlide 30s linear infinite;
+  gap: 20px;
+}
+
+.clients-strip-services:hover .marquee-content-services { animation-play-state: paused; }
+
+.reach-marquee-card {
+  width: 220px;
+  height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.reach-marquee-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(224, 120, 48, 0.2);
+}
+
+.reach-card-image-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.reach-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: grayscale(10%) brightness(0.95);
+}
+
+.reach-marquee-card:hover .reach-card-image {
+  transform: scale(1.05);
+  filter: grayscale(0%) brightness(1.0);
+}
+
+.reach-card-content {
+  padding: 14px 16px;
+  background: #ffffff;
+}
+
+.reach-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0e1b2e;
+  margin: 0;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+@keyframes marqueeSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+
+/* Responsive breakpoints */
+
+@media (max-width: 991px) {
+  .clients-strip-services {
+    padding: 2rem 0.5rem;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .reach-marquee-card {
+    width: 200px;
+    height: 260px;
+  }
+
+  .reach-card-image-wrapper {
+    height: 160px;
+  }
+
+  .reach-card-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-strip-services {
+    padding: 1.5rem 0.5rem;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .clients-title-services {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .reach-marquee-card {
+    width: 180px;
+    height: 240px;
+  }
+
+  .reach-card-image-wrapper {
+    height: 140px;
+  }
+
+  .reach-card-content {
+    padding: 12px 14px;
+  }
+
+  .reach-card-title {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .clients-strip-services {
+    padding: 1.25rem 0.5rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .reach-marquee-card {
+    width: 160px;
+    height: 220px;
+  }
+
+  .reach-card-image-wrapper {
+    height: 120px;
+  }
+
+  .reach-card-content {
+    padding: 10px 12px;
+  }
+
+  .reach-card-title {
+    font-size: 0.9rem;
   }
 }

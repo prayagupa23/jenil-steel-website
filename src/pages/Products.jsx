@@ -18,6 +18,7 @@ import mukundLogo from '../assets/images/mukund.jpeg';
 import nicoLogo from '../assets/images/nico.png';
 import eslLogo from '../assets/images/esl.jpeg';
 import sailLogo from '../assets/images/sail.png';
+import aboutIndustry from '../assets/images/about-industry.jpeg';
 
 const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
 
@@ -87,8 +88,14 @@ const products = [
 function ProductCard({ product, onOpenModal }) {
   const isMobile = () => window.innerWidth < 768;
 
+  const handleCardClick = (e) => {
+    e.stopPropagation();
+    if (e.target.closest('a, button')) return;
+    onOpenModal(product);
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleCardClick}>
       {/* Full-card background image */}
       <img src={product.image} alt={product.title} className="card-image" />
 
@@ -212,7 +219,7 @@ function AboutIndustry() {
         <div className="about-industry-image-wrapper">
           <div className="about-industry-image-frame">
             <img 
-              src="https://media.gettyimages.com/id/1186090913/photo/steelworkers-looking-on-during-steel-pour-in-steelworks.jpg?s=612x612&w=0&k=20&c=bUlPwDX-gamFoRu0-KvYhZ61n0WuQuU5fQ_6ZRhea3Y=" 
+              src={aboutIndustry}
               alt="Worker in industrial factory" 
               className="about-industry-main-img"
             />
