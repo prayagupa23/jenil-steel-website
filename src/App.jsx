@@ -9,6 +9,7 @@ import CSR from './pages/CSR';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Reach from './pages/Reach';
+import Careers from './pages/Careers';
 import ScrollToTop from './components/ScrollToTop';
 // import MiddleScrollToTop from './components/MiddleScrollToTop';
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/reach" element={<Reach/>}/>
           <Route path="/csr" element={<CSR />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <WhatsAppButton />

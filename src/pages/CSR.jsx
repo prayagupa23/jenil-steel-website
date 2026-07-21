@@ -84,9 +84,14 @@ function CSR() {
             <h2 className="about-industry-heading">
               CSR Committee
             </h2>
-            <p className="about-industry-subtext">
-              Jenil Steel offers a comprehensive range of high-quality steel products sourced from leading manufacturers across India. Our portfolio includes Wire Rods, TMT Bars, Billets, Beams, Channels, Angles, Flats, and other structural steel solutions designed to meet diverse industrial requirements. With a strong focus on quality, reliability, and timely delivery, we ensure that every product meets the highest industry standards and supports the success of our customers' projects.
-            </p>
+            <ul className="about-industry-subtext">
+              <li>Wire Rods - high-quality reinforcement for construction and industrial applications</li>
+              <li>TMT Bars - thermo-mechanically treated bars with superior strength and ductility</li>
+              <li>Billets - semi-finished steel for further processing and forging</li>
+              <li>Beams - structural load-bearing sections for large-scale infrastructure projects</li>
+              <li>Channels, Angles &amp; Flats - versatile structural profiles for fabrication and engineering</li>
+              <li>Other structural steel solutions tailored to meet diverse industrial requirements</li>
+            </ul>
           </div>
           
         </div>
@@ -286,7 +291,7 @@ function CSR() {
           </div>
 
           {/* Card 6 */}
-          <div className="csr-display-grid-card">
+          {/* <div className="csr-display-grid-card">
             <div className="grid-card-image-box">
               <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&q=80" alt="Sports & Youth" />
             </div>
@@ -303,7 +308,7 @@ function CSR() {
               <h3 className="grid-card-title">Sports & Youth</h3>
               <p className="grid-card-desc">Sponsoring tournaments and supporting athletes from rural areas.</p>
             </div>
-          </div>
+          </div> */}
 
         </div>
 

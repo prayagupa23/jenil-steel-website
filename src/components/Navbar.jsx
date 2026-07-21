@@ -10,6 +10,7 @@ const navItems = [
   { label: 'Industries We Serve', to: '/services' },
   { label: 'Our Reach', to: '/reach' },
   { label: 'CSR', to: '/csr' },
+  { label: 'Careers', to: '/careers' },
   { label: 'Contact', to: '/contact' },
 ];
 

@@ -642,12 +642,13 @@
 
 /* Left Image Container with Hover Zoom effect */
 .about-industry-image-wrapper {
-  flex: 1;
-  max-width: 50%;
+  flex: 0 0 38%;
+  max-width: 38%;
 }
 
 .about-industry-image-frame {
   width: 100%;
+  aspect-ratio: 4 / 3;
   border-radius: 12px;
   overflow: hidden; /* Keeps the scaling image safely inside borders */
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
@@ -656,7 +657,7 @@
 
 .about-industry-main-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
   transform: scale(1);
@@ -682,16 +683,35 @@
   font-weight: 800;
   line-height: 1.15;
   color: #0e1b2e; 
-  margin: 0 0 20px 0;
+  margin: 0;
   letter-spacing: -0.02em;
   font-family: 'Segoe UI', sans-serif;
 }
 
 .about-industry-subtext {
-  font-size: 1rem;
-  line-height: 1.6;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 35px 0;
+}
+
+.about-industry-subtext li {
+  font-size: 1.1rem;
+  line-height: 1.8;
   color: #6c757d;
-  margin-bottom: 35px;
+  padding: 6px 0 6px 24px;
+  position: relative;
+}
+
+.about-industry-subtext li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #e07830;
+  flex-shrink: 0;
 }
 
 /* Mini Features row grid */
