@@ -92,10 +92,10 @@ function AboutIndustry() {
 
         {/* Right Side: Text details */}
         <div className="about-industry-text-wrapper">
-          <h2 className="about-industry-heading">
+          <h2 className="about-industry-heading-services">
             The best solution for all industries and factories
           </h2>
-          <p className="about-industry-subtext">
+          <p className="about-industry-subtext-services">
             Jenil Steel caters to a wide range of industries that drive India's growth and development. Our steel solutions serve Infrastructure, Construction, Automotive, Power & Energy, Engineering, Agriculture, Railways, and Defense sectors, providing the strength, durability, and performance required for critical applications. Backed by decades of industry expertise, we help businesses build, manufacture, and innovate with confidence.
           </p>
 

@@ -457,8 +457,8 @@
   flex: 1;
 }
 
-.about-industry-heading {
-  font-size: 2.8rem;
+.about-industry-heading-products {
+  font-size: 2.5rem;
   font-weight: 800;
   line-height: 1.15;
   color: #0e1b2e; 
@@ -467,9 +467,9 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-.about-industry-subtext {
-  font-size: 2.5rem;
-  line-height: 1.7;
+.about-industry-subtext-products {
+  font-size: 1.2rem;
+  line-height: 1.6;
   color: #6c757d;
   margin-bottom: 35px;
   margin-top: 35px;

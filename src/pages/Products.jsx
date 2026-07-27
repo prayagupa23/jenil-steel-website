@@ -228,10 +228,10 @@ function AboutIndustry() {
 
         {/* Right Side: Text details */}
         <div className="about-industry-text-wrapper">
-          <h2 className="about-industry-heading">
+          <h2 className="about-industry-heading-products">
             Engineered for Strength. Trusted for Generations.
           </h2>
-          <p className="about-industry-subtext">
+          <p className="about-industry-subtext-products">
             Jenil Steel offers a comprehensive range of high-quality steel products sourced from leading manufacturers across India. Our portfolio includes Wire Rods, TMT Bars, Billets, Beams, Channels, Angles, Flats, and other structural steel solutions designed to meet diverse industrial requirements. With a strong focus on quality, reliability, and timely delivery, we ensure that every product meets the highest industry standards and supports the success of our customers' projects.
           </p>
 

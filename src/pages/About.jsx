@@ -13,7 +13,12 @@ import mukundLogo from '../assets/images/mukund.jpeg';
 import nicoLogo from '../assets/images/nico.png';
 import eslLogo from '../assets/images/esl.jpeg';
 import sailLogo from '../assets/images/sail.png';
-import usp from '../assets/images/usp.jpeg';
+import fastDelivery from '../assets/images/truck.png';
+import logistics from '../assets/images/logistics.png';
+import productDev from '../assets/images/product_dev.png';
+import productMix from '../assets/images/product_mix.png';
+import tailoredSol from '../assets/images/tailored_solution.png';
+import sizeMax from '../assets/images/sizeMax.jpeg';
 
 const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
 
@@ -130,7 +135,7 @@ function HeroSection() {
           <span className="breadcrumb-current-about">About</span>
         </nav>
         <h1 className="hero-heading-about">
-          ABOUT <span className="hero-heading-accent-about">US</span>
+          About <span className="hero-heading-accent-about">Us</span>
         </h1>
       </div>
     </section>
@@ -538,64 +543,119 @@ export default function About() {
     <div className="about-page">
       <HeroSection />
       <AboutContent />
-            {/* Our USP Section */}
-      <section className="our-usp-section">
-        <div className="our-usp-container">
-          <h2 className="our-usp-title">Our Unique Selling Propositions</h2>
-          <div className="our-usp-content">
-            <div className="our-usp-features">
-              <ul className="usp-items">
-                <li className="usp-item">
-                  <span className="usp-number">01</span>
-                  <div className="usp-text">
-                    <h3>Timely Delivery</h3>
-                    <p>Ensuring on-schedule project completion with precision and efficiency</p>
-                  </div>
-                </li>
-                <li className="usp-item">
-                  <span className="usp-number">02</span>
-                  <div className="usp-text">
-                    <h3>Logistics</h3>
-                    <p>Streamlined supply chain management for optimal project execution</p>
-                  </div>
-                </li>
-                <li className="usp-item">
-                  <span className="usp-number">03</span>
-                  <div className="usp-text">
-                    <h3>Product Development</h3>
-                    <p>Innovative steel solutions tailored to industry-specific requirements</p>
-                  </div>
-                </li>
-                <li className="usp-item">
-                  <span className="usp-number">04</span>
-                  <div className="usp-text">
-                    <h3>Product Mix</h3>
-                    <p>Diverse range of high-quality steel products for all applications</p>
-                  </div>
-                </li>
-                <li className="usp-item">
-                  <span className="usp-number">05</span>
-                  <div className="usp-text">
-                    <h3>Tailored Solutions</h3>
-                    <p>Customized service packages addressing unique client challenges</p>
-                  </div>
-                </li>
-                <li className="usp-item">
-                  <span className="usp-number">06</span>
-                  <div className="usp-text">
-                    <h3>Size Max</h3>
-                    <p>Comprehensive size range to meet diverse project requirements.</p>
-                  </div>
-                </li>                
-              </ul>
+      {/* Our USP Section - Marquee Cards */}
+      <section className="about-usp-marquee-section">
+        <div className="about-usp-marquee-header">
+          <h3 className="about-usp-title">Our USPs</h3>
+        </div>
+        <div className="about-usp-marquee-wrapper">
+          <div className="about-usp-marquee-track">
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={fastDelivery} alt="Timely Delivery" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Timely Delivery</h4>
+                <p className="about-usp-card-desc">Project completion precision and on-schedule efficiency</p>
+              </div>
             </div>
-            <div className="our-usp-image-wrapper">
-              <div className="our-usp-image-frame">
-                <img 
-                  src={usp}
-                  alt="Steel manufacturing process" 
-                  className="our-usp-main-img"
-                />
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={logistics} alt="Logistics" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Logistics</h4>
+                <p className="about-usp-card-desc">Supply chain optimization for seamless project execution</p>
+              </div>
+            </div>
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={productDev} alt="Product Development" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Product Development</h4>
+                <p className="about-usp-card-desc">Industry-specific steel innovation tailored</p>
+              </div>
+            </div>
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={productMix} alt="Product Mix" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Product Mix</h4>
+                <p className="about-usp-card-desc">High-quality steel range for diverse applications</p>
+              </div>
+            </div>
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={tailoredSol} alt="Tailored Solutions" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Tailored Solutions</h4>
+                <p className="about-usp-card-desc">Custom steel solutions for unique client needs</p>
+              </div>
+            </div>
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={sizeMax} alt="Size Max" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Size Max</h4>
+                <p className="about-usp-card-desc">Diverse size options for all project scale needs</p>
+              </div>
+            </div>
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={fastDelivery} alt="Timely Delivery" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Timely Delivery</h4>
+                <p className="about-usp-card-desc">Project completion precision and on-schedule efficiency</p>
+              </div>
+            </div>
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={logistics} alt="Logistics" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Logistics</h4>
+                <p className="about-usp-card-desc">Supply chain optimization for seamless execution</p>
+              </div>
+            </div>
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={productDev} alt="Product Development" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Product Development</h4>
+                <p className="about-usp-card-desc">Industry-specific steel innovation tailored</p>
+              </div>
+            </div>
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={productMix} alt="Product Mix" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Product Mix</h4>
+                <p className="about-usp-card-desc">Quality steel range for diverse applications</p>
+              </div>
+            </div>
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={tailoredSol} alt="Tailored Solutions" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Tailored Solutions</h4>
+                <p className="about-usp-card-desc">Custom steel solutions for unique needs</p>
+              </div>
+            </div>
+            <div className="about-usp-card">
+              <div className="about-usp-image-wrapper">
+                <img src={sizeMax} alt="Size Max" className="about-usp-image" />
+              </div>
+              <div className="about-usp-content">
+                <h4 className="about-usp-card-title">Size Max</h4>
+                <p className="about-usp-card-desc">Diverse size options for all project scales</p>
               </div>
             </div>
           </div>

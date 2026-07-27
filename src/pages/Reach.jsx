@@ -71,6 +71,37 @@ function OurReach() {
         </div>
       </section>
 
+            {/* Our USP Section */}
+      <section className="reach-usp-section">
+        <div className="reach-usp-container">
+          <h2 className="reach-usp-title">Our Reach</h2>
+          <div className="reach-usp-content">
+            <div className="reach-usp-features">
+              <p className="reach-usp-description">
+                Our extensive distribution network enables us to efficiently supply quality steel products to customers across major industrial and infrastructure hubs throughout India. By maintaining deep inventory levels and streamlined dispatch systems, we bridge the gap between primary production plants and your project site.
+              </p>
+              <ul className="reach-usp-points">
+                <li>Pan-India Distribution Network</li>
+                <li>Ready Stock for Faster Dispatch</li>
+                <li>On-Time Delivery Commitment</li>
+                <li>Efficient Logistics & Supply Chain</li>
+                <li>Serving Infrastructure & Industrial Projects</li>
+                <li>Reliable Support from Order to Delivery</li>
+              </ul>
+            </div>
+            <div className="reach-usp-image-wrapper">
+              <div className="reach-usp-image-frame">
+                <img 
+                  src={usp}
+                  alt="Steel manufacturing process" 
+                  className="reach-usp-main-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. EXPANDED MAP CONNECTIONS GRID SECTION */}
       <section className="reach-map-split-container">
         
@@ -114,38 +145,6 @@ function OurReach() {
         </div>
 
       </section>
-
-            {/* Our USP Section */}
-      <section className="reach-usp-section">
-        <div className="reach-usp-container">
-          <h2 className="reach-usp-title">Our Reach</h2>
-          <div className="reach-usp-content">
-            <div className="reach-usp-features">
-              <p className="reach-usp-description">
-                Our extensive distribution network enables us to efficiently supply quality steel products to customers across major industrial and infrastructure hubs throughout India. By maintaining deep inventory levels and streamlined dispatch systems, we bridge the gap between primary production plants and your project site.
-              </p>
-              <ul className="reach-usp-points">
-                <li>Pan-India Distribution Network</li>
-                <li>Ready Stock for Faster Dispatch</li>
-                <li>On-Time Delivery Commitment</li>
-                <li>Efficient Logistics & Supply Chain</li>
-                <li>Serving Infrastructure & Industrial Projects</li>
-                <li>Reliable Support from Order to Delivery</li>
-              </ul>
-            </div>
-            <div className="reach-usp-image-wrapper">
-              <div className="reach-usp-image-frame">
-                <img 
-                  src={usp}
-                  alt="Steel manufacturing process" 
-                  className="reach-usp-main-img"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
        {/* Horizontal Marquee Section - Our Capabilities */}
       <section className="reach-our-capabilities-section">
         <div className="reach-our-capabilities-header">
