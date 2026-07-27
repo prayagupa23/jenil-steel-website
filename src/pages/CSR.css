@@ -461,6 +461,7 @@
   box-shadow: 0 4px 12px rgba(14, 27, 46, 0.02);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
               box-shadow 0.4s ease, 
               border-color 0.4s ease;
@@ -603,6 +604,171 @@
   .csr-cards-grid-layout { grid-template-columns: 1fr; }
   .csr-counters-flex-container { grid-template-columns: 1fr; }
   .grid-card-image-box { height: 180px; }
+}
+
+/* =========================================
+   CSR Modal / Lightbox Gallery
+   ========================================= */
+
+.csr-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(14, 27, 46, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.csr-modal-content {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  animation: modalSlideUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.csr-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 16px 24px;
+  min-height: 56px;
+}
+
+.csr-modal-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f5f9;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.csr-modal-close:hover {
+  background: #e07830;
+}
+
+.csr-modal-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.csr-modal-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0e1b2e;
+  margin: 0;
+}
+
+.csr-modal-slideshow {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.csr-modal-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.csr-modal-slide.active {
+  opacity: 1;
+}
+
+.csr-modal-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.csr-modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(14, 27, 46, 0.6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.csr-modal-arrow:hover {
+  background: #e07830;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.csr-modal-arrow svg {
+  width: 22px;
+  height: 22px;
+}
+
+.csr-modal-arrow-left {
+  left: 12px;
+}
+
+.csr-modal-arrow-right {
+  right: 12px;
+}
+
+.csr-modal-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px 20px 24px;
+}
+
+.csr-modal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.csr-modal-dot.active {
+  background: #e07830;
+  transform: scale(1.25);
+}
+
+.csr-modal-dot:hover {
+  background: #e07830;
 }
 
 /* =========================================

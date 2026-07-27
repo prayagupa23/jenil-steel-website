@@ -12,11 +12,108 @@ import csr6 from "../assets/images/csr6.jpg";
 import csr7 from "../assets/images/csr7.jpg";
 import csr8 from "../assets/images/csr8.jpg";
 import csrMain from "../assets/images/csr_main.jpeg";
+import education1 from "../assets/images/education1.JPG";
+import education2 from "../assets/images/education2.jpeg";
+import education3 from "../assets/images/education_3.jpeg";
+import healthcare1 from "../assets/images/healthcare1.jpeg";
+import healthcare2 from "../assets/images/healthcare2.jpeg";
+import healthcare3 from "../assets/images/healthcare3.jpeg";
+import environment1 from "../assets/images/environment1.jpeg";
+import environment2 from "../assets/images/environment2.jpeg";
+import environment3 from "../assets/images/environment3.jpeg";
+import community1 from "../assets/images/community1.jpeg";
+import community2 from "../assets/images/community2.jpeg";
+import community3 from "../assets/images/community3.jpeg";
 
 const CAROUSEL_IMAGES = [csr1, csr2, csr3, csr4, csr5, csr6, csr7, csr8];
 
+const GRID_CARDS_DATA = [
+  {
+    id: 1,
+    title: "Education & Skill Development",
+    desc: "Supporting local schools, scholarships, and vocational training.",
+    images: [
+      { src: education1, title: "Z.P School, Chinchani, Dahanu - 2021-22" },
+      { src: education2, title: "Sulabha School" },
+      { src: education3, title: "Z.P School, Mategaon - 2024-25" },
+    ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+        <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+      </svg>
+    ),
+  },
+  {
+    id: 2,
+    title: "Healthcare & Wellness",
+    desc: "Free health camps, blood donation drives, and medical support.",
+    images: [
+      { src: healthcare1, title: "Ghatkopar Kapol Mahajan 2024" },
+      { src: healthcare2, title: "Ghatkopar Kapol Mahajan 2024" },
+      { src: healthcare3, title: "Ghatkopar Kapol Mahajan 2024" },
+    ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+      </svg>
+    ),
+  },
+  {
+    id: 3,
+    title: "Environment & Sustainability",
+    desc: "Tree plantation drives, rainwater harvesting, sustainable practices.",
+    images: [
+      { src: environment1, title: "Jeevan Sandhya Mangalya Sanstha - Matoshree Vruddhaashram 2023-24" },
+      { src: environment2, title: "Jeevan Sandhya Mangalya Sanstha - Matoshree Vruddhaashram 2023-24" },
+      { src: environment3, title: "Jeevan Sandhya Mangalya Sanstha - Matoshree Vruddhaashram 2023-24" },
+    ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+        <path d="M12 6v6l4 2" />
+      </svg>
+    ),
+  },
+  {
+    id: 4,
+    title: "Community Welfare",
+    desc: "Supporting festivals, calamity relief, and local infrastructure.",
+    images: [
+      { src: community1, title: "Omkar Andha KEVK Ghatkopar East 2024-25" },
+      { src: community2, title: "Omkar Andha KEVK Ghatkopar East 2024-25" },
+      { src: community3, title: "Omkar Andha KEVK Ghatkopar East 2024-25" },
+    ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+  {
+    id: 5,
+    title: "Animal Welfare",
+    desc: "Supporting animal welfare through care, protection, and community initiatives.",
+    images: [
+      { src: csr2, title: "Gaushala" },
+      { src: csr4, title: "Community Welfare" },
+      { src: csr3, title: "Z.P School, Dahanu" },
+    ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 14c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+      </svg>
+    ),
+  },
+];
+
 function CSR() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [modalCard, setModalCard] = useState(null);
+  const [modalSlide, setModalSlide] = useState(0);
 
   // Smooth automatic carousel loop running every 5 seconds
   useEffect(() => {
@@ -26,12 +123,37 @@ function CSR() {
     return () => clearInterval(slideInterval);
   }, []);
 
+  useEffect(() => {
+    if (!modalCard) return;
+    const interval = setInterval(() => {
+      setModalSlide((prev) => (prev + 1) % 3);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [modalCard]);
+
   const handlePrevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? CAROUSEL_IMAGES.length - 1 : prev - 1));
   };
 
   const handleNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % CAROUSEL_IMAGES.length);
+  };
+
+  const openModal = (card) => {
+    setModalCard(card);
+    setModalSlide(0);
+  };
+
+  const closeModal = () => {
+    setModalCard(null);
+  };
+
+  const handleModalPrev = () => {
+    setModalSlide((prev) => (prev === 0 ? 2 : prev - 1));
+  };
+
+  const handleModalNext = () => {
+    setModalSlide((prev) => (prev + 1) % 3);
   };
 
   return (
@@ -204,112 +326,18 @@ function CSR() {
 {/* 4. DETAILS GRID LAYOUT BASED ON image_445d7d.png */}
       <section className="csr-details-grid-section">
         <div className="csr-cards-grid-layout">
-          
-          {/* Card 1 */}
-          <div className="csr-display-grid-card">
-            <div className="grid-card-image-box">
-              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Education & Skill Development" />
-            </div>
-            <div className="grid-card-body">
-              <div className="grid-card-svg-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                  <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
-                </svg>
+          {GRID_CARDS_DATA.map((card) => (
+            <div className="csr-display-grid-card" key={card.id} onClick={() => openModal(card)}>
+              <div className="grid-card-image-box">
+          <img src={card.images[0].src} alt={card.images[0].title} />
               </div>
-              <h3 className="grid-card-title">Education & Skill Development</h3>
-              <p className="grid-card-desc">Supporting local schools, scholarships, and vocational training.</p>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="csr-display-grid-card">
-            <div className="grid-card-image-box">
-              <img src="https://media.gettyimages.com/id/940636920/photo/fit-woman-holding-a-yoga-mat-at-the-beach.jpg?s=612x612&w=0&k=20&c=RL3gBGHDTyaL6IF8degZVasZyC_R0HaazgeDur4x9ko=" alt="Healthcare & Wellness" />
-            </div>
-            <div className="grid-card-body">
-              <div className="grid-card-svg-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
+              <div className="grid-card-body">
+                <div className="grid-card-svg-icon">{card.icon}</div>
+                <h3 className="grid-card-title">{card.title}</h3>
+                <p className="grid-card-desc">{card.desc}</p>
               </div>
-              <h3 className="grid-card-title">Healthcare & Wellness</h3>
-              <p className="grid-card-desc">Free health camps, blood donation drives, and medical support.</p>
             </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="csr-display-grid-card">
-            <div className="grid-card-image-box">
-              <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" alt="Environment & Sustainability" />
-            </div>
-            <div className="grid-card-body">
-              <div className="grid-card-svg-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
-                  <path d="M12 6v6l4 2"></path>
-                </svg>
-              </div>
-              <h3 className="grid-card-title">Environment & Sustainability</h3>
-              <p className="grid-card-desc">Tree plantation drives, rainwater harvesting, sustainable practices.</p>
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div className="csr-display-grid-card">
-            <div className="grid-card-image-box">
-              <img src="https://cws-india.org/wp-content/uploads/2021/02/Community-Welfare-School-5-1024x768.jpg" alt="Community Welfare" />
-            </div>
-            <div className="grid-card-body">
-              <div className="grid-card-svg-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <h3 className="grid-card-title">Community Welfare</h3>
-              <p className="grid-card-desc">Supporting festivals, calamity relief, and local infrastructure.</p>
-            </div>
-          </div>
-
-          {/* Card 5 */}
-          <div className="csr-display-grid-card">
-            <div className="grid-card-image-box">
-              <img src="https://www.smilefoundationindia.org/wp-content/uploads/2023/07/Shyama-e1689920384972.png" alt="Women Empowerment" />
-            </div>
-            <div className="grid-card-body">
-              <div className="grid-card-svg-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 14c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
-                </svg>
-              </div>
-              <h3 className="grid-card-title">Women Empowerment</h3>
-              <p className="grid-card-desc">Self-help groups, female education, and employment opportunities.</p>
-            </div>
-          </div>
-
-          {/* Card 6 */}
-          {/* <div className="csr-display-grid-card">
-            <div className="grid-card-image-box">
-              <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&q=80" alt="Sports & Youth" />
-            </div>
-            <div className="grid-card-body">
-              <div className="grid-card-svg-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-                  <path d="M4 22h16"></path>
-                  <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"></path>
-                  <path d="M12 2a4 4 0 0 1 4 4v4H8V6a4 4 0 0 1 4-4z"></path>
-                </svg>
-              </div>
-              <h3 className="grid-card-title">Sports & Youth</h3>
-              <p className="grid-card-desc">Sponsoring tournaments and supporting athletes from rural areas.</p>
-            </div>
-          </div> */}
-
+          ))}
         </div>
 
         {/* RECYCLING COUNT-UP METRICS DISPLAY PANEL */}
@@ -349,7 +377,50 @@ function CSR() {
           </div>
 
         </div>
-      </section>      
+      </section>
+
+      {/* GALLERY MODAL */}
+      {modalCard && (
+        <div className="csr-modal-overlay" onClick={closeModal}>
+          <div className="csr-modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="csr-modal-header">
+              <h3 className="csr-modal-title">
+                {modalSlide === 0 && modalCard.images[0].title}
+                {modalSlide === 1 && modalCard.images[1].title}
+                {modalSlide === 2 && modalCard.images[2].title}
+              </h3>
+              <button className="csr-modal-close" onClick={closeModal} aria-label="Close modal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+            <div className="csr-modal-slideshow">
+              {modalCard.images.map((img, index) => (
+                <div className={`csr-modal-slide ${index === modalSlide ? "active" : ""}`} key={index}>
+                  <img src={img.src} alt={`${img.title}`} />
+                </div>
+              ))}
+              <button className="csr-modal-arrow csr-modal-arrow-left" onClick={handleModalPrev} aria-label="Previous">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="15 18 9 12 15 6" /></svg>
+              </button>
+              <button className="csr-modal-arrow csr-modal-arrow-right" onClick={handleModalNext} aria-label="Next">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+              </button>
+            </div>
+            <div className="csr-modal-dots">
+              {modalCard.images.map((_, index) => (
+                <span
+                  className={`csr-modal-dot ${index === modalSlide ? "active" : ""}`}
+                  key={index}
+                  onClick={() => setModalSlide(index)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
