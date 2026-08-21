@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Footer from "../components/Footer";
+import AwardsSection from "../components/AwardsSection";
 import jswLogo from "../assets/images/jsw-logo-jv.webp";
 import rinlLogo from "../assets/images/Rashtriya_Ispat_Nigam.svg.png";
 import tataLogo from "../assets/images/tata-steel-logo.png";
@@ -543,6 +544,7 @@ export default function About() {
     <div className="about-page">
       <HeroSection />
       <AboutContent />
+      <AwardsSection />
       {/* Our USP Section - Marquee Cards */}
       <section className="about-usp-marquee-section">
         <div className="about-usp-marquee-header">

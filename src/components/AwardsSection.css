@@ -1,0 +1,181 @@
+/* ==================== INFINITE TROPHY MARQUEE SECTION (AWARDS) ==================== */
+#trophy-marquee-section-awards {
+    position: relative;
+    background-color: var(--navy);
+    padding: 110px 0;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    color: var(--white);
+}
+
+.trophy-bg-particles-awards {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 20%, rgba(234, 81, 42, 0.08) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.trophy-header-container-awards {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 24px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.trophy-subtitle-awards {
+    font-family: 'DM Mono', monospace;
+    color: var(--orange);
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.trophy-title-awards {
+    font-family: 'Bebas Neue', Helvetica, sans-serif;
+    font-size: 52px;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin: 0;
+}
+
+.trophy-accent-line-awards {
+    width: 60px;
+    height: 3px;
+    background-color: var(--orange);
+    margin: 15px auto 0;
+}
+
+/* Marquee Viewport with Fading Edge Masks */
+.marquee-viewport-awards {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+}
+
+.marquee-track-awards {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: scrollTrophyMarqueeAwards 35s linear infinite;
+}
+
+.marquee-viewport-awards:hover .marquee-track-awards {
+    animation-play-state: paused;
+}
+
+@keyframes scrollTrophyMarqueeAwards {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Individual Trophy Card Layout */
+.trophy-item-card-awards {
+    width: 280px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    transition: transform 0.4s var(--ease-spring), border-color 0.4s ease, background-color 0.4s ease;
+}
+
+/* Glowing Circular Frame */
+.trophy-display-circle-awards {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.ring-glow-effect-awards {
+    position: absolute;
+    top: 5px; left: 5px; right: 5px; bottom: 5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(234, 81, 42, 0.15) 0%, rgba(7, 0, 57, 0) 70%);
+    border: 1px dashed rgba(234, 81, 42, 0.3);
+    transition: transform 0.6s var(--ease-smooth), border-color 0.4s ease;
+}
+
+.trophy-img-awards {
+    position: relative;
+    z-index: 2;
+    max-width: 95px;
+    max-height: 110px;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.5));
+    transition: transform 0.4s var(--ease-spring);
+}
+
+.trophy-name-awards {
+    font-family: 'Bebas Neue', Helvetica, sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin: 0 0 6px 0;
+    transition: color 0.3s ease;
+}
+
+.trophy-desc-awards {
+    font-size: 12px;
+    color: var(--text-light);
+    margin: 0;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Card Hover Interactions */
+.trophy-item-card-awards:hover {
+    transform: translateY(-6px);
+    border-color: rgba(234, 81, 42, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.trophy-item-card-awards:hover .ring-glow-effect-awards {
+    transform: scale(1.1) rotate(180deg);
+    border-color: var(--orange);
+}
+
+.trophy-item-card-awards:hover .trophy-img-awards {
+    transform: scale(1.08) translateY(-4px);
+}
+
+.trophy-item-card-awards:hover .trophy-name-awards {
+    color: var(--orange);
+}
+
+/* ==================== RESPONSIVE CONTROLS ==================== */
+@media (max-width: 768px) {
+    .trophy-item-card-awards {
+        width: 240px;
+        padding: 20px 15px;
+    }
+    .trophy-display-circle-awards {
+        width: 130px;
+        height: 130px;
+    }
+    .trophy-title-awards {
+        font-size: 40px;
+    }
+    #trophy-marquee-section-awards {
+        padding: 80px 0;
+    }
+}

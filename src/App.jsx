@@ -11,12 +11,14 @@ import About from './pages/About';
 import Reach from './pages/Reach';
 import Careers from './pages/Careers';
 import ScrollToTop from './components/ScrollToTop';
+import TitleManager from './components/TitleManager';
 // import MiddleScrollToTop from './components/MiddleScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop/>
+      <TitleManager/>
       <div className="site-shell">
         <Navbar />
         <Routes>
