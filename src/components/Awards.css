@@ -1,0 +1,141 @@
+/* ═══════════════════════════════════════════════
+   Awards.css — Jenil Steel | Awards & Recognition
+   ═══════════════════════════════════════════════ */
+
+.awards-section {
+  background: #ffffff;
+  padding: clamp(56px, 6vw, 90px) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ─── HEADER ─────────────────────────────── */
+.awards-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(32px, 4vw, 52px);
+  padding: 0 24px;
+}
+
+.awards-label {
+  font-family: var(--font-mono, 'DM Mono', monospace);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange, #F97316);
+  margin-bottom: 12px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.awards-label::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--orange, #F97316);
+  margin: 10px auto 0;
+}
+
+.awards-heading {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: clamp(28px, 3.6vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #050a12;
+  margin-bottom: 14px;
+}
+
+.awards-accent { color: var(--orange, #F97316); }
+
+.awards-desc {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #374151;
+  max-width: 560px;
+}
+
+/* ─── MARQUEE ────────────────────────────── */
+.awards-marquee-fade {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.awards-marquee-track {
+  width: 100%;
+  overflow: hidden;
+}
+
+.awards-marquee-content {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: awardsScroll 55s linear infinite;
+}
+
+.awards-marquee-content:has(.awards-item:hover) {
+  animation-play-state: paused;
+}
+
+.awards-item {
+  flex-shrink: 0;
+  margin: 0 clamp(18px, 2.5vw, 36px);
+  width: clamp(190px, 24vw, 290px);
+  height: clamp(190px, 24vw, 290px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: none;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.awards-item img {
+  max-width: 68%;
+  max-height: 68%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.awards-item:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 0 22px rgba(249, 115, 22, 0.35),
+    0 12px 30px rgba(249, 115, 22, 0.18);
+  z-index: 1;
+}
+
+@keyframes awardsScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .awards-marquee-content { animation: none; }
+  .awards-marquee-track { overflow-x: auto; }
+}

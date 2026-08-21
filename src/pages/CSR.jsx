@@ -1,5 +1,33 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
+import Awards from "../components/Awards";
+
+// CSR award images
+import csrAward3 from "../assets/awards/csr-award3.png";
+import csrAward9 from "../assets/awards/csr-award9.png";
+import csrAward10 from "../assets/awards/csr-award10.png";
+import csrAward11 from "../assets/awards/csr-award11.png";
+import csrAward12 from "../assets/awards/csr-award12.png";
+import csrAward13 from "../assets/awards/csr-award13.png";
+import csrAward14 from "../assets/awards/csr-award14.png";
+import csrAward15 from "../assets/awards/csr-award15.png";
+import csrAward16 from "../assets/awards/csr-award16.png";
+import csrAward23 from "../assets/awards/csr-award23.png";
+import csrAward24 from "../assets/awards/csr-award24.png";
+
+const CSR_AWARDS = [
+  csrAward3,
+  csrAward9,
+  csrAward10,
+  csrAward11,
+  csrAward12,
+  csrAward13,
+  csrAward14,
+  csrAward15,
+  csrAward16,
+  csrAward23,
+  csrAward24,
+];
 import "./CSR.css";
 
 // Local image carousel imports
@@ -422,6 +450,12 @@ function CSR() {
         </div>
       )}
 
+      <Awards
+        label="CSR RECOGNITION"
+        title="CSR Awards & Recognition."
+        description="Our commitment to the community has been recognized through various awards and honors for our corporate social responsibility initiatives."
+        images={CSR_AWARDS}
+      />
       <Footer />
     </div>
   );
