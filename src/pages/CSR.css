@@ -574,16 +574,16 @@
 }
 
 /* Assign initial states to display content immediately before animation kicks in */
-.register-500::after { content: "500"; animation: count500 15s infinite cubic-bezier(0.1, 1, 0.1, 1) forwards; }
+.register-1000::after { content: "1,000"; animation: count1000 15s infinite cubic-bezier(0.1, 1, 0.1, 1) forwards; }
 .register-20::after { content: "20"; animation: count20 15s infinite cubic-bezier(0.1, 1, 0.1, 1) forwards; }
 .register-5000::after { content: "5,000"; animation: count5000 15s infinite cubic-bezier(0.1, 1, 0.1, 1) forwards; }
-.register-10::after { content: "10"; animation: count10 15s infinite cubic-bezier(0.1, 1, 0.1, 1) forwards; }
+.register-8::after { content: "8"; animation: count8 15s infinite cubic-bezier(0.1, 1, 0.1, 1) forwards; }
 
 
-@keyframes count500 { 0%, 92%, 100% { content: "0"; } 2%, 90% { content: "135"; } 4%, 88% { content: "312"; } 6%, 86% { content: "478"; } 8%, 84% { content: "500"; } }
+@keyframes count1000 { 0%, 92%, 100% { content: "0"; } 2%, 90% { content: "270"; } 4%, 88% { content: "620"; } 6%, 86% { content: "940"; } 8%, 84% { content: "1,000"; } }
 @keyframes count20 { 0%, 92%, 100% { content: "0"; } 2%, 90% { content: "4"; } 4%, 88% { content: "11"; } 6%, 86% { content: "17"; } 8%, 84% { content: "20"; } }
 @keyframes count5000 { 0%, 92%, 100% { content: "0"; } 2%, 90% { content: "1,240"; } 4%, 88% { content: "2,850"; } 6%, 86% { content: "4,610"; } 8%, 84% { content: "5,000"; } }
-@keyframes count10 { 0%, 92%, 100% { content: "0"; } 2%, 90% { content: "2"; } 4%, 88% { content: "5"; } 6%, 86% { content: "8"; } 8%, 84% { content: "10"; } }
+@keyframes count8 { 0%, 92%, 100% { content: "0"; } 2%, 90% { content: "1"; } 4%, 88% { content: "4"; } 6%, 86% { content: "6"; } 8%, 84% { content: "8"; } }
 
 .ticker-meta-label {
   font-family: 'Segoe UI', sans-serif;

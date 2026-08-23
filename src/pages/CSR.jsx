@@ -374,7 +374,7 @@ function CSR() {
           <div className="csr-ticker-box">
             <div className="ticker-numeric-display">
               {/* Empty spans prevent value duplication */}
-              <span className="ticker-register register-500"></span>
+              <span className="ticker-register register-1000"></span>
               <span className="ticker-orange-suffix">+</span>
             </div>
             <p className="ticker-meta-label">STUDENTS</p>
@@ -398,10 +398,10 @@ function CSR() {
 
           <div className="csr-ticker-box">
             <div className="ticker-numeric-display">
-              <span className="ticker-register register-10"></span>
+              <span className="ticker-register register-8"></span>
               <span className="ticker-orange-suffix">+</span>
             </div>
-            <p className="ticker-meta-label">VILLAGES</p>
+            <p className="ticker-meta-label">SCHOOLS</p>
           </div>
 
         </div>

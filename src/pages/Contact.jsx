@@ -90,7 +90,7 @@
                     </div>
                     <div>
                       <h4>Email Inquiries</h4>
-                      <p>admin@jenilsteel.com</p>
+                      <p>sales@jenilsteel.com</p>
                     </div>
                   </div>
 
