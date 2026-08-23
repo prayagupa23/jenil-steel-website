@@ -1,32 +1,36 @@
 import React from 'react';
-import { ShieldCheck, Clock, IndianRupee, Headphones } from 'lucide-react';
+import { BadgeCheck, Boxes, Factory, Truck } from 'lucide-react';
 import './JenilAdvantage.css';
 
 const JenilAdvantage = () => {
   const advantages = [
     {
       id: 1,
-      icon: <ShieldCheck className="advantage-icon" />,
-      title: 'Certified Quality',
-      description: 'BIS certified with test certificates.',
+      icon: <BadgeCheck className="advantage-icon" />,
+      title: 'Quality',
+      description:
+        'Rigorously tested products from the best suppliers.',
     },
     {
       id: 2,
-      icon: <Clock className="advantage-icon" />,
-      title: 'Timely Delivery',
-      description: 'Own fleet ensures on-time arrival.',
+      icon: <Boxes className="advantage-icon" />,
+      title: 'Quantity',
+      description:
+        'Deep stock reserves to meet every customer demand.',
     },
     {
       id: 3,
-      icon: <IndianRupee className="advantage-icon" />,
-      title: 'Best Pricing',
-      description: 'Direct from mills, transparent billing.',
+      icon: <Factory className="advantage-icon" />,
+      title: 'Stable Supply',
+      description:
+        'A robust supply chain built on 75+ years of trust.',
     },
     {
       id: 4,
-      icon: <Headphones className="advantage-icon" />,
-      title: 'Expert Support',
-      description: 'Dedicated managers end-to-end.',
+      icon: <Truck className="advantage-icon" />,
+      title: 'Just-In-Time Delivery',
+      description:
+        'Steel delivered exactly when you need it.',
     },
   ];
 

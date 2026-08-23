@@ -500,7 +500,7 @@
   user-select: none;
 }
 
-.timeline-hz-wrapper.scrolling-active {
+.timeline-hz-track.scrolling-active {
   cursor: grabbing;
 }
 
@@ -510,22 +510,8 @@
   min-width: 300%;
   position: relative;
   padding-bottom: 15px;
-  animation: timelineScroll 25s linear 0.5s infinite;
   will-change: transform;
-  transition: animation-play-state 0.3s ease;
-}
-
-.timeline-section-about-hz:hover .timeline-hz-track {
-  animation-play-state: paused;
-}
-
-.timeline-hz-track.scrolling-active {
-  animation-play-state: paused;
-}
-
-@keyframes timelineScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.33%); }
+  touch-action: pan-y;
 }
 
 @media (max-width: 1024px) {

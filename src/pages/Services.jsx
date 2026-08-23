@@ -13,9 +13,12 @@ import mukundLogo from '../assets/images/mukund.jpeg';
 import nicoLogo from '../assets/images/nico.png';
 import eslLogo from '../assets/images/esl.jpeg';
 import sailLogo from '../assets/images/sail.png';
+import bhushanLogo from '../assets/images/bhushanLogo.jpeg';
+import jindalLogo from '../assets/images/jindalLogo.jpeg';
+import vedantaLogo from '../assets/images/vedantaLogo.png';
 import aboutIndustry from '../assets/images/about-industry.jpeg';
 
-const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
+const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo, bhushanLogo, jindalLogo, vedantaLogo];
 
 const services = [
   {
@@ -122,7 +125,7 @@ function AboutIndustry() {
 function ClientsStrip() {
   return (
     <section className="clients-strip-services">
-      <p className="clients-title-services">Companies We Work With</p>
+      <p className="clients-title-services">Our Principal Suppliers</p>
       <div className="marquee-fade-container-services">
         <div className="marquee-track-services">
           <div className="marquee-content-services">

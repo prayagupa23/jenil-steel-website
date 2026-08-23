@@ -17,21 +17,24 @@ import mukundLogo from '../assets/images/mukund.jpeg';
 import nicoLogo from '../assets/images/nico.png';
 import eslLogo from '../assets/images/esl.jpeg';
 import sailLogo from '../assets/images/sail.png';
+import bhushanLogo from '../assets/images/bhushanLogo.jpeg';
+import jindalLogo from '../assets/images/jindalLogo.jpeg';
+import vedantaLogo from '../assets/images/vedantaLogo.png';
 
 const stats = [
   { value: 75, suffix: '+', label: 'YEARS EXPERIENCE' },
   { value: 5000, suffix: '+', label: 'TRUSTED CUSTOMERS' },
-  { value: 100, suffix: '', label: 'ISO QUALITY ASSURED' },
+  { value: 50, suffix: '+', label: 'INDUSTRIES' },
   { value: 1, suffix: '', label: 'INDIA NATIONWIDE REACH' },
 ];
 
-const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
+const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo, bhushanLogo, jindalLogo, vedantaLogo];
 
 const legacyStats = [
   { value: 75, suffix: '+', label: 'YEARS IN INDUSTRY' },
-  { value: 5000, suffix: '+', label: 'PROJECTS DELIVERED' },
-  { value: 200, suffix: '+', label: 'ACTIVE CLIENTS' },
-  { value: 12, suffix: '+', label: 'PRODUCT CATEGORIES' },
+  { value: 50, suffix: '+', label: 'PRINCIPAL SUPPLIERS' },
+  { value: 300, suffix: '+', label: 'ACTIVE CUSTOMERS' },
+  { value: 200, suffix: '+', label: 'SKU' },
 ];
 
 function Counter({ value, suffix, cycle }) {
@@ -158,8 +161,7 @@ function Home() {
             <p className="legacy-text">
               Founded on the principles of integrity and engineering excellence,
               Jenil Steel has evolved from a local trading house into a national
-              steel powerhouse. Our legacy is built on precision engineering and
-              long-term infrastructure partnerships.
+              steel powerhouse. Our legacy is built on precision.
             </p>
             <p className="legacy-text">
               Our mission remains unchanged: to provide the backbone of progress
@@ -194,7 +196,7 @@ function Home() {
       <JenilAdvantage/>
 
       <section className="clients-strip">
-        <p className="clients-title">Companies We Work With</p>
+        <p className="clients-title">Our Principal Suppliers</p>
         
         {/* Add this wrapper to handle the left & right fade gradient */}
         <div className="marquee-fade-container">

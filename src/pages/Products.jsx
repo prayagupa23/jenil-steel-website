@@ -18,9 +18,12 @@ import mukundLogo from '../assets/images/mukund.jpeg';
 import nicoLogo from '../assets/images/nico.png';
 import eslLogo from '../assets/images/esl.jpeg';
 import sailLogo from '../assets/images/sail.png';
-import aboutIndustry from '../assets/images/about-industry.jpeg';
+import bhushanLogo from '../assets/images/bhushanLogo.jpeg';
+import jindalLogo from '../assets/images/jindalLogo.jpeg';
+import vedantaLogo from '../assets/images/vedantaLogo.png';
+import aboutProducts from '../assets/images/products.png';
 
-const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
+const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo, bhushanLogo, jindalLogo, vedantaLogo];
 
 const products = [
   {
@@ -219,7 +222,7 @@ function AboutIndustry() {
         <div className="about-industry-image-wrapper">
           <div className="about-industry-image-frame">
             <img 
-              src={aboutIndustry}
+              src={aboutProducts}
               alt="Worker in industrial factory" 
               className="about-industry-main-img"
             />
@@ -258,7 +261,7 @@ function AboutIndustry() {
 function ClientsStrip() {
   return (
     <section className="clients-strip-products">
-      <p className="clients-title-products">Companies We Work With</p>
+      <p className="clients-title-products">Our Principal Suppliers</p>
       <div className="marquee-fade-container-products">
         <div className="marquee-track-products">
           <div className="marquee-content-products">

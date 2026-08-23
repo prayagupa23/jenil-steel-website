@@ -29,7 +29,8 @@
 .line {
   width: 30px;
   height: 2px;
-  background-color:chocolate; /* Matching the orange line accent */
+  background: linear-gradient(to right, #ffb26b, #ffd9a8);
+  transform: translateY(3px);
 }
 
 .sub-title-for-process {

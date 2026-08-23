@@ -14,6 +14,9 @@ import mukundLogo from '../assets/images/mukund.jpeg';
 import nicoLogo from '../assets/images/nico.png';
 import eslLogo from '../assets/images/esl.jpeg';
 import sailLogo from '../assets/images/sail.png';
+import bhushanLogo from '../assets/images/bhushanLogo.jpeg';
+import jindalLogo from '../assets/images/jindalLogo.jpeg';
+import vedantaLogo from '../assets/images/vedantaLogo.png';
 import fastDelivery from '../assets/images/truck.png';
 import logistics from '../assets/images/logistics.png';
 import productDev from '../assets/images/product_dev.png';
@@ -21,7 +24,7 @@ import productMix from '../assets/images/product_mix.png';
 import tailoredSol from '../assets/images/tailored_solution.png';
 import sizeMax from '../assets/images/sizeMax.jpeg';
 
-const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo];
+const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo, bhushanLogo, jindalLogo, vedantaLogo];
 
 /* ─── DATA ARRAYS ─── */
 const VALUES = [
@@ -48,12 +51,22 @@ const VALUES = [
 ];
 
 const MILESTONES = [
-  { year: '1948', title: 'The Foundation', desc: 'The founding family began their journey in the steel trade, establishing roots of trust and reliability.' },
-  { year: '2005', title: 'Jenil Steel Founded', desc: 'Jenil Steel Pvt. Ltd. was formally established, carrying forward the legacy into a new era of growth.' },
-  { year: '2013', title: 'BIS Certification', desc: 'Achieved BIS certification. Expanded to structural steel, channels, and angles.' },
-  { year: '2016', title: 'Major Expansion', desc: '50,000 sq. ft. warehouse, in-house testing lab, weigh bridge, and own delivery fleet.' },
-  { year: '2020', title: 'Pvt. Ltd. Incorporation', desc: 'Incorporated as Pvt. Ltd. Crossed 25,000 MT annual sales.' },
-  { year: '2024', title: 'Industry Leader', desc: '50,000+ MT capacity, 2,500+ projects, 500+ clients across Gujarat.' }
+  { year: '1948', title: 'The Foundation', desc: 'Tulsidas Mehta and Jethalal Doshi established an Iron Trading Company for distribution of Iron and Steel Products.' },
+  { year: '1972', title: 'Affiliation with Mukand', desc: 'Began our long-standing affiliation with Mukand.' },
+  { year: '1988', title: 'Mahalaxmi & Jenil Steel Corporation', desc: 'Established Mahalaxmi & Jenil Steel Corporation, which focused on distribution of Wire Rods & Wires.' },
+  { year: '1989', title: 'Associated with SAIL', desc: 'Became associated with Steel Authority of India.' },
+  { year: '1991', title: 'Pan-India RINL Distributorship', desc: 'Achieved pan-India distributorship of RINL.' },
+  { year: '1996', title: 'Best Sales Performance', desc: 'Emerged as best performer for sales of wire rods by RINL.' },
+  { year: '2002', title: 'Jenil Steel Pvt. Ltd.', desc: 'Establishment of Jenil Steel Private Limited.' },
+  { year: '2008', title: 'Ventured into Imports', desc: 'Ventured into imports of steel products, predominantly wire rod coils, to meet booming market needs.' },
+  { year: '2010', title: 'Enhanced Product Portfolio', desc: 'Consistently enhanced product portfolio by adding high carbon & carbon steel wire rods.' },
+  { year: '2012', title: 'JSPL Partnership', desc: 'Tie-up and business development partnership with Jindal Steel and Power Limited (Patratu).' },
+  { year: '2013', title: 'Expanding Scope', desc: 'Identified gaps in the market and kept adding more products (electrode grades) within our scope.' },
+  { year: '2014', title: 'Global Credit Lines', desc: 'Developed credit lines, onboarded various bankers and started imports from Ukraine, China, Russia etc.' },
+  { year: '2015', title: 'High Carbon Basket', desc: 'Began partnership with Electrosteel & Usha Martin for high carbon product basket.' },
+  { year: '2018', title: 'Alloy Steel & Auto Grades', desc: 'Ventured into Alloy Steel & Specialised Wire Rods with focus on Auto Grades, procured from JSW Salem.' },
+  { year: '2019', title: 'Tata Steel & Neco Jaiswal', desc: 'Business affiliation with Tata Steel Long Products for alloy steel grades & Neco Jaiswal for high carbon wire rods.' },
+  { year: '2022', title: 'MOU Success', desc: 'Successful completion of MOUs with Tata, JSW, SAIL, RINL and Electrosteel.' }
 ];
 
 const TEAM_MEMBERS = [
@@ -251,134 +264,90 @@ function ValuesSection() {
   );
 }
 
-/* ─── HELPER FUNCTION: SCROLL HANDLING ─── */
-function useTimelineScroll(trackRef) {
-  const [isScrolling, setIsScrolling] = useState(false);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
-
-  const getClientX = (e) => e.touches ? e.touches[0].clientX : e.clientX;
-
-  const startScroll = () => {
-    if (!isDragging.current) {
-      isDragging.current = true;
-      setIsScrolling(true);
-    }
-  };
-
-  const stopScroll = () => {
-    if (isDragging.current) {
-      isDragging.current = false;
-      setIsScrolling(false);
-    }
-  };
-
-  const handleMouseDown = (e) => {
-    e.preventDefault();
-    startScroll();
-    startX.current = getClientX(e) - trackRef.current.offsetLeft;
-    scrollLeft.current = trackRef.current.scrollLeft;
-    trackRef.current.classList.add('scrolling-active');
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging.current) return;
-    e.preventDefault();
-    const x = getClientX(e) - trackRef.current.offsetLeft;
-    const walk = (x - startX.current) * 1.5;
-    trackRef.current.scrollLeft = scrollLeft.current - walk;
-  };
-
-  const handleTouchStart = (e) => {
-    const touch = e.touches[0];
-    e.preventDefault();
-    startScroll();
-    startX.current = getClientX(e) - trackRef.current.offsetLeft;
-    scrollLeft.current = trackRef.current.scrollLeft;
-    trackRef.current.classList.add('scrolling-active');
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging.current) return;
-    e.preventDefault();
-    const touch = e.touches[0];
-    const x = getClientX(e) - trackRef.current.offsetLeft;
-    const walk = (x - startX.current) * 1.5;
-    trackRef.current.scrollLeft = scrollLeft.current - walk;
-  };
-
-  useEffect(() => {
-    const track = trackRef.current;
-
-    const handleGlobalMouseUp = () => {
-      if (isDragging.current) {
-        stopScroll();
-        track.classList.remove('scrolling-active');
-      }
-    };
-
-    const handleGlobalTouchEnd = () => {
-      if (isDragging.current) {
-        stopScroll();
-        track.classList.remove('scrolling-active');
-      }
-    };
-
-    const handleMouseLeave = () => {
-      if (isDragging.current) {
-        stopScroll();
-        track.classList.remove('scrolling-active');
-      }
-    };
-
-    track.addEventListener('mousedown', handleMouseDown);
-    track.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseup', handleGlobalMouseUp);
-
-    track.addEventListener('touchstart', handleTouchStart, { passive: false });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
-    document.addEventListener('touchend', handleGlobalTouchEnd);
-
-    return () => {
-      track.removeEventListener('mousedown', handleMouseDown);
-      track.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseup', handleGlobalMouseUp);
-      track.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchmove', handleTouchMove);
-      document.removeEventListener('touchend', handleGlobalTouchEnd);
-    };
-  }, [trackRef]);
-
-  return { isScrolling, startScroll, stopScroll };
-}
-
-/* ─── TIMELINE SECTION (HORIZONTAL AUTO-SCROLL) ─── */
+/* ─── TIMELINE SECTION (DRAGGABLE AUTO-SCROLL) ─── */
 function TimelineSection() {
   const { ref, inView } = useInViewObs({ threshold: 0.1, triggerOnce: true });
   const trackRef = useRef(null);
+  const dragState = useRef({ offset: 0, dragging: false, startX: 0, startOffset: 0 });
 
-  const { startScroll, stopScroll } = useTimelineScroll(trackRef);
+  useEffect(() => {
+    const track = trackRef.current;
+    const s = dragState.current;
+    let raf;
+
+    const apply = () => {
+      track.style.transform = `translateX(${s.offset}px)`;
+    };
+
+    const wrap = () => {
+      const w = track.scrollWidth / 3;
+      while (w > 0 && s.offset <= -w) s.offset += w;
+      while (w > 0 && s.offset > 0) s.offset -= w;
+    };
+
+    const tick = () => {
+      if (!s.dragging) {
+        s.offset -= 0.6;
+        wrap();
+        apply();
+      }
+      raf = requestAnimationFrame(tick);
+    };
+
+    const onPointerDown = (e) => {
+      s.dragging = true;
+      s.startX = e.clientX;
+      s.startOffset = s.offset;
+      track.classList.add('scrolling-active');
+    };
+
+    const onPointerMove = (e) => {
+      if (!s.dragging) return;
+      s.offset = s.startOffset + (e.clientX - s.startX);
+      wrap();
+      apply();
+    };
+
+    const onPointerUp = () => {
+      s.dragging = false;
+      track.classList.remove('scrolling-active');
+    };
+
+    track.addEventListener('pointerdown', onPointerDown);
+    window.addEventListener('pointermove', onPointerMove);
+    window.addEventListener('pointerup', onPointerUp);
+    window.addEventListener('pointercancel', onPointerUp);
+
+    raf = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      track.removeEventListener('pointerdown', onPointerDown);
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerup', onPointerUp);
+      window.removeEventListener('pointercancel', onPointerUp);
+    };
+  }, []);
 
   return (
     <section className="timeline-section-about-hz" ref={ref}>
       <div className="section-header-about">
         <div className="section-label-about centered-about">
           <span className="label-line-about" style={{ width: inView ? '40px' : '0px', transition: 'width 0.8s ease' }} />
-          OUR JOURNEY
+          SINCE 1948
           <span className="label-line-about" style={{ width: inView ? '40px' : '0px', transition: 'width 0.8s ease' }} />
         </div>
         <h2 className="section-heading-about">
-          Milestones of <span className="accent-text-about">Our Legacy.</span>
+          Our <span className="accent-text-about">Journey</span>
         </h2>
       </div>
 
       <div className="timeline-hz-wrapper">
-        <div className="timeline-hz-track" ref={trackRef} onMouseOver={startScroll} onMouseOut={stopScroll} onTouchStart={startScroll} onTouchEnd={stopScroll}>
+        <div className="timeline-hz-track" ref={trackRef}>
           <div className="timeline-hz-spine" style={{ transform: inView ? 'scaleX(1)' : 'scaleX(0)' }} />
           
-          {MILESTONES.map((item) => (
-            <div key={item.year} className="timeline-hz-item">
+          {[...MILESTONES, ...MILESTONES, ...MILESTONES].map((item, idx) => (
+            <div key={`${item.year}-${idx}`} className="timeline-hz-item">
               <div className="timeline-hz-node-box">
                 <div className="timeline-hz-node">
                   <span className="node-inner-about" />
@@ -405,16 +374,16 @@ function TeamSection() {
   return (
     <section className="team-section-about" ref={ref}>
       {/* BlueprintGrid component assuming it is defined in your file */}
-      <BlueprintGrid />
+      {/* <BlueprintGrid /> */}
       
       <div className="section-header-about">
         <div className="section-label-about centered-about">
           <span className="label-line-about" style={{ width: inView ? '40px' : '0px', transition: 'width 0.8s ease' }} />
-          OUR TEAM
+          LEADERSHIP TEAM
           <span className="label-line-about" style={{ width: inView ? '40px' : '0px', transition: 'width 0.8s ease' }} />
         </div>
         <h2 className="section-heading-about">
-          Expert Team Building <span className="accent-text-about">Industrial Excellence.</span>
+          Leadership <span className="accent-text-about">Team</span>
         </h2>
       </div>
 
@@ -520,7 +489,7 @@ function TeamSection() {
 function ClientsStrip() {
   return (
     <section className="clients-strip-about">
-      <p className="clients-title-about">Companies We Work With</p>
+      <p className="clients-title-about">Our Principal Suppliers</p>
       <div className="marquee-fade-container-about">
         <div className="marquee-track-about">
           <div className="marquee-content-about">
@@ -558,16 +527,16 @@ export default function About() {
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Timely Delivery</h4>
-                <p className="about-usp-card-desc">Project completion precision and on-schedule efficiency</p>
+                <p className="about-usp-card-desc">Precision-driven, always on schedule</p>
               </div>
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={logistics} alt="Logistics" className="about-usp-image" />
+                <img src={logistics} alt="Just in Time Delivery" className="about-usp-image" />
               </div>
               <div className="about-usp-content">
-                <h4 className="about-usp-card-title">Logistics</h4>
-                <p className="about-usp-card-desc">Supply chain optimization for seamless project execution</p>
+                <h4 className="about-usp-card-title">Just in Time Delivery</h4>
+                <p className="about-usp-card-desc">Arranging logistics</p>
               </div>
             </div>
             <div className="about-usp-card">
@@ -576,7 +545,7 @@ export default function About() {
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Product Development</h4>
-                <p className="about-usp-card-desc">Industry-specific steel innovation tailored</p>
+                <p className="about-usp-card-desc">Custom steel solutions engineered for your industry</p>
               </div>
             </div>
             <div className="about-usp-card">
@@ -602,8 +571,8 @@ export default function About() {
                 <img src={sizeMax} alt="Size Max" className="about-usp-image" />
               </div>
               <div className="about-usp-content">
-                <h4 className="about-usp-card-title">Size Max</h4>
-                <p className="about-usp-card-desc">Diverse size options for all project scale needs</p>
+                <h4 className="about-usp-card-title">Size Mix</h4>
+                <p className="about-usp-card-desc">Diverse size options for every requirement</p>
               </div>
             </div>
             <div className="about-usp-card">
@@ -612,16 +581,16 @@ export default function About() {
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Timely Delivery</h4>
-                <p className="about-usp-card-desc">Project completion precision and on-schedule efficiency</p>
+                <p className="about-usp-card-desc">Precision-driven, always on schedule</p>
               </div>
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={logistics} alt="Logistics" className="about-usp-image" />
+                <img src={logistics} alt="Just in Time Delivery" className="about-usp-image" />
               </div>
               <div className="about-usp-content">
-                <h4 className="about-usp-card-title">Logistics</h4>
-                <p className="about-usp-card-desc">Supply chain optimization for seamless execution</p>
+                <h4 className="about-usp-card-title">Just in Time Delivery</h4>
+                <p className="about-usp-card-desc">Arranging logistics</p>
               </div>
             </div>
             <div className="about-usp-card">
@@ -630,7 +599,7 @@ export default function About() {
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Product Development</h4>
-                <p className="about-usp-card-desc">Industry-specific steel innovation tailored</p>
+                <p className="about-usp-card-desc">Custom steel solutions engineered for your industry</p>
               </div>
             </div>
             <div className="about-usp-card">
@@ -656,8 +625,8 @@ export default function About() {
                 <img src={sizeMax} alt="Size Max" className="about-usp-image" />
               </div>
               <div className="about-usp-content">
-                <h4 className="about-usp-card-title">Size Max</h4>
-                <p className="about-usp-card-desc">Diverse size options for all project scales</p>
+                <h4 className="about-usp-card-title">Size Mix</h4>
+                <p className="about-usp-card-desc">Diverse size options for every requirement</p>
               </div>
             </div>
           </div>

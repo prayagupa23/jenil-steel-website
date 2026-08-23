@@ -163,7 +163,7 @@ function OurReach() {
               </div>
               <div className="reach-capability-content">
                 <h4 className="reach-capability-title">Timely Delivery</h4>
-                <p className="reach-capability-description">Project completion precision and on-schedule efficiency</p>
+                <p className="reach-capability-description">Precision-driven, always on schedule</p>
               </div>
             </div>
 
@@ -171,13 +171,13 @@ function OurReach() {
               <div className="reach-capability-image-wrapper">
                 <img 
                   src={logistics}
-                  alt="Logistics" 
+                  alt="Just in Time Delivery" 
                   className="reach-capability-image"
                 />
               </div>
               <div className="reach-capability-content">
-                <h4 className="reach-capability-title">Logistics</h4>
-                <p className="reach-capability-description">Supply chain optimization for seamless project execution</p>
+                <h4 className="reach-capability-title">Just in Time Delivery</h4>
+                <p className="reach-capability-description">Arranging logistics</p>
               </div>
             </div>
 
@@ -191,7 +191,7 @@ function OurReach() {
               </div>
               <div className="reach-capability-content">
                 <h4 className="reach-capability-title">Product Development</h4>
-                <p className="reach-capability-description">Industry-specific steel innovation tailored</p>
+                <p className="reach-capability-description">Custom steel solutions engineered for your industry</p>
               </div>
             </div>
 
@@ -232,8 +232,8 @@ function OurReach() {
                 />
               </div>
               <div className="reach-capability-content">
-                <h4 className="reach-capability-title">Size Max</h4>
-                <p className="reach-capability-description">Diverse size options for all project scale needs</p>
+                <h4 className="reach-capability-title">Size Mix</h4>
+                <p className="reach-capability-description">Diverse size options for every requirement</p>
               </div>
             </div>
 
@@ -247,7 +247,7 @@ function OurReach() {
               </div>
               <div className="reach-capability-content">
                 <h4 className="reach-capability-title">Timely Delivery</h4>
-                <p className="reach-capability-description">Project completion precision and on-schedule efficiency</p>
+                <p className="reach-capability-description">Precision-driven, always on schedule</p>
               </div>
             </div>
 
@@ -255,13 +255,13 @@ function OurReach() {
               <div className="reach-capability-image-wrapper">
                 <img 
                   src={logistics}
-                  alt="Logistics" 
+                  alt="Just in Time Delivery" 
                   className="reach-capability-image"
                 />
               </div>
               <div className="reach-capability-content">
-                <h4 className="reach-capability-title">Logistics</h4>
-                <p className="reach-capability-description">Supply chain optimization for seamless execution</p>
+                <h4 className="reach-capability-title">Just in Time Delivery</h4>
+                <p className="reach-capability-description">Arranging logistics</p>
               </div>
             </div>
 
@@ -275,7 +275,7 @@ function OurReach() {
               </div>
               <div className="reach-capability-content">
                 <h4 className="reach-capability-title">Product Development</h4>
-                <p className="reach-capability-description">Industry-specific steel innovation tailored</p>
+                <p className="reach-capability-description">Custom steel solutions engineered for your industry</p>
               </div>
             </div>
 
@@ -316,8 +316,8 @@ function OurReach() {
                 />
               </div>
               <div className="reach-capability-content">
-                <h4 className="reach-capability-title">Size Max</h4>
-                <p className="reach-capability-description">Diverse size options for all project scales</p>
+                <h4 className="reach-capability-title">Size Mix</h4>
+                <p className="reach-capability-description">Diverse size options for every requirement</p>
               </div>
             </div>
           </div>
