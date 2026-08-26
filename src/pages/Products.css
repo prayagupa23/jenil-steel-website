@@ -115,7 +115,7 @@
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--white);
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .hero-heading-accent-products {
