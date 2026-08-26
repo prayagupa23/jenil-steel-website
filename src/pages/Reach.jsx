@@ -49,28 +49,6 @@ function OurReach() {
         </div>
       </section>
 
-      {/* 2. STATS GRID */}
-      <section className="reach-stats-section">
-        <div className="reach-stats-grid">
-          <div className="stat-card">
-            <h3 className="stat-number">75+</h3>
-            <p className="stat-text">Years of Industry Experience</p>
-          </div>
-          <div className="stat-card">
-            <h3 className="stat-number">1000+</h3>
-            <p className="stat-text">Customers Served</p>
-          </div>
-          <div className="stat-card">
-            <h3 className="stat-number">Pan-India</h3>
-            <p className="stat-text">Supply Network</p>
-          </div>
-          <div className="stat-card">
-            <h3 className="stat-number">Trusted</h3>
-            <p className="stat-text">Partnerships with Leading Steel Manufacturers</p>
-          </div>
-        </div>
-      </section>
-
             {/* Our USP Section */}
       <section className="reach-usp-section">
         <div className="reach-usp-container">
@@ -78,14 +56,14 @@ function OurReach() {
           <div className="reach-usp-content">
             <div className="reach-usp-features">
               <p className="reach-usp-description">
-                Our extensive distribution network enables us to efficiently supply quality steel products to customers across major industrial and infrastructure hubs throughout India. By maintaining deep inventory levels and streamlined dispatch systems, we bridge the gap between primary production plants and your project site.
+                Our extensive distribution network enables us to efficiently supply quality steel products to customers across major industrial and infrastructure hubs throughout India. By maintaining deep inventory levels and streamlined dispatch systems, we bridge the gap between production and consumption centres.
               </p>
               <ul className="reach-usp-points">
                 <li>Pan-India Distribution Network</li>
                 <li>Ready Stock for Faster Dispatch</li>
                 <li>On-Time Delivery Commitment</li>
                 <li>Efficient Logistics & Supply Chain</li>
-                <li>Serving Infrastructure & Industrial Projects</li>
+                <li>Serving Industrial and infrastructure requirements</li>
                 <li>Reliable Support from Order to Delivery</li>
               </ul>
             </div>

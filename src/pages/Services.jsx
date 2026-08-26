@@ -23,39 +23,39 @@ const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailL
 const services = [
   {
     id: 1,
-    title: "Agriculture",
-    description: "Supplying quality steel solutions for agricultural infrastructure, equipment, irrigation systems, and storage facilities.",
-    image: agriculture,
-  },
-  {
-    id: 2,
-    title: "Engineering",
-    description: "Providing reliable steel products for fabrication, industrial machinery, manufacturing, and engineering projects.",
-    image: engineering,
-  },
-  {
-    id: 3,
-    title: "Defense",
-    description: "Supporting defense and security sectors with high-quality steel materials that meet demanding performance requirements.",
-    image: defence,
-  },
-  {
-    id: 4,
-    title: "Infrastructure",
+    title: "Infrastructure & Construction",
     description: "Delivering steel products for large-scale infrastructure projects including bridges, highways, commercial buildings, and urban development.",
     image: infrastructure,
   },
   {
-    id: 5,
+    id: 2,
     title: "Power & Electric",
     description: "Supplying steel solutions for power generation, transmission, electrical infrastructure, and energy-related projects.",
     image: powerelectric,
   },
   {
-    id: 6,
-    title: "Automobiles",
+    id: 3,
+    title: "Automobiles & Forging",
     description: "Providing steel materials that support automotive manufacturing, components, engineering, and transportation industries.",
     image: automobiles,
+  },
+  {
+    id: 4,
+    title: "Agriculture",
+    description: "Supplying quality steel solutions for agricultural infrastructure, equipment, irrigation systems, and storage facilities.",
+    image: agriculture,
+  },
+  {
+    id: 5,
+    title: "Engineering",
+    description: "Providing reliable steel products for fabrication, industrial machinery, manufacturing, and engineering projects.",
+    image: engineering,
+  },
+  {
+    id: 6,
+    title: "Defense",
+    description: "Supporting defense and security sectors with high-quality steel materials that meet demanding performance requirements.",
+    image: defence,
   },
 ];
 

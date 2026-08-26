@@ -194,21 +194,6 @@ function AboutContent() {
               <div className="img-overlay-about" />
             </div>
           </div>
-
-          <div className="stats-row-about">
-            <div className="stat-card-about">
-              <span className="stat-number-about"><AnimatedCounter end={75} />+</span>
-              <span className="stat-label-about">Years Experience</span>
-            </div>
-            <div className="stat-card-about">
-              <span className="stat-number-about"><AnimatedCounter end={50000} duration={3} />+</span>
-              <span className="stat-label-about">MT Capacity</span>
-            </div>
-            <div className="stat-card-about">
-              <span className="stat-number-about"><AnimatedCounter end={2500} duration={2.5} />+</span>
-              <span className="stat-label-about">Projects</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

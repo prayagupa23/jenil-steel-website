@@ -31,7 +31,8 @@ const products = [
     title: "Wire Rods",
     description: "High-quality wire rods used in wire drawing, fasteners, electrodes, and engineering applications.",
     specs: [
-      { label: "Size", value: "5.5mm – 16mm" },
+      { label: "Size", value: "5.5mm – 34mm" },
+      { label: "Grade", value: "Placeholder" },
     ],
     image: wireRods,
     brands: [jswLogo, rinlLogo, tataLogo],
@@ -42,6 +43,7 @@ const products = [
     description: "Hot-rolled round bars suitable for machining, construction, engineering, and fabrication applications.",
     specs: [
       { label: "Size", value: "12mm – 100mm" },
+      { label: "Grade", value: "Placeholder" },
     ],
     image: roundBars,
     brands: [rinlLogo, tataLogo, jswLogo],
@@ -52,9 +54,10 @@ const products = [
     description: "Fe-500D & Fe-550D grade TMT bars with superior strength and ductility.",
     specs: [
       { label: "Size", value: "8mm – 32mm" },
+      { label: "Grade", value: "Placeholder" },
     ],
     image: tmtBar,
-    brands: [jswLogo, tataLogo, rinlLogo],
+    brands: [],
   },
   {
     id: 4,
@@ -62,19 +65,20 @@ const products = [
     description: "Steel billets used as raw material for manufacturing TMT bars, wire rods, and other rolled products.",
     specs: [
       { label: "Size", value: "100×100mm – 150×150mm" },
+      { label: "Grade", value: "Placeholder" },
     ],
     image: billets,
-    brands: [rinlLogo, jswLogo, tataLogo],
+    brands: [],
   },
   {
     id: 5,
     title: "Structural Steel",
     description: "Engineered structural steel solutions comprising Channels, Beams, and Angles, delivering superior strength, durability, and performance across infrastructure and industrial applications.",
     specs: [
-      { label: "Size", value: "100mm – 600mm" },
+      { label: "Grade", value: "Placeholder" },
     ],
     image: structuralSteel,
-    brands: [tataLogo, jswLogo, rinlLogo],
+    brands: [],
   },    
   {
     id: 6,
@@ -82,9 +86,10 @@ const products = [
     description: "Equal and unequal steel angles widely used in structural frameworks and fabrication projects.",
     specs: [
       { label: "Size", value: "25×25mm – 200×200mm" },
+      { label: "Grade", value: "Placeholder" },
     ],
     image: pipes,
-    brands: [jswLogo, rinlLogo, tataLogo],
+    brands: [],
   }
 ];
 
@@ -194,6 +199,7 @@ function ProductModal({ product, onClose }) {
                     </div>
                   ))}
                 </div>
+                {product.brands?.length > 0 && (
                 <div className="product-modal-brands-container">
                   <p className="brands-title">Companies We Stock</p>
                   <div className="product-modal-brands">
@@ -204,6 +210,7 @@ function ProductModal({ product, onClose }) {
                     ))}
                   </div>
                 </div>
+                )}
               </div>
             </div>
           </motion.div>
@@ -335,7 +342,7 @@ function Products() {
         </div>
         <h2 className="products-main-title">What We Deliver</h2>
         <p className="products-header-subtext">
-          We provide high-grade, resilient steel products tailored to meet the strict performance standards and structural requirements of diverse sectors across India.
+          We provide high-grade, resilient steel products tailored to meet the strict performance standards and customer requirements.
         </p>
       </div>      
 
