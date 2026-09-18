@@ -31,22 +31,20 @@ const products = [
     title: "Wire Rods",
     description: "High-quality wire rods used in wire drawing, fasteners, electrodes, and engineering applications.",
     specs: [
-      { label: "Size", value: "5.5mm – 34mm" },
-      { label: "Grade", value: "Placeholder" },
+      { label: "Size", value: "5.5mm – 32mm" },
     ],
     image: wireRods,
-    brands: [jswLogo, rinlLogo, tataLogo],
+    brands: [jswLogo, rinlLogo, tataLogo, bhushanLogo, mukundLogo, sailLogo, nicoLogo, jindalLogo, eslLogo],
   },
   {
     id: 2,
     title: "Round Bars",
     description: "Hot-rolled round bars suitable for machining, construction, engineering, and fabrication applications.",
     specs: [
-      { label: "Size", value: "12mm – 100mm" },
-      { label: "Grade", value: "Placeholder" },
+      { label: "Size", value: "8mm – 60mm" },
     ],
     image: roundBars,
-    brands: [rinlLogo, tataLogo, jswLogo],
+    brands: [mukundLogo, rinlLogo, nicoLogo, bhushanLogo],
   },  
   {
     id: 3,
@@ -54,7 +52,6 @@ const products = [
     description: "Fe-500D & Fe-550D grade TMT bars with superior strength and ductility.",
     specs: [
       { label: "Size", value: "8mm – 32mm" },
-      { label: "Grade", value: "Placeholder" },
     ],
     image: tmtBar,
     brands: [],
@@ -64,8 +61,7 @@ const products = [
     title: "Billets",
     description: "Steel billets used as raw material for manufacturing TMT bars, wire rods, and other rolled products.",
     specs: [
-      { label: "Size", value: "100×100mm – 150×150mm" },
-      { label: "Grade", value: "Placeholder" },
+      { label: "Available Sizes", value: "100×100 mm, 110×110 mm, 130×130 mm, 160×160 mm, 200×200 mm" },
     ],
     image: billets,
     brands: [],
@@ -74,9 +70,7 @@ const products = [
     id: 5,
     title: "Structural Steel",
     description: "Engineered structural steel solutions comprising Channels, Beams, and Angles, delivering superior strength, durability, and performance across infrastructure and industrial applications.",
-    specs: [
-      { label: "Grade", value: "Placeholder" },
-    ],
+    specs: [],
     image: structuralSteel,
     brands: [],
   },    
@@ -86,7 +80,6 @@ const products = [
     description: "Equal and unequal steel angles widely used in structural frameworks and fabrication projects.",
     specs: [
       { label: "Size", value: "25×25mm – 200×200mm" },
-      { label: "Grade", value: "Placeholder" },
     ],
     image: pipes,
     brands: [],

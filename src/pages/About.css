@@ -32,7 +32,7 @@
 .about-page {
   background-color: var(--bg-deep);
   color: var(--white);
-  font-family: var(--font-body);
+  font-family: 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
 
@@ -43,13 +43,14 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: var(--font-mono);
+  font-family: 'Segoe UI', sans-serif;
   font-size: 11px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   color: var(--orange);
   text-transform: uppercase;
   margin-bottom: 12px;
   justify-content: center;
+  font-weight: 700;
 }
 .section-label-about.centered-about { justify-content: center; }
 
@@ -72,9 +73,9 @@
 }
 
 .section-heading-about {
-  font-family: var(--font-display);
+  font-family: 'Segoe UI', sans-serif;
   font-size: clamp(34px, 4.5vw, 56px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: #0b1220;
@@ -238,7 +239,7 @@
 .about-heading-about {
   font-family: 'Segoe UI', sans-serif;
   font-size: clamp(38px, 4.5vw, 62px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.01em;
   margin-bottom: 16px;
@@ -345,7 +346,7 @@
 
 .stat-number-about {
   display: block;
-  font-family: var(--font-display);
+  font-family: 'Segoe UI', sans-serif;
   font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 800;
   color: var(--orange);
@@ -357,7 +358,8 @@
   letter-spacing: 0.05em;
   color: var(--gray-mid);
   text-transform: uppercase;
-  font-family: var(--font-mono);
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
 }
 
 /* ════════════════════════════════════════════
@@ -458,22 +460,22 @@
 .value-card-about:hover .card-accent-line-about { width: 48px; }
 
 .card-title-about {
-  font-family: var(--font-display);
+  font-family: 'Segoe UI', sans-serif;
   font-size: 22px;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.01em;
   color: var(--white);
   margin-bottom: 12px;
   position: relative;
   z-index: 2;
-  text-transform: uppercase;
 }
 
 .card-desc-about {
+  font-family: 'Segoe UI', sans-serif;
   font-size: 14px;
   line-height: 1.75;
   color: var(--gray-mid);
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   z-index: 2;
 }
@@ -595,19 +597,19 @@
 
 .timeline-hz-year {
   display: block;
-  font-family: var(--font-mono);
+  font-family: 'Segoe UI', sans-serif;
   font-size: 11px;
   color: var(--orange);
   letter-spacing: 0.1em;
   margin-bottom: 4px;
+  font-weight: 700;
 }
 .timeline-hz-title {
-  font-family: var(--font-display);
+  font-family: 'Segoe UI', sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: #0b1220;
   margin-bottom: 6px;
-  text-transform: uppercase;
 }
 .timeline-hz-desc {
   font-size: 13px;
@@ -706,7 +708,7 @@
 }
 
 .team-card-name {
-  font-family: var(--font-display), sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   font-size: clamp(18px, 1.8vw, 22px);
   font-weight: 700;
   color: #ffffff;
@@ -831,7 +833,7 @@
 }
 
 .team-modal-name {
-  font-family: var(--font-display), sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   font-size: 28px;
   font-weight: 700;
   color: #1e3a8a; /* Deep elegant corporate blue */
