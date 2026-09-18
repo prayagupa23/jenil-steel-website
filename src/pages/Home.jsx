@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import heroVideo from '../assets/ourReach.mp4';
 import jswLogo from '../assets/images/jsw-logo-jv.webp';
 import rinlLogo from '../assets/webp_images/Rashtriya_Ispat_Nigam.svg.webp';
 // import sailLogo '../assets/webp_images/sail.webp';
@@ -92,8 +91,16 @@ function Home() {
   return (
     <main className="home-page">
       <section className="hero">
-        <video className="hero-video" autoPlay muted loop playsInline>
-          <source src={heroVideo} type="video/mp4" />
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/hero-poster.webp"
+          preload="metadata"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
         </video>
         <div className="hero-overlay" />
 
