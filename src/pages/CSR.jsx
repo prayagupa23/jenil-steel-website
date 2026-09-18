@@ -3,17 +3,17 @@ import Footer from "../components/Footer";
 import Awards from "../components/Awards";
 
 // CSR award images
-import csrAward3 from "../assets/awards/csr-award3.png";
-import csrAward9 from "../assets/awards/csr-award9.png";
-import csrAward10 from "../assets/awards/csr-award10.png";
-import csrAward11 from "../assets/awards/csr-award11.png";
-import csrAward12 from "../assets/awards/csr-award12.png";
-import csrAward13 from "../assets/awards/csr-award13.png";
-import csrAward14 from "../assets/awards/csr-award14.png";
-import csrAward15 from "../assets/awards/csr-award15.png";
-import csrAward16 from "../assets/awards/csr-award16.png";
-import csrAward23 from "../assets/awards/csr-award23.png";
-import csrAward24 from "../assets/awards/csr-award24.png";
+import csrAward3 from "../assets/webp_awards/csr-award3.webp";
+import csrAward9 from "../assets/webp_awards/csr-award9.webp";
+import csrAward10 from "../assets/webp_awards/csr-award10.webp";
+import csrAward11 from "../assets/webp_awards/csr-award11.webp";
+import csrAward12 from "../assets/webp_awards/csr-award12.webp";
+import csrAward13 from "../assets/webp_awards/csr-award13.webp";
+import csrAward14 from "../assets/webp_awards/csr-award14.webp";
+import csrAward15 from "../assets/webp_awards/csr-award15.webp";
+import csrAward16 from "../assets/webp_awards/csr-award16.webp";
+import csrAward23 from "../assets/webp_awards/csr-award23.webp";
+import csrAward24 from "../assets/webp_awards/csr-award24.webp";
 
 const CSR_AWARDS = [
   csrAward3,
@@ -31,27 +31,27 @@ const CSR_AWARDS = [
 import "./CSR.css";
 
 // Local image carousel imports
-import csr1 from "../assets/images/csr1.png";
-import csr2 from "../assets/images/csr2.jpg";
-import csr3 from "../assets/images/csr3.jpg";
-import csr4 from "../assets/images/csr4.jpg";
-import csr5 from "../assets/images/csr5.jpg";
-import csr6 from "../assets/images/csr6.jpg";
-import csr7 from "../assets/images/csr7.jpg";
-import csr8 from "../assets/images/csr8.jpg";
-import csrMain from "../assets/images/csr_main.jpeg";
-import education1 from "../assets/images/education1.JPG";
-import education2 from "../assets/images/education2.jpeg";
-import education3 from "../assets/images/education_3.jpeg";
-import healthcare1 from "../assets/images/healthcare1.jpeg";
-import healthcare2 from "../assets/images/healthcare2.jpeg";
-import healthcare3 from "../assets/images/healthcare3.jpeg";
-import environment1 from "../assets/images/environment1.jpeg";
-import environment2 from "../assets/images/environment2.jpeg";
-import environment3 from "../assets/images/environment3.jpeg";
-import community1 from "../assets/images/community1.jpeg";
-import community2 from "../assets/images/community2.jpeg";
-import community3 from "../assets/images/community3.jpeg";
+import csr1 from "../assets/webp_images/csr1.webp";
+import csr2 from "../assets/webp_images/csr2.webp";
+import csr3 from "../assets/webp_images/csr3.webp";
+import csr4 from "../assets/webp_images/csr4.webp";
+import csr5 from "../assets/webp_images/csr5.webp";
+import csr6 from "../assets/webp_images/csr6.webp";
+import csr7 from "../assets/webp_images/csr7.webp";
+import csr8 from "../assets/webp_images/csr8.webp";
+import csrMain from "../assets/webp_images/csr_main.webp";
+import education1 from "../assets/webp_images/education1.webp";
+import education2 from "../assets/webp_images/education2.webp";
+import education3 from "../assets/webp_images/education_3.webp";
+import healthcare1 from "../assets/webp_images/healthcare1.webp";
+import healthcare2 from "../assets/webp_images/healthcare2.webp";
+import healthcare3 from "../assets/webp_images/healthcare3.webp";
+import environment1 from "../assets/webp_images/environment1.webp";
+import environment2 from "../assets/webp_images/environment2.webp";
+import environment3 from "../assets/webp_images/environment3.webp";
+import community1 from "../assets/webp_images/community1.webp";
+import community2 from "../assets/webp_images/community2.webp";
+import community3 from "../assets/webp_images/community3.webp";
 
 const CAROUSEL_IMAGES = [csr1, csr2, csr3, csr4, csr5, csr6, csr7, csr8];
 
@@ -194,6 +194,8 @@ function CSR() {
             src="https://images.unsplash.com/photo-1521898284481-a5ec348cb555?w=1800&q=80"
             alt="Corporate Social Responsibility"
             className="hero-bg-img-csr"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="hero-overlay-csr" />
         </div>
@@ -224,6 +226,8 @@ function CSR() {
                 src={csrMain} 
                 alt="Worker in industrial factory" 
                 className="about-industry-main-img"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -266,7 +270,7 @@ function CSR() {
                   className={`carousel-slide-panel ${index === currentSlide ? "active-slide" : ""}`}
                   key={index}
                 >
-                  <img src={imgSrc} alt={`Community support slide ${index + 1}`} />
+                  <img src={imgSrc} alt={`Community support slide ${index + 1}`} decoding="async" />
                 </div>
               ))}
               <div className="carousel-tint-overlay" />
@@ -357,7 +361,7 @@ function CSR() {
           {GRID_CARDS_DATA.map((card) => (
             <div className="csr-display-grid-card" key={card.id} onClick={() => openModal(card)}>
               <div className="grid-card-image-box">
-          <img src={card.images[0].src} alt={card.images[0].title} />
+          <img src={card.images[0].src} alt={card.images[0].title} loading="lazy" decoding="async" />
               </div>
               <div className="grid-card-body">
                 <div className="grid-card-svg-icon">{card.icon}</div>
@@ -427,7 +431,7 @@ function CSR() {
             <div className="csr-modal-slideshow">
               {modalCard.images.map((img, index) => (
                 <div className={`csr-modal-slide ${index === modalSlide ? "active" : ""}`} key={index}>
-                  <img src={img.src} alt={`${img.title}`} />
+                  <img src={img.src} alt={`${img.title}`} decoding="async" />
                 </div>
               ))}
               <button className="csr-modal-arrow csr-modal-arrow-left" onClick={handleModalPrev} aria-label="Previous">

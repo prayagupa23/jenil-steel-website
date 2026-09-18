@@ -3,14 +3,14 @@ import Footer from "../components/Footer";
 import "./Reach.css";
 import "./Services.css"
 import truckVideo from "../assets/ourReach.mp4"; 
-import indiaMapImg from "../assets/images/map.jpeg"; 
-import fastDelivery from '../assets/images/truck.png';
-import usp from '../assets/images/usp.jpeg';
-import logistics from '../assets/images/logistics.png';
-import productDev from '../assets/images/product_dev.png';
-import productMix from '../assets/images/product_mix.png';
-import tailoredSol from '../assets/images/tailored_solution.png';
-import sizeMax from '../assets/images/sizeMax.jpeg'
+import indiaMapImg from "../assets/webp_images/map.webp"; 
+import fastDelivery from '../assets/webp_images/truck.webp';
+import usp from '../assets/webp_images/usp.webp';
+import logistics from '../assets/webp_images/logistics.webp';
+import productDev from '../assets/webp_images/product_dev.webp';
+import productMix from '../assets/webp_images/product_mix.webp';
+import tailoredSol from '../assets/webp_images/tailored_solution.webp';
+import sizeMax from '../assets/webp_images/sizeMax.webp'
 
 function OurReach() {
   return (
@@ -73,6 +73,8 @@ function OurReach() {
                   src={usp}
                   alt="Steel manufacturing process" 
                   className="reach-usp-main-img"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -94,6 +96,8 @@ function OurReach() {
               src={indiaMapImg} 
               alt="Jenil Steel National Distribution Hub Map" 
               className="india-distribution-map-img"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -137,6 +141,8 @@ function OurReach() {
                   src={fastDelivery}
                   alt="Timely Delivery" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -151,6 +157,8 @@ function OurReach() {
                   src={logistics}
                   alt="Just in Time Delivery" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -165,6 +173,8 @@ function OurReach() {
                   src={productDev} 
                   alt="Product Development" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -179,6 +189,8 @@ function OurReach() {
                   src={productMix}
                   alt="Product Mix" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -193,6 +205,8 @@ function OurReach() {
                   src={tailoredSol}
                   alt="Tailored Solutions" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -207,6 +221,8 @@ function OurReach() {
                   src={sizeMax} 
                   alt="Size Max" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -221,6 +237,8 @@ function OurReach() {
                   src={fastDelivery}
                   alt="Timely Delivery" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -235,6 +253,8 @@ function OurReach() {
                   src={logistics}
                   alt="Just in Time Delivery" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -249,6 +269,8 @@ function OurReach() {
                   src={productDev}
                   alt="Product Development" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -263,6 +285,8 @@ function OurReach() {
                   src={productMix}
                   alt="Product Mix" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -277,6 +301,8 @@ function OurReach() {
                   src={tailoredSol}
                   alt="Tailored Solutions" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">
@@ -291,6 +317,8 @@ function OurReach() {
                   src={sizeMax}
                   alt="Size Max" 
                   className="reach-capability-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reach-capability-content">

@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Star, Play } from 'lucide-react'; // Added P
 import './VideoTestimonials.css';
 import videoTestimonials from '../assets/videoTestimonial1.mp4';
 
-import bedmuthaLogo from '../assets/images/bedmutha.png'; 
+import bedmuthaLogo from '../assets/webp_images/bedmutha.webp'; 
 
 const VideoTestimonials = () => {
 
@@ -170,7 +170,7 @@ const VideoTestimonials = () => {
 
                 <AnimatePresence mode="wait">
                   <motion.div key={currentIndex} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="corporate-logo-frame">
-                    <img src={current.logo} alt="Corporate Entity Verification" className="b2b-logo-img" />
+                    <img src={current.logo} alt="Corporate Entity Verification" className="b2b-logo-img" loading="lazy" decoding="async" />
                   </motion.div>
                 </AnimatePresence>
               </div>

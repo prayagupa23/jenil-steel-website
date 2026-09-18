@@ -31,6 +31,8 @@
               src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?w=1800&q=80"
               alt="Industrial Architecture"
               className="hero-bg-img-contact"
+              fetchPriority="high"
+              decoding="async"
             />
             <div className="hero-overlay-contact" />
           </div>

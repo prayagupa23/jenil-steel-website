@@ -4,25 +4,25 @@ import React, { useState, useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import Awards from "../components/Awards";
 import jswLogo from "../assets/images/jsw-logo-jv.webp";
-import rinlLogo from "../assets/images/Rashtriya_Ispat_Nigam.svg.png";
-import tataLogo from "../assets/images/tata-steel-logo.png";
+import rinlLogo from "../assets/webp_images/Rashtriya_Ispat_Nigam.svg.webp";
+import tataLogo from "../assets/webp_images/tata-steel-logo.webp";
 import "./About.css";
-import about1 from '../assets/images/about1.png';
+import about1 from '../assets/webp_images/about1.webp';
 import { useInView as useInViewObs } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
-import mukundLogo from '../assets/images/mukund.jpeg';
-import nicoLogo from '../assets/images/nico.png';
-import eslLogo from '../assets/images/esl.jpeg';
-import sailLogo from '../assets/images/sail.png';
-import bhushanLogo from '../assets/images/bhushanLogo.jpeg';
-import jindalLogo from '../assets/images/jindalLogo.jpeg';
-import vedantaLogo from '../assets/images/vedantaLogo.png';
-import fastDelivery from '../assets/images/truck.png';
-import logistics from '../assets/images/logistics.png';
-import productDev from '../assets/images/product_dev.png';
-import productMix from '../assets/images/product_mix.png';
-import tailoredSol from '../assets/images/tailored_solution.png';
-import sizeMax from '../assets/images/sizeMax.jpeg';
+import mukundLogo from '../assets/webp_images/mukund.webp';
+import nicoLogo from '../assets/webp_images/nico.webp';
+import eslLogo from '../assets/webp_images/esl.webp';
+import sailLogo from '../assets/webp_images/sail.webp';
+import bhushanLogo from '../assets/webp_images/bhushanLogo.webp';
+import jindalLogo from '../assets/webp_images/jindalLogo.webp';
+import vedantaLogo from '../assets/webp_images/vedantaLogo.webp';
+import fastDelivery from '../assets/webp_images/truck.webp';
+import logistics from '../assets/webp_images/logistics.webp';
+import productDev from '../assets/webp_images/product_dev.webp';
+import productMix from '../assets/webp_images/product_mix.webp';
+import tailoredSol from '../assets/webp_images/tailored_solution.webp';
+import sizeMax from '../assets/webp_images/sizeMax.webp';
 
 const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo, bhushanLogo, jindalLogo, vedantaLogo];
 
@@ -131,11 +131,11 @@ function HeroSection() {
           src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1800&q=80"
           alt="Steel factory"
           className="hero-bg-img-about"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="hero-overlay-about" />
       </div>
-
-      <BlueprintGrid />
 
       <div className="hero-content-about">
         <nav className="hero-breadcrumbs-about">
@@ -190,7 +190,7 @@ function AboutContent() {
         <div className="about-right-about">
           <div className="about-img-primary-about">
             <div className="img-inner-wrapper">
-              <img src={about1} alt="Steel warehouse" />
+              <img src={about1} alt="Steel warehouse" loading="lazy" decoding="async" />
               <div className="img-overlay-about" />
             </div>
           </div>
@@ -381,7 +381,7 @@ function TeamSection() {
             onClick={() => setSelectedMember(member)}
           >
             <div className="team-card-img-wrapper">
-              <img src={member.image} alt={member.name} />
+              <img src={member.image} alt={member.name} loading="lazy" decoding="async" />
               <div className="team-card-overlay-gradient" />
             </div>
 
@@ -448,7 +448,7 @@ function TeamSection() {
               <div className="team-modal-body">
                 {/* Left Side: Dynamic Image Layout */}
                 <div className="team-modal-img-container">
-                  <img src={selectedMember.image} alt={selectedMember.name} />
+                  <img src={selectedMember.image} alt={selectedMember.name} decoding="async" />
                   <div className="team-modal-caption">
                     <h3 className="team-modal-name">{selectedMember.name}</h3>
                     <p className="team-modal-role">{selectedMember.role}</p>
@@ -480,7 +480,7 @@ function ClientsStrip() {
           <div className="marquee-content-about">
             {[...logos, ...logos, ...logos].map((logo, idx) => (
               <div className="client-logo-about" key={`${logo}-${idx}`}>
-                <img src={logo} alt="Customer logo" />
+                <img src={logo} alt="Customer logo" loading="lazy" decoding="async" />
               </div>
             ))}
           </div>
@@ -508,7 +508,7 @@ export default function About() {
           <div className="about-usp-marquee-track">
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={fastDelivery} alt="Timely Delivery" className="about-usp-image" />
+                <img src={fastDelivery} alt="Timely Delivery" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Timely Delivery</h4>
@@ -517,7 +517,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={logistics} alt="Just in Time Delivery" className="about-usp-image" />
+                <img src={logistics} alt="Just in Time Delivery" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Just in Time Delivery</h4>
@@ -526,7 +526,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={productDev} alt="Product Development" className="about-usp-image" />
+                <img src={productDev} alt="Product Development" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Product Development</h4>
@@ -535,7 +535,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={productMix} alt="Product Mix" className="about-usp-image" />
+                <img src={productMix} alt="Product Mix" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Product Mix</h4>
@@ -544,7 +544,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={tailoredSol} alt="Tailored Solutions" className="about-usp-image" />
+                <img src={tailoredSol} alt="Tailored Solutions" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Tailored Solutions</h4>
@@ -553,7 +553,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={sizeMax} alt="Size Max" className="about-usp-image" />
+                <img src={sizeMax} alt="Size Max" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Size Mix</h4>
@@ -562,7 +562,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={fastDelivery} alt="Timely Delivery" className="about-usp-image" />
+                <img src={fastDelivery} alt="Timely Delivery" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Timely Delivery</h4>
@@ -571,7 +571,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={logistics} alt="Just in Time Delivery" className="about-usp-image" />
+                <img src={logistics} alt="Just in Time Delivery" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Just in Time Delivery</h4>
@@ -580,7 +580,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={productDev} alt="Product Development" className="about-usp-image" />
+                <img src={productDev} alt="Product Development" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Product Development</h4>
@@ -589,7 +589,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={productMix} alt="Product Mix" className="about-usp-image" />
+                <img src={productMix} alt="Product Mix" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Product Mix</h4>
@@ -598,7 +598,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={tailoredSol} alt="Tailored Solutions" className="about-usp-image" />
+                <img src={tailoredSol} alt="Tailored Solutions" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Tailored Solutions</h4>
@@ -607,7 +607,7 @@ export default function About() {
             </div>
             <div className="about-usp-card">
               <div className="about-usp-image-wrapper">
-                <img src={sizeMax} alt="Size Max" className="about-usp-image" />
+                <img src={sizeMax} alt="Size Max" className="about-usp-image" loading="lazy" decoding="async" />
               </div>
               <div className="about-usp-content">
                 <h4 className="about-usp-card-title">Size Mix</h4>

@@ -154,6 +154,8 @@ export default function Testimonials() {
                 src={t.avatar}
                 alt={t.name}
                 className="avatar"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 

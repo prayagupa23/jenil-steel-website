@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import "./Careers.css";
 
 import jswLogo from "../assets/images/jsw-logo-jv.webp";
-import rinlLogo from "../assets/images/Rashtriya_Ispat_Nigam.svg.png";
-import tataLogo from "../assets/images/tata-steel-logo.png";
+import rinlLogo from "../assets/webp_images/Rashtriya_Ispat_Nigam.svg.webp";
+import tataLogo from "../assets/webp_images/tata-steel-logo.webp";
 
 const employeeTestimonials = [
   {
@@ -80,6 +80,8 @@ function CareersHero() {
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80](https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80"
           alt="Industrial Office Setup"
           className="hero-bg-img-careers"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="hero-overlay-careers" />
       </div>
@@ -115,7 +117,7 @@ function EmployeeTestimonialCard({ testimonial, index }) {
     >
       <div className="testimonial-header">
         <div className="testimonial-avatar">
-          <img src={testimonial.image} alt={testimonial.name} />
+          <img src={testimonial.image} alt={testimonial.name} loading="lazy" decoding="async" />
         </div>
         <div className="testimonial-info">
           <h4 className="testimonial-name">{testimonial.name}</h4>

@@ -3,23 +3,23 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import heroVideo from '../assets/ourReach.mp4';
 import jswLogo from '../assets/images/jsw-logo-jv.webp';
-import rinlLogo from '../assets/images/Rashtriya_Ispat_Nigam.svg.png';
-// import sailLogo '../assets/images/sail.png';
-import tataLogo from '../assets/images/tata-steel-logo.png';
-import legacyImage from '../assets/images/legacy.png';
+import rinlLogo from '../assets/webp_images/Rashtriya_Ispat_Nigam.svg.webp';
+// import sailLogo '../assets/webp_images/sail.webp';
+import tataLogo from '../assets/webp_images/tata-steel-logo.webp';
+import legacyImage from '../assets/webp_images/legacy.webp';
 import JenilAdvantage from '../components/JenilAdvantage';
 import HowWeWork from '../components/HowWeWork';
 import Testimonials from '../components/Testimonials';
 import VideoTestimonials from '../components/VideoTestimonials';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
-import mukundLogo from '../assets/images/mukund.jpeg';
-import nicoLogo from '../assets/images/nico.png';
-import eslLogo from '../assets/images/esl.jpeg';
-import sailLogo from '../assets/images/sail.png';
-import bhushanLogo from '../assets/images/bhushanLogo.jpeg';
-import jindalLogo from '../assets/images/jindalLogo.jpeg';
-import vedantaLogo from '../assets/images/vedantaLogo.png';
+import mukundLogo from '../assets/webp_images/mukund.webp';
+import nicoLogo from '../assets/webp_images/nico.webp';
+import eslLogo from '../assets/webp_images/esl.webp';
+import sailLogo from '../assets/webp_images/sail.webp';
+import bhushanLogo from '../assets/webp_images/bhushanLogo.webp';
+import jindalLogo from '../assets/webp_images/jindalLogo.webp';
+import vedantaLogo from '../assets/webp_images/vedantaLogo.webp';
 
 const stats = [
   { value: 75, suffix: '+', label: 'YEARS EXPERIENCE' },
@@ -187,7 +187,7 @@ function Home() {
             <span className="legacy-corner legacy-corner-tl" aria-hidden="true" />
             <span className="legacy-corner legacy-corner-br" aria-hidden="true" />
             <div className="legacy-image-wrap">
-              <img src={legacyImage} alt="Jenil Steel leadership in industrial facility" />
+              <img src={legacyImage} alt="Jenil Steel leadership in industrial facility" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -204,7 +204,7 @@ function Home() {
             <div className="marquee-content">
               {[...logos, ...logos, ...logos].map((logo, idx) => (
                 <div className="client-logo" key={`${logo}-${idx}`}>
-                  <img src={logo} alt="Customer logo" />
+                  <img src={logo} alt="Customer logo" loading="lazy" decoding="async" />
                 </div>
               ))}
             </div>

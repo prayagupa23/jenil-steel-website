@@ -1,27 +1,27 @@
 import Footer from "../components/Footer";
 import "./Products.css";
-import tmtBar from '../assets/images/tmtbar.jpeg';
-import wireRods from '../assets/images/wirerods.jpeg';
-import angels from '../assets/images/angels.jpeg';
-import billets from '../assets/images/billets.jpeg';
-import roundBars from '../assets/images/roundbars.jpeg';
-import beams from '../assets/images/beams.jpeg';
-import channels from '../assets/images/channels.jpeg';
+import tmtBar from '../assets/webp_images/tmtbar.webp';
+import wireRods from '../assets/webp_images/wirerods.webp';
+import angels from '../assets/webp_images/angels.webp';
+import billets from '../assets/webp_images/billets.webp';
+import roundBars from '../assets/webp_images/roundbars.webp';
+import beams from '../assets/webp_images/beams.webp';
+import channels from '../assets/webp_images/channels.webp';
 import jswLogo from "../assets/images/jsw-logo-jv.webp";
-import rinlLogo from "../assets/images/Rashtriya_Ispat_Nigam.svg.png";
-import tataLogo from "../assets/images/tata-steel-logo.png";
+import rinlLogo from "../assets/webp_images/Rashtriya_Ispat_Nigam.svg.webp";
+import tataLogo from "../assets/webp_images/tata-steel-logo.webp";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import structuralSteel from '../assets/images/structuralSteel.jpeg';
-import pipes from '../assets/images/pipes.jpeg';
-import mukundLogo from '../assets/images/mukund.jpeg';
-import nicoLogo from '../assets/images/nico.png';
-import eslLogo from '../assets/images/esl.jpeg';
-import sailLogo from '../assets/images/sail.png';
-import bhushanLogo from '../assets/images/bhushanLogo.jpeg';
-import jindalLogo from '../assets/images/jindalLogo.jpeg';
-import vedantaLogo from '../assets/images/vedantaLogo.png';
-import aboutProducts from '../assets/images/products.png';
+import structuralSteel from '../assets/webp_images/structuralSteel.webp';
+import pipes from '../assets/webp_images/pipes.webp';
+import mukundLogo from '../assets/webp_images/mukund.webp';
+import nicoLogo from '../assets/webp_images/nico.webp';
+import eslLogo from '../assets/webp_images/esl.webp';
+import sailLogo from '../assets/webp_images/sail.webp';
+import bhushanLogo from '../assets/webp_images/bhushanLogo.webp';
+import jindalLogo from '../assets/webp_images/jindalLogo.webp';
+import vedantaLogo from '../assets/webp_images/vedantaLogo.webp';
+import aboutProducts from '../assets/webp_images/products.webp';
 
 const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo, bhushanLogo, jindalLogo, vedantaLogo];
 
@@ -98,7 +98,7 @@ function ProductCard({ product, onOpenModal }) {
   return (
     <div className="product-card" onClick={handleCardClick}>
       {/* Full-card background image */}
-      <img src={product.image} alt={product.title} className="card-image" />
+      <img src={product.image} alt={product.title} className="card-image" loading="lazy" decoding="async" />
 
       {/* Dark gradient overlay — content sits on top of this */}
       <div className="card-overlay" />
@@ -175,7 +175,7 @@ function ProductModal({ product, onClose }) {
             <div className="product-modal-body">
               {/* Left Side: Dynamic Image Layout */}
               <div className="product-modal-img-container">
-                <img src={product.image} alt={product.title} />
+                <img src={product.image} alt={product.title} decoding="async" />
                 <div className="product-modal-caption">
                   <h3 className="product-modal-name">{product.title}</h3>
                   <p className="product-modal-description">{product.description}</p>
@@ -194,11 +194,11 @@ function ProductModal({ product, onClose }) {
                 </div>
                 {product.brands?.length > 0 && (
                 <div className="product-modal-brands-container">
-                  <p className="brands-title">Companies We Stock</p>
+                  <p className="brands-title">Companies</p>
                   <div className="product-modal-brands">
                     {product.brands.map((brand, idx) => (
                       <div className="brand-logo" key={brand}>
-                        <img src={brand} alt={`Company logo ${idx}`} />
+                        <img src={brand} alt={`Company logo ${idx}`} decoding="async" />
                       </div>
                     ))}
                   </div>
@@ -225,6 +225,8 @@ function AboutIndustry() {
               src={aboutProducts}
               alt="Worker in industrial factory" 
               className="about-industry-main-img"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -267,7 +269,7 @@ function ClientsStrip() {
           <div className="marquee-content-products">
             {[...logos, ...logos, ...logos].map((logo, idx) => (
               <div className="client-logo-products" key={`${logo}-${idx}`}>
-                <img src={logo} alt="Customer logo" />
+                <img src={logo} alt="Customer logo" loading="lazy" decoding="async" />
               </div>
             ))}
           </div>
@@ -305,6 +307,8 @@ function Products() {
           src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1800&q=80"
           alt="Steel factory"
           className="hero-bg-img-products"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="hero-overlay-products" />
       </div>

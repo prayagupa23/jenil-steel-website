@@ -2,19 +2,19 @@
 import React from "react";
 import "./Awards.css";
 
-import award1 from "../assets/awards/award1.png";
-import award2 from "../assets/awards/award2.png";
-import award4 from "../assets/awards/award4.png";
-import award5 from "../assets/awards/award5.png";
-import award6 from "../assets/awards/award6.png";
-import award7 from "../assets/awards/award7.png";
-import award8 from "../assets/awards/award8.png";
-import award17 from "../assets/awards/award17.png";
-import award18 from "../assets/awards/award18.png";
-import award19 from "../assets/awards/award19.png";
-import award20 from "../assets/awards/award20.png";
-import award21 from "../assets/awards/award21.png";
-import award22 from "../assets/awards/award22.png";
+import award1 from "../assets/webp_awards/award1.webp";
+import award2 from "../assets/webp_awards/award2.webp";
+import award4 from "../assets/webp_awards/award4.webp";
+import award5 from "../assets/webp_awards/award5.webp";
+import award6 from "../assets/webp_awards/award6.webp";
+import award7 from "../assets/webp_awards/award7.webp";
+import award8 from "../assets/webp_awards/award8.webp";
+import award17 from "../assets/webp_awards/award17.webp";
+import award18 from "../assets/webp_awards/award18.webp";
+import award19 from "../assets/webp_awards/award19.webp";
+import award20 from "../assets/webp_awards/award20.webp";
+import award21 from "../assets/webp_awards/award21.webp";
+import award22 from "../assets/webp_awards/award22.webp";
 
 const DEFAULT_AWARDS = [
   award1,
@@ -58,7 +58,7 @@ export default function Awards({
                 key={`${idx}`}
                 aria-hidden={idx >= images.length ? "true" : undefined}
               >
-                <img src={src} alt={`${label} received by Jenil Steel`} loading="lazy" />
+                <img src={src} alt={`${label} received by Jenil Steel`} loading="lazy" decoding="async" />
               </figure>
             ))}
           </div>

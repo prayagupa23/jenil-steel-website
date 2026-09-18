@@ -47,7 +47,7 @@ function Navbar() {
 
         {/* Logo */}
         <NavLink to="/" className="brand" aria-label="Jenil Steel Home" onClick={close}>
-          <img src={logo} alt="Jenil Steel logo" />
+          <img src={logo} alt="Jenil Steel logo" decoding="async" />
         </NavLink>
 
         {/* Nav links — desktop row / mobile dropdown */}

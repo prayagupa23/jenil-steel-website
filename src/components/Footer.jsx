@@ -18,6 +18,8 @@ function Footer() {
                 src={logo}
                 alt="Jenil Steel"
                 className="footer-logo"
+                loading="lazy"
+                decoding="async"
             />
 
           <p>

@@ -1,22 +1,22 @@
 import Footer from "../components/Footer";
 import "./Services.css";
-import agriculture from '../assets/images/agriculture.jpeg';
-import engineering from '../assets/images/engineering.jpeg';
-import defence from '../assets/images/defence.jpeg';
-import infrastructure from '../assets/images/infrastructure.jpeg';
-import powerelectric from '../assets/images/powerelectric.jpeg';
-import automobiles from '../assets/images/automobiles.jpeg';
+import agriculture from '../assets/webp_images/agriculture.webp';
+import engineering from '../assets/webp_images/engineering.webp';
+import defence from '../assets/webp_images/defence.webp';
+import infrastructure from '../assets/webp_images/infrastructure.webp';
+import powerelectric from '../assets/webp_images/powerelectric.webp';
+import automobiles from '../assets/webp_images/automobiles.webp';
 import jswLogo from "../assets/images/jsw-logo-jv.webp";
-import rinlLogo from "../assets/images/Rashtriya_Ispat_Nigam.svg.png";
-import tataLogo from "../assets/images/tata-steel-logo.png";
-import mukundLogo from '../assets/images/mukund.jpeg';
-import nicoLogo from '../assets/images/nico.png';
-import eslLogo from '../assets/images/esl.jpeg';
-import sailLogo from '../assets/images/sail.png';
-import bhushanLogo from '../assets/images/bhushanLogo.jpeg';
-import jindalLogo from '../assets/images/jindalLogo.jpeg';
-import vedantaLogo from '../assets/images/vedantaLogo.png';
-import aboutIndustry from '../assets/images/about-industry.jpeg';
+import rinlLogo from "../assets/webp_images/Rashtriya_Ispat_Nigam.svg.webp";
+import tataLogo from "../assets/webp_images/tata-steel-logo.webp";
+import mukundLogo from '../assets/webp_images/mukund.webp';
+import nicoLogo from '../assets/webp_images/nico.webp';
+import eslLogo from '../assets/webp_images/esl.webp';
+import sailLogo from '../assets/webp_images/sail.webp';
+import bhushanLogo from '../assets/webp_images/bhushanLogo.webp';
+import jindalLogo from '../assets/webp_images/jindalLogo.webp';
+import vedantaLogo from '../assets/webp_images/vedantaLogo.webp';
+import aboutIndustry from '../assets/webp_images/about-industry.webp';
 
 const logos = [jswLogo, rinlLogo, tataLogo, mukundLogo, nicoLogo, eslLogo, sailLogo, bhushanLogo, jindalLogo, vedantaLogo];
 
@@ -64,7 +64,7 @@ function ServiceCard({ service, index }) {
 
   return (
     <div className="service-card">
-      <img src={service.image} alt={service.title} className="card-image" />
+      <img src={service.image} alt={service.title} className="card-image" loading="lazy" decoding="async" />
       <div className="card-overlay" />
       <div className="card-hover-number">{cardNumber}</div>
       <div className="card-content">
@@ -89,6 +89,8 @@ function AboutIndustry() {
               src={aboutIndustry}
               alt="Worker in industrial factory" 
               className="about-industry-main-img"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -131,7 +133,7 @@ function ClientsStrip() {
           <div className="marquee-content-services">
             {[...logos, ...logos, ...logos].map((logo, idx) => (
               <div className="client-logo-services" key={`${logo}-${idx}`}>
-                <img src={logo} alt="Customer logo" />
+                <img src={logo} alt="Customer logo" loading="lazy" decoding="async" />
               </div>
             ))}
           </div>
@@ -151,6 +153,8 @@ function Services() {
             src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1800&q=80"
             alt="Steel factory"
             className="hero-bg-img-services"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="hero-overlay-services" />
         </div>
