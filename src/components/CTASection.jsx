@@ -17,26 +17,35 @@ function CTASection() {
 
   const [hoveringButton, setHoveringButton] = useState(false);
 
-  //cursor effects inside the CTA section only
+  //cursor effects inside the CTA section only - throttled via rAF
+  const rafRef = useRef(null);
+  const pendingPos = useRef(null);
+
   useEffect(() => {
     const section = sectionRef.current;
+    if (!section) return;
 
     const handleMouseMove = (e) => {
       const rect = section.getBoundingClientRect();
-      setHasMoved(true);
-      setMousePos({
+      pendingPos.current = {
         x: e.clientX - rect.left,
         y: e.clientY - rect.top,
+      };
+      if (rafRef.current) return;
+      rafRef.current = requestAnimationFrame(() => {
+        if (pendingPos.current) {
+          setMousePos(pendingPos.current);
+          setHasMoved(true);
+        }
+        rafRef.current = null;
       });
     };
 
-    section.addEventListener("mousemove", handleMouseMove);
+    section.addEventListener("mousemove", handleMouseMove, { passive: true });
 
     return () => {
-      section.removeEventListener(
-        "mousemove",
-        handleMouseMove
-      );
+      section.removeEventListener("mousemove", handleMouseMove);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []); 
 

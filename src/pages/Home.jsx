@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import jswLogo from '../assets/images/jsw-logo-jv.webp';
 import rinlLogo from '../assets/webp_images/Rashtriya_Ispat_Nigam.svg.webp';
@@ -9,9 +8,39 @@ import legacyImage from '../assets/webp_images/legacy.webp';
 import JenilAdvantage from '../components/JenilAdvantage';
 import HowWeWork from '../components/HowWeWork';
 import Testimonials from '../components/Testimonials';
-import VideoTestimonials from '../components/VideoTestimonials';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
+
+const VideoTestimonials = lazy(() => import('../components/VideoTestimonials'));
+
+function DeferredVideoTestimonials() {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <div ref={ref} style={{ minHeight: isVisible ? undefined : '520px' }}>
+      {isVisible ? (
+        <Suspense fallback={<div style={{ minHeight: '520px' }} aria-hidden="true" />}>
+          <VideoTestimonials />
+        </Suspense>
+      ) : null}
+    </div>
+  );
+}
 import mukundLogo from '../assets/webp_images/mukund.webp';
 import nicoLogo from '../assets/webp_images/nico.webp';
 import eslLogo from '../assets/webp_images/esl.webp';
@@ -37,43 +66,63 @@ const legacyStats = [
 ];
 
 function Counter({ value, suffix, cycle }) {
-  const [count, setCount] = useState(0);
+  const ref = useRef(null);
 
   useEffect(() => {
     let startTime = null;
     const duration = 2000;
     let frameId = null;
+    let lastDisplayed = -1;
 
     const animate = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * value));
-      if (progress < 1) frameId = requestAnimationFrame(animate);
+      const current = Math.floor(progress * value);
+      if (current !== lastDisplayed && ref.current) {
+        ref.current.textContent = current.toLocaleString() + suffix;
+        lastDisplayed = current;
+      }
+      if (progress < 1) {
+        frameId = requestAnimationFrame(animate);
+      } else if (ref.current) {
+        ref.current.textContent = value.toLocaleString() + suffix;
+      }
     };
 
     frameId = requestAnimationFrame(animate);
-
     return () => {
       if (frameId) cancelAnimationFrame(frameId);
     };
-  }, [cycle, value]);
+  }, [cycle, value, suffix]);
 
-  return (
-    <>
-      {count.toLocaleString()}
-      {suffix}
-    </>
-  );
+  return <span ref={ref}>{(0).toLocaleString() + suffix}</span>;
 }
 
 function Home() {
   const [countCycle, setCountCycle] = useState(0);
+  const heroVideoRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCountCycle((prev) => prev + 1);
     }, 15000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+    const loadVideo = () => {
+      video.load();
+      const p = video.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
+    };
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(loadVideo, { timeout: 2000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const t = setTimeout(loadVideo, 400);
+    return () => clearTimeout(t);
   }, []);
 
   const handleCommitmentMove = (event) => {
@@ -92,24 +141,20 @@ function Home() {
     <main className="home-page">
       <section className="hero">
         <video
+          ref={heroVideoRef}
           className="hero-video"
           autoPlay
           muted
           loop
           playsInline
           poster="/hero-poster.webp"
-          preload="metadata"
+          preload="none"
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
         <div className="hero-overlay" />
 
-        <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, y: 26 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
+        <div className="hero-content">
           {/* <p className="hero-tagline">ESTABLISHED 1948</p> */}
           <h1>
             Trust.
@@ -135,7 +180,7 @@ function Home() {
               <span>Explore Products</span>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       <section className="stats">
@@ -221,7 +266,7 @@ function Home() {
       {/* <hr className="custom-line" /> */}
       <HowWeWork/>
       <Testimonials/>
-      <VideoTestimonials/>
+      <DeferredVideoTestimonials/>
       <CTASection/>
       <Footer/>
 
