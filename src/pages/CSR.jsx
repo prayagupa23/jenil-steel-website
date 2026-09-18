@@ -39,7 +39,6 @@ import csr5 from "../assets/webp_images/csr5.webp";
 import csr6 from "../assets/webp_images/csr6.webp";
 import csr7 from "../assets/webp_images/csr7.webp";
 import csr8 from "../assets/webp_images/csr8.webp";
-import csrMain from "../assets/webp_images/csr_main.webp";
 import education1 from "../assets/webp_images/education1.webp";
 import education2 from "../assets/webp_images/education2.webp";
 import education3 from "../assets/webp_images/education_3.webp";
@@ -216,38 +215,51 @@ function CSR() {
         </div>
       </section>
 
-      <section className="about-industry-container animate-fade-in-up">
-        <div className="about-industry-content">
+      {/* CREATIVE LIGHT-THEMED INITIATIVES SECTION */}
+      <section className="csr-initiatives-section">
+        <div className="csr-split-container">
           
-          {/* Left Side: Worker Image with Zoom Frame */}
-          <div className="about-industry-image-wrapper">
-            <div className="about-industry-image-frame">
-              <img 
-                src={csrMain} 
-                alt="Worker in industrial factory" 
-                className="about-industry-main-img"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+          {/* Left Column: Heading & Introduction Block */}
+          <div className="csr-intro-column">
+            <div className="csr-orange-accent-line" />
+            <h2 className="csr-section-title">CSR Initiatives</h2>
+            <p className="csr-section-desc">
+              Jenil Steel firmly believes in giving back to the society. This principle forms a strong base for all the activities that our JSPL stands for and undertakes. We have bifurcated our CSR Initiatives into key developmental structures.
+            </p>
           </div>
 
-          {/* Right Side: Text details */}
-          <div className="about-industry-text-wrapper">
-            <div className="csr-orange-accent-line" />
-            <h2 className="about-industry-heading">
-              CSR Committee
-            </h2>
-            <ul className="about-industry-subtext">
-              <li>Wire Rods - high-quality reinforcement for construction and industrial applications</li>
-              <li>TMT Bars - thermo-mechanically treated bars with superior strength and ductility</li>
-              <li>Billets - semi-finished steel for further processing and forging</li>
-              <li>Beams - structural load-bearing sections for large-scale infrastructure projects</li>
-              <li>Channels, Angles &amp; Flats - versatile structural profiles for fabrication and engineering</li>
-              <li>Other structural steel solutions tailored to meet diverse industrial requirements</li>
-            </ul>
+          {/* Right Column: High-End Interactive List Items Grid */}
+          <div className="csr-cards-column">
+            
+            <div className="csr-interactive-row-card">
+              <div className="card-indicator-dot" />
+              <div className="card-content-block">
+                <h3>Education Initiatives</h3>
+                <p>Creating sustainable learning pathways and educational framework development for regional schools.</p>
+              </div>
+              <div className="card-hover-border-accent" />
+            </div>
+
+            <div className="csr-interactive-row-card">
+              <div className="card-indicator-dot" />
+              <div className="card-content-block">
+                <h3>Food and Medical Initiatives</h3>
+                <p>Deploying targeted nutrition programs and continuous local healthcare camp infrastructures.</p>
+              </div>
+              <div className="card-hover-border-accent" />
+            </div>
+
+            <div className="csr-interactive-row-card">
+              <div className="card-indicator-dot" />
+              <div className="card-content-block">
+                <h3>Initiatives for Supporting Old Age Center</h3>
+                <p>Providing financial security, dedicated resource supply, and essential care validation protocols.</p>
+              </div>
+              <div className="card-hover-border-accent" />
+            </div>
+
           </div>
-          
+
         </div>
       </section>
 
@@ -302,54 +314,6 @@ function CSR() {
                 The various activities that are carried out in CSR are mentioned in Schedule VII of the Section 135 of the Companies Act, 2013. Some include eradicating hunger, poverty, promoting preventive healthcare, sanitation, gender equality, reduced inequalities, initiatives for education, employment, skilling, sports and many more.
               </p>
             </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* CREATIVE LIGHT-THEMED INITIATIVES SECTION */}
-      <section className="csr-initiatives-section">
-        <div className="csr-split-container">
-          
-          {/* Left Column: Heading & Introduction Block */}
-          <div className="csr-intro-column">
-            <div className="csr-orange-accent-line" />
-            <h2 className="csr-section-title">CSR Initiatives</h2>
-            <p className="csr-section-desc">
-              Jenil Steel firmly believes in giving back to the society. This principle forms a strong base for all the activities that our JSPL stands for and undertakes. We have bifurcated our CSR Initiatives into key developmental structures.
-            </p>
-          </div>
-
-          {/* Right Column: High-End Interactive List Items Grid */}
-          <div className="csr-cards-column">
-            
-            <div className="csr-interactive-row-card">
-              <div className="card-indicator-dot" />
-              <div className="card-content-block">
-                <h3>Education Initiatives</h3>
-                <p>Creating sustainable learning pathways and educational framework development for regional schools.</p>
-              </div>
-              <div className="card-hover-border-accent" />
-            </div>
-
-            <div className="csr-interactive-row-card">
-              <div className="card-indicator-dot" />
-              <div className="card-content-block">
-                <h3>Food and Medical Initiatives</h3>
-                <p>Deploying targeted nutrition programs and continuous local healthcare camp infrastructures.</p>
-              </div>
-              <div className="card-hover-border-accent" />
-            </div>
-
-            <div className="csr-interactive-row-card">
-              <div className="card-indicator-dot" />
-              <div className="card-content-block">
-                <h3>Initiatives for Supporting Old Age Center</h3>
-                <p>Providing financial security, dedicated resource supply, and essential care validation protocols.</p>
-              </div>
-              <div className="card-hover-border-accent" />
-            </div>
-
           </div>
 
         </div>
